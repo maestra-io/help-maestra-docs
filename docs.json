@@ -326,5 +326,467 @@
       "vscode"
     ]
   },
-  "footer": {}
+  "footer": {},
+  "redirects": [
+    {
+      "source": "/en/articles/11584375-who-is-a-customer",
+      "destination": "/customers-orders-and-products/customers/who-is-a-customer"
+    },
+    {
+      "source": "/en/articles/11840644-how-to-add-a-customer-manually-via-the-user-interface",
+      "destination": "/customers-orders-and-products/customers/how-to-add-a-customer-manually-via-the-user-interface"
+    },
+    {
+      "source": "/en/articles/11840796-how-to-bulk-import-customers-from-a-file",
+      "destination": "/customers-orders-and-products/customers/how-to-bulk-import-customers-from-a-file"
+    },
+    {
+      "source": "/en/articles/11840886-how-maestra-builds-a-unified-customer-profile",
+      "destination": "/customers-orders-and-products/customers/how-maestra-builds-a-unified-customer-profile"
+    },
+    {
+      "source": "/en/articles/11841410-how-to-manage-invalid-mobile-phone-numbers-and-email-addresses",
+      "destination": "/customers-orders-and-products/customers/how-to-manage-invalid-mobile-phone-numbers-and-email-addresses"
+    },
+    {
+      "source": "/en/articles/11841652-how-to-create-an-action-template",
+      "destination": "/customers-orders-and-products/actions/how-to-create-an-action-template"
+    },
+    {
+      "source": "/en/articles/11843001-what-is-an-order",
+      "destination": "/customers-orders-and-products/orders/what-is-an-order"
+    },
+    {
+      "source": "/en/articles/11843350-what-is-a-product",
+      "destination": "/customers-orders-and-products/products/what-is-a-product"
+    },
+    {
+      "source": "/en/articles/11886904-how-to-set-up-data-export-for-analytics",
+      "destination": "/customers-orders-and-products/data-export/how-to-set-up-data-export-for-analytics"
+    },
+    {
+      "source": "/en/articles/11887488-types-of-customer-segments",
+      "destination": "/segments/types-of-customer-segments"
+    },
+    {
+      "source": "/en/articles/11887995-how-to-filter-customers-into-segments",
+      "destination": "/segments/how-to-filter-customers-into-segments"
+    },
+    {
+      "source": "/en/articles/11888563-how-to-create-a-static-customer-segment",
+      "destination": "/segments/how-to-create-a-static-customer-segment"
+    },
+    {
+      "source": "/en/articles/11888976-how-to-add-customers-into-a-static-segment-using-ui",
+      "destination": "/segments/how-to-add-customers-into-a-static-segment-using-ui"
+    },
+    {
+      "source": "/en/articles/11889655-how-does-rfm-segmentation-work",
+      "destination": "/segments/how-does-rfm-segmentation-work"
+    },
+    {
+      "source": "/en/articles/11890112-what-to-do-if-you-cannot-update-a-segment",
+      "destination": "/segments/what-to-do-if-you-cannot-update-a-segment"
+    },
+    {
+      "source": "/en/articles/11890158-what-are-flows-and-how-do-you-use-them",
+      "destination": "/flows/what-are-flows-and-how-do-you-use-them"
+    },
+    {
+      "source": "/en/articles/11890212-how-to-test-a-flow",
+      "destination": "/flows/how-to-test-a-flow"
+    },
+    {
+      "source": "/en/articles/11890368-what-is-a-transactional-flow",
+      "destination": "/flows/what-is-a-transactional-flow"
+    },
+    {
+      "source": "/en/articles/11890376-the-price-of-the-most-viewed-or-purchased-product-has-dropped-flow",
+      "destination": "/flows/examples/the-price-of-the-most-viewed-or-purchased-product-has-dropped-flow"
+    },
+    {
+      "source": "/en/articles/11890392-how-to-create-a-next-best-action-flow",
+      "destination": "/flows/examples/how-to-create-a-next-best-action-flow"
+    },
+    {
+      "source": "/en/articles/11897760-types-of-campaigns-available-in-maestra",
+      "destination": "/campaigns/types-of-campaigns-available-in-maestra"
+    },
+    {
+      "source": "/en/articles/11898085-filtering-out-fake-clicks-keeping-your-click-rate-clean",
+      "destination": "/campaigns/filtering-out-fake-clicks-keeping-your-click-rate-clean"
+    },
+    {
+      "source": "/en/articles/11898129-how-to-test-your-campaign",
+      "destination": "/campaigns/how-to-test-your-campaign"
+    },
+    {
+      "source": "/en/articles/11898318-how-to-test-an-automated-campaign",
+      "destination": "/campaigns/how-to-test-an-automated-campaign"
+    },
+    {
+      "source": "/en/articles/11898514-how-to-create-a-bulk-email-campaign",
+      "destination": "/campaigns/email-campaigns/how-to-create-a-bulk-email-campaign"
+    },
+    {
+      "source": "/en/articles/11898684-how-to-create-a-bulk-sms-campaign",
+      "destination": "/campaigns/sms-campaigns/how-to-create-a-bulk-sms-campaign"
+    },
+    {
+      "source": "/en/articles/11898878-how-to-create-a-bulk-mobile-push-campaign",
+      "destination": "/campaigns/mobile-push-campaigns/how-to-create-a-bulk-mobile-push-campaign"
+    },
+    {
+      "source": "/en/articles/11898923-technical-limitations-for-push-notifications",
+      "destination": "/campaigns/mobile-push-campaigns/technical-limitations-for-push-notifications"
+    },
+    {
+      "source": "/en/articles/11899072-how-to-use-manual-import-in-emails",
+      "destination": "/campaigns/common-settings/how-to-use-manual-import-in-emails"
+    },
+    {
+      "source": "/en/articles/11899127-action-templates-for-campaigns",
+      "destination": "/campaigns/common-settings/action-templates-for-campaigns"
+    },
+    {
+      "source": "/en/articles/11899160-how-does-the-test-mode-work-in-automated-campaigns",
+      "destination": "/campaigns/common-settings/how-does-the-test-mode-work-in-automated-campaigns"
+    },
+    {
+      "source": "/en/articles/11899222-how-to-set-up-control-groups-and-a-b-tests-for-campaigns",
+      "destination": "/campaigns/ab-tests/how-to-set-up-control-groups-and-ab-tests-for-campaigns"
+    },
+    {
+      "source": "/en/articles/11899281-what-is-the-message-template-engine",
+      "destination": "/campaigns/message-template-engine/what-is-the-message-template-engine"
+    },
+    {
+      "source": "/en/articles/11899317-adding-a-condition-if-else-if-end-if",
+      "destination": "/campaigns/message-template-engine/adding-a-condition-ifelse-ifend-if"
+    },
+    {
+      "source": "/en/articles/11899338-how-to-use-elements-of-a-collection-with-the-for-end-for-loop-and-the-set-keyword",
+      "destination": "/campaigns/message-template-engine/how-to-use-elements-of-a-collection-with-the-forend-for-loop-and-the-set-keyword"
+    },
+    {
+      "source": "/en/articles/11899352-what-is-a-webhook-and-how-to-create-one",
+      "destination": "/campaigns/webhooks/what-is-a-webhook-and-how-to-create-one"
+    },
+    {
+      "source": "/en/articles/11899415-webhook-logs",
+      "destination": "/campaigns/webhooks/webhook-logs"
+    },
+    {
+      "source": "/en/articles/11899437-how-to-use-webhook-responses-in-flows",
+      "destination": "/campaigns/webhooks/how-to-use-webhook-responses-in-flows"
+    },
+    {
+      "source": "/en/articles/11899548-guidelines-for-coding-pop-ups-and-embedded-forms",
+      "destination": "/personalization/pop-up-forms-and-embedded-blocks/guidelines-for-coding-pop-ups-and-embedded-forms"
+    },
+    {
+      "source": "/en/articles/11899614-types-of-product-recommendation-presets",
+      "destination": "/personalization/product-recommendation/types-of-product-recommendation-presets"
+    },
+    {
+      "source": "/en/articles/11899700-free-in-app-to-collect-subscriptions-to-push-notifications",
+      "destination": "/mobile-app-personalization/free-in-app-to-collect-subscriptions-to-push-notifications"
+    },
+    {
+      "source": "/en/articles/11899783-creating-an-in-app-message",
+      "destination": "/mobile-app-personalization/creating-an-in-app-message"
+    },
+    {
+      "source": "/en/articles/11899881-how-to-set-up-the-ad-optimization-module",
+      "destination": "/ad-optimization/how-to-set-up-the-ad-optimization-module"
+    },
+    {
+      "source": "/en/articles/11899917-how-to-import-promo-codes-into-a-project",
+      "destination": "/loyalty/how-to-import-promo-codes-into-a-project"
+    },
+    {
+      "source": "/en/articles/11899942-how-to-manually-issue-promo-codes-from-the-pool-using-filters",
+      "destination": "/loyalty/how-to-manually-issue-promo-codes-from-the-pool-using-filters"
+    },
+    {
+      "source": "/en/articles/11899955-how-to-add-a-promo-code-into-a-campaign",
+      "destination": "/loyalty/how-to-add-a-promo-code-into-a-campaign"
+    },
+    {
+      "source": "/en/articles/11899963-goals",
+      "destination": "/reports/goals"
+    },
+    {
+      "source": "/en/articles/11900062-customer-lifecycle-segmentation-smart-engagement-strategies",
+      "destination": "/reports/customer-lifecycle-segmentation-smart-engagement-strategies"
+    },
+    {
+      "source": "/en/articles/11900080-attribution-model",
+      "destination": "/reports/attribution-model"
+    },
+    {
+      "source": "/en/articles/11900113-api-v3-methods-basics",
+      "destination": "/api-integrations/api-v3-methods-basics"
+    },
+    {
+      "source": "/en/articles/11900131-what-is-a-deviceuuid",
+      "destination": "/api-integrations/what-is-a-deviceuuid"
+    },
+    {
+      "source": "/en/articles/11900149-computed-fields",
+      "destination": "/api-integrations/computed-fields"
+    },
+    {
+      "source": "/en/articles/11900218-how-to-create-a-custom-field",
+      "destination": "/api-integrations/how-to-create-a-custom-field"
+    },
+    {
+      "source": "/en/articles/11900237-faq-billing",
+      "destination": "/administration/faq-billing"
+    },
+    {
+      "source": "/en/articles/11900245-single-sign-on-sso",
+      "destination": "/security/single-sign-on-sso"
+    },
+    {
+      "source": "/en/articles/11908956-how-to-add-sender-s-email-address",
+      "destination": "/campaigns/email-campaigns/get-started/how-to-add-senders-email-address"
+    },
+    {
+      "source": "/en/articles/11908974-maestra-s-basic-template-variables-web-version-unsubscribe-mailing-name",
+      "destination": "/campaigns/email-campaigns/get-started/maestras-basic-template-variables-web-version-unsubscribe-mailing-name"
+    },
+    {
+      "source": "/en/articles/11909019-setting-up-dkim-and-dmarc",
+      "destination": "/campaigns/email-campaigns/email-authentication-methods/setting-up-dkim-and-dmarc"
+    },
+    {
+      "source": "/en/articles/11909063-what-is-email-deliverability",
+      "destination": "/campaigns/email-campaigns/email-deliverability/what-is-email-deliverability"
+    },
+    {
+      "source": "/en/articles/11909081-which-email-metrics-impact-deliverability",
+      "destination": "/campaigns/email-campaigns/email-deliverability/which-email-metrics-impact-deliverability"
+    },
+    {
+      "source": "/en/articles/11909119-email-health-report",
+      "destination": "/campaigns/email-campaigns/email-deliverability/email-health-report"
+    },
+    {
+      "source": "/en/articles/11909164-what-ips-does-maestra-use-to-send-emails",
+      "destination": "/campaigns/email-campaigns/email-deliverability/what-ips-does-maestra-use-to-send-emails"
+    },
+    {
+      "source": "/en/articles/11909207-email-list-hygiene",
+      "destination": "/campaigns/email-campaigns/email-deliverability/email-list-hygiene"
+    },
+    {
+      "source": "/en/articles/11909223-how-to-segment-your-subscribers-based-on-activity",
+      "destination": "/campaigns/email-campaigns/email-deliverability/how-to-segment-your-subscribers-based-on-activity"
+    },
+    {
+      "source": "/en/articles/11909239-active-subscribers",
+      "destination": "/campaigns/email-campaigns/email-deliverability/active-subscribers"
+    },
+    {
+      "source": "/en/articles/11909249-inactive-subscribers",
+      "destination": "/campaigns/email-campaigns/email-deliverability/inactive-subscribers"
+    },
+    {
+      "source": "/en/articles/11909260-what-to-do-if-you-have-a-low-email-open-rate",
+      "destination": "/campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-low-email-open-rate"
+    },
+    {
+      "source": "/en/articles/11909288-what-to-do-if-you-have-a-low-email-click-through-rate",
+      "destination": "/campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-low-email-click-through-rate"
+    },
+    {
+      "source": "/en/articles/11909299-what-to-do-if-you-have-a-high-bounce-rate",
+      "destination": "/campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-high-bounce-rate"
+    },
+    {
+      "source": "/en/articles/11909312-what-to-do-if-you-have-a-high-email-spam-complaint-rate",
+      "destination": "/campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-high-email-spam-complaint-rate"
+    },
+    {
+      "source": "/en/articles/11909324-what-to-do-if-you-have-a-high-email-unsubscribe-rate",
+      "destination": "/campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-high-email-unsubscribe-rate"
+    },
+    {
+      "source": "/en/articles/11909331-why-gmail-clips-emails",
+      "destination": "/campaigns/email-campaigns/email-deliverability/why-gmail-clips-emails"
+    },
+    {
+      "source": "/en/articles/11909592-how-use-variables-to-create-a-product-grid-layout-for-html",
+      "destination": "/campaigns/message-template-engine/how-use-variables-to-create-a-product-grid-layout-for-html"
+    },
+    {
+      "source": "/en/articles/11909641-data-processing-and-formatting-methods",
+      "destination": "/campaigns/message-template-engine/data-processing-and-formatting-methods"
+    },
+    {
+      "source": "/en/articles/11963919-business-metrics-report",
+      "destination": "/reports/business-metrics-report"
+    },
+    {
+      "source": "/en/articles/12032930-how-to-create-automated-email-campaign",
+      "destination": "/campaigns/email-campaigns/how-to-create-automated-email-campaign"
+    },
+    {
+      "source": "/en/articles/12062349-how-to-send-a-campaign-using-a-file",
+      "destination": "/campaigns/how-to-send-a-campaign-using-a-file"
+    },
+    {
+      "source": "/en/articles/12089048-campaigns-report",
+      "destination": "/reports/campaigns-report"
+    },
+    {
+      "source": "/en/articles/12292528-how-customer-de-anonymization-works",
+      "destination": "/customers-orders-and-products/customers/how-customer-de-anonymization-works"
+    },
+    {
+      "source": "/en/articles/12359414-how-to-set-up-a-product-feed-import",
+      "destination": "/customers-orders-and-products/products/how-to-set-up-a-product-feed-import"
+    },
+    {
+      "source": "/en/articles/12441549-how-to-create-pop-ups",
+      "destination": "/personalization/pop-up-forms-and-embedded-blocks/how-to-create-pop-ups"
+    },
+    {
+      "source": "/en/articles/12510421-how-to-set-up-a-regional-product-feed-import",
+      "destination": "/customers-orders-and-products/products/how-to-set-up-a-regional-product-feed-import"
+    },
+    {
+      "source": "/en/articles/12533973-how-to-greet-contacts-by-name-in-your-campaigns",
+      "destination": "/campaigns/message-template-engine/how-to-greet-contacts-by-name-in-your-campaigns"
+    },
+    {
+      "source": "/en/articles/12610185-promotions-report",
+      "destination": "/reports/promotions-report"
+    },
+    {
+      "source": "/en/articles/12610982-how-the-multibranches-mode-work-in-the-condition-block-of-the-flow",
+      "destination": "/flows/how-the-multibranches-mode-work-in-the-condition-block-of-the-flow"
+    },
+    {
+      "source": "/en/articles/12747464-what-are-passkeys",
+      "destination": "/security/what-are-passkeys"
+    },
+    {
+      "source": "/en/articles/12747519-passkey-faq",
+      "destination": "/security/passkey-faq"
+    },
+    {
+      "source": "/en/articles/12821109-passkey-login-administration-and-setup",
+      "destination": "/security/passkey-login-administration-and-setup"
+    },
+    {
+      "source": "/en/articles/12822152-how-to-find-clicks-on-specific-links-in-campaigns",
+      "destination": "/filters/filtering-by-campaign-engagement/how-to-find-clicks-on-specific-links-in-campaigns"
+    },
+    {
+      "source": "/en/articles/12988784-multibrand",
+      "destination": "/administration/multibrand"
+    },
+    {
+      "source": "/en/articles/13007364-how-to-create-an-external-system",
+      "destination": "/administration/how-to-create-an-external-system"
+    },
+    {
+      "source": "/en/articles/13016201-how-to-upload-multiple-product-feeds-in-a-single-file",
+      "destination": "/customers-orders-and-products/products/how-to-upload-multiple-product-feeds-in-a-single-file"
+    },
+    {
+      "source": "/en/articles/13153514-how-to-find-customers-who-interacted-with-a-specific-campaign",
+      "destination": "/filters/filtering-by-campaign-engagement/how-to-find-customers-who-interacted-with-a-specific-campaign"
+    },
+    {
+      "source": "/en/articles/13154544-how-to-find-customers-with-send-failures-or-undeliveries",
+      "destination": "/filters/filtering-by-campaign-engagement/how-to-find-customers-with-send-failures-or-undeliveries"
+    },
+    {
+      "source": "/en/articles/13154551-how-to-find-customers-who-interacted-with-more-than-one-campaign",
+      "destination": "/filters/filtering-by-campaign-engagement/how-to-find-customers-who-interacted-with-more-than-one-campaign"
+    },
+    {
+      "source": "/en/articles/13189084-how-to-shorten-links-in-sms-mms-and-other-channels",
+      "destination": "/campaigns/sms-campaigns/how-to-shorten-links-in-sms-mms-and-other-channels"
+    },
+    {
+      "source": "/en/articles/13316509-how-discounts-are-distributed-across-order-line-items",
+      "destination": "/loyalty/how-discounts-are-distributed-across-order-line-items"
+    },
+    {
+      "source": "/en/articles/13520096-how-to-create-embedded-form",
+      "destination": "/personalization/pop-up-forms-and-embedded-blocks/how-to-create-embedded-form"
+    },
+    {
+      "source": "/en/articles/13639572-advanced-security",
+      "destination": "/security/advanced-security"
+    },
+    {
+      "source": "/en/articles/13639576-staff-session-duration",
+      "destination": "/security/staff-session-duration"
+    },
+    {
+      "source": "/en/articles/13639601-how-two-factor-authentication-works",
+      "destination": "/security/how-two-factor-authentication-works"
+    },
+    {
+      "source": "/en/articles/13666431-how-to-find-customers-with-orders",
+      "destination": "/filters/filtering-by-orders/how-to-find-customers-with-orders"
+    },
+    {
+      "source": "/en/articles/13666536-how-to-find-orders-for-a-specific-period",
+      "destination": "/filters/filtering-by-orders/how-to-find-orders-for-a-specific-period"
+    },
+    {
+      "source": "/en/articles/13666599-how-to-find-customers-without-orders",
+      "destination": "/filters/filtering-by-orders/how-to-find-customers-without-orders"
+    },
+    {
+      "source": "/en/articles/13666942-how-to-find-orders-with-a-specific-order-price",
+      "destination": "/filters/filtering-by-orders/how-to-find-orders-with-a-specific-order-price"
+    },
+    {
+      "source": "/en/articles/13667340-how-to-filter-customers-by-total-revenue",
+      "destination": "/filters/filtering-by-orders/how-to-filter-customers-by-total-revenue"
+    },
+    {
+      "source": "/en/articles/13667416-how-to-find-customers-by-average-order-value",
+      "destination": "/filters/filtering-by-orders/how-to-find-customers-by-average-order-value"
+    },
+    {
+      "source": "/en/articles/13667626-how-to-find-orders-with-applied-promotions",
+      "destination": "/filters/filtering-by-orders/how-to-find-orders-with-applied-promotions"
+    },
+    {
+      "source": "/en/articles/13667686-how-to-find-orders-with-earned-points",
+      "destination": "/filters/filtering-by-orders/how-to-find-orders-with-earned-points"
+    },
+    {
+      "source": "/en/articles/13667714-how-the-order-status-filter-works",
+      "destination": "/filters/filtering-by-orders/how-the-order-status-filter-works"
+    },
+    {
+      "source": "/en/articles/13667784-how-the-order-first-action-filter-works",
+      "destination": "/filters/filtering-by-orders/how-the-order-first-action-filter-works"
+    },
+    {
+      "source": "/en/articles/13667832-how-to-find-campaigns-sent-for-a-specific-order",
+      "destination": "/filters/filtering-by-orders/how-to-find-campaigns-sent-for-a-specific-order"
+    },
+    {
+      "source": "/en/articles/13901638-smart-send",
+      "destination": "/campaigns/smart-send"
+    },
+    {
+      "source": "/en/articles/6262582-how-to-simplify-a-filter",
+      "destination": "/filters/how-to-simplify-a-filter"
+    },
+    {
+      "source": "/en/articles/6262584-how-to-create-filters",
+      "destination": "/filters/how-to-create-filters"
+    }
+  ]
 }
