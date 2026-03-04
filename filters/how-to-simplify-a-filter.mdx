@@ -6,39 +6,39 @@ Some filters cannot be updated in real time. In this case, you will see a notifi
 
 ## Here’s what you can do to simplify a filter.
 
-If you need to search for customers with orders, try following these steps: go to **Database** → **Customers**, click **Add condition** and go to** Actions** → **Customer action** → **Orders** and **Product lists** → **Order** → **Additional information** → **First action information **instead of selecting **Add condition** → **Actions** → **Customer action** → **Orders and products** → **Order** → **Order first action**:
-
-**Before**
-
-**After**
+If you need to search for customers with orders, try following these steps: go to **Database** → **Customers**, click **Add condition** and go to  **Actions** → **Customer action** → **Orders** and **Product lists** → **Order** → **Additional information** → **First action information** instead of selecting **Add condition** → **Actions** → **Customer action** → **Orders and products** → **Order** → **Order first action**:
 
 ![](/images/imported/00_simplify_a_filter-(1).png)
 
 ![](/images/imported/01_simplify_a_filter.png)
 
+| **Before** | **After** |
+| --- | --- |
+|  |  |
+
 ---
 
 A search by quantity is more complex than the At least one condition. Therefore, try using the At least one condition instead of Set quantity → From 1:
-
-**Before**
-
-**After**
 
 ![](/images/imported/06_simplify_a_filter.png)
 
 ![](/images/imported/07_simplify_a_filter.png)
 
+| **Before** | **After** |
+| --- | --- |
+|  |  |
+
 ---
 
 If you’re creating a filter for orders with specific product categories and it’s taking a while to load, try creating a Scheduled or Static segment for these products and add it to your filter:
 
-**Before**
-
-**After**
-
 ![](/images/imported/08_simplify_a_filter.png)
 
 ![](/images/imported/09_simplify_a_filter.png)
+
+| **Before** | **After** |
+| --- | --- |
+|  |  |
 
 ---
 
@@ -47,37 +47,37 @@ You can also speed up your search for balance updates: add your conditions for t
 You can specify the balance update actions by its name or category:
 ​
 
-**Before**
-
-**After**
-
 ![](/images/imported/10_simplify_a_filter.png)
 
 ![](/images/imported/11_simplify_a_filter.png)
+
+| **Before** | **After** |
+| --- | --- |
+|  |  |
 
 ---
 
 If you need a search for orders placed during a specific timeframe in the Actions tab, go to Database → Actions, click Add condition → Orders and products → Order → Order item → Order → Additional information → First action information:
 
-**Before**
-
-**After**
-
 ![](/images/imported/12_simplify_a_filter.png)
 
 ![](/images/imported/13_simplify_a_filter.png)
+
+| **Before** | **After** |
+| --- | --- |
+|  |  |
 
 ---
 
 If your filter for actions cannot be created and you cannot simplify it, try filtering using a Scheduled segment for customers with the actions from the initial filter:
 
-**Before**
-
-**After**
-
 ![](/images/imported/14_simplify_a_filter.png)
 
 ![](/images/imported/15_simplify_a_filter.png)
+
+| **Before** | **After** |
+| --- | --- |
+|  |  |
 
 ---
 
@@ -111,7 +111,7 @@ If you add a new condition — for example, First action information — the fil
 
 Therefore, the more entities your filter includes and the more data for these entities the database contains, the more complex your filter is.
 
-** 2. Volume of data**
+ **2. Volume of data**
 
 If a Realtime filter often displays a notification that suggests building a Scheduled segment, this is an indicator that a large volume of data has built up in your project’s database.
 
@@ -123,7 +123,7 @@ To help everything work smoother, you can delete some of this data. Actions can 
 
 In this case, please keep in mind that your filters may work slower. Some of them will no longer be updated in real time and you will have to replace them with Scheduled segments.
 
-** 3. Database workload**
+ **3. Database workload**
 
 Database resources are limited. Filters share these resources with other features in the system, including messages, triggers, imports and exports, multiple API method calls, etc.
 

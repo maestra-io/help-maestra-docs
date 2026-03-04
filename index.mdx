@@ -1,97 +1,153 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Maestra Help Center"
+description: "Guides, tutorials, and API documentation for the Maestra platform"
 ---
 
-## Setting up
+{/* ── Main category cards ── */}
+{/* Grid layout with all help center sections, matching the sidebar navigation groups. */}
+{/* Each card links to the first/overview article in that section. */}
 
-Get your documentation site up and running in minutes.
+## Guides
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+Everything you need to get the most out of Maestra.
 
-## Make it yours
+<CardGroup cols={3}>
 
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
+{/* ── Data & customer management ── */}
 
 <Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
+  title="Customers, orders and products"
+  icon="users"
+  href="/customers-orders-and-products/customers/who-is-a-customer"
 >
-  Browse our showcase of exceptional documentation sites.
+  Customer profiles, orders, product feeds, and data export.
 </Card>
+
+<Card
+  title="Filters"
+  icon="filter"
+  href="/filters/how-to-create-filters"
+>
+  Create and combine filters to find the right audience.
+</Card>
+
+<Card
+  title="Segments"
+  icon="chart-pie"
+  href="/segments/types-of-customer-segments"
+>
+  Static and dynamic segments, RFM segmentation.
+</Card>
+
+{/* ── Automation & messaging ── */}
+
+<Card
+  title="Flows"
+  icon="diagram-project"
+  href="/flows/what-are-flows-and-how-do-you-use-them"
+>
+  Automated flows: triggers, conditions, and actions.
+</Card>
+
+<Card
+  title="Campaigns"
+  icon="paper-plane"
+  href="/campaigns/types-of-campaigns-available-in-maestra"
+>
+  Email, SMS, mobile push, webhooks, and A/B tests.
+</Card>
+
+<Card
+  title="Personalization"
+  icon="wand-magic-sparkles"
+  href="/personalization/pop-up-forms-and-embedded-blocks/how-to-create-pop-ups"
+>
+  Pop-ups, embedded forms, and product recommendations.
+</Card>
+
+{/* ── Channels & optimization ── */}
+
+<Card
+  title="Mobile app personalization"
+  icon="mobile"
+  href="/mobile-app-personalization/creating-an-in-app-message"
+>
+  In-app messages and push notification opt-ins.
+</Card>
+
+<Card
+  title="Ad Optimization"
+  icon="bullseye"
+  href="/ad-optimization/how-to-set-up-the-ad-optimization-module"
+>
+  Sync segments with ad platforms for better targeting.
+</Card>
+
+<Card
+  title="Loyalty"
+  icon="gift"
+  href="/loyalty/how-to-add-a-promo-code-into-a-campaign"
+>
+  Promo codes, discounts, and loyalty program mechanics.
+</Card>
+
+{/* ── Analytics & platform settings ── */}
+
+<Card
+  title="Reports"
+  icon="chart-line"
+  href="/reports/business-metrics-report"
+>
+  Business metrics, campaign reports, attribution, and goals.
+</Card>
+
+<Card
+  title="API integrations"
+  icon="plug"
+  href="/api-integrations/api-v3-methods-basics"
+>
+  Custom fields, computed fields, and DeviceUUID.
+</Card>
+
+<Card
+  title="Administration"
+  icon="gear"
+  href="/administration/faq-billing"
+>
+  Billing, external systems, and multibrand setup.
+</Card>
+
+<Card
+  title="Security"
+  icon="shield-halved"
+  href="/security/advanced-security"
+>
+  2FA, passkeys, SSO, and session management.
+</Card>
+
+</CardGroup>
+
+{/* ── Developer section ── */}
+{/* Links to the API reference and technical documentation. */}
+
+## For developers
+
+<CardGroup cols={2}>
+
+<Card
+  title="V3 API"
+  icon="code"
+  href="/for-developers/v3-api"
+>
+  API reference: endpoints, authentication, and error handling.
+</Card>
+
+<Card
+  title="API integrations guide"
+  icon="book"
+  href="/api-integrations/api-v3-methods-basics"
+>
+  Practical guide to working with the Maestra API.
+</Card>
+
+</CardGroup>

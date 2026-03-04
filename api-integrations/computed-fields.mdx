@@ -1,0 +1,159 @@
+---
+title: "Computed fields"
+---
+
+**Computed fields** allow aggregating data about your customer and fill their profile in with additional info based on their user behavior.
+
+For example, such fields can help you identify what products, categories, or vendors your customer buys or views most frequently.
+
+Computed fields can be used as any other custom fields, e. g. for segmentation, campaigns, promotions, etc.
+
+# Creating a computed field
+
+You can create up to 3 fields
+
+1. Go to the **Settings tab** → **System settings** → **Custom fields** and click "**Create computed field**":
+
+![01_ComputedFields](/images/imported/01_ComputedFields.png)
+
+2. Fill in the settings:
+
+![00_ComputedFields](/images/imported/00_ComputedFields.png)
+
+## General settings
+
+- Name — the same as displayed in filters or campaigns
+
+- Brand
+
+- System name — is used in integrations and the message template engine
+
+## Recalculating
+
+- Frequency is daily or just once (per all the time the field exists)
+
+- Period is the data time frame you want to use in your report.
+
+## Formula
+
+1. Choose what type of events to collect data for: views or orders
+
+![08_Computed fields](/images/imported/08_Computed-20fields.png)
+
+2. Choose which entity to search in processed data — it will be filled in customer’s calculated field.
+
+- **Product**
+
+![](/images/imported/02_ComputedFields.png)
+
+![](/images/imported/09_Computed-fields.png)
+
+| Find the most frequently purchased product: ​ |
+| --- |
+| Or the most frequently viewed product: ​ |
+
+- **Category** — you need to select categories among which the calculation will take place
+
+![](/images/imported/03_ComputedFields.png)
+
+| Find the most frequently purchased category of the four selected: ​ |
+| --- |
+
+Important: You cannot select a parent and child category at the same time
+​
+
+![11_Computed fields](/images/imported/11_Computed-20fields.png)
+
+- **Manufacturer**
+
+![](/images/imported/12_Computed-fields.png)
+
+| Which manufacturer's products are most frequently purchased or viewed by the customer: |
+| --- |
+
+- **Product’s [custom field](/api-integrations/how-to-create-a-custom-field)** - string, integer and enumerated field types are available.
+
+![](/images/imported/13_Computed-fields.png)
+
+| Product from which collection the customer purchases most often |
+| --- |
+
+- **Order’s [custom field](/api-integrations/how-to-create-a-custom-field)** - string, integer and enumerated field types are available.
+
+![](/images/imported/14_Computed-fields.png)
+
+| Which delivery type the customer uses most often: |
+| --- |
+
+- **Order’s touchpoint**
+
+![](/images/imported/15_Computed-fields.png)
+
+| Where the customer makes purchases most often: |
+| --- |
+
+**Additional conditions** - allow you to narrow the selection of data among which the calculation will take place.
+
+![NEW_08_ComputedField](/images/imported/NEW_08_ComputedField.png)
+
+![NEW_09_ComputedField](/images/imported/NEW_09_ComputedField.png)
+
+| Find the client's brand of interest in the eyewear category: ​ |
+| --- |
+| Find the most frequently purchased product in the women's category and only from delivered items: ​ |
+
+Minimum views/orders for this product is the action number threshold for the value to be filled in the field.
+
+You can also set the Calculation priority:
+
+- Most recent
+
+- Most expensive
+
+3. Click "Save"
+
+Done:
+
+![04_ComputedFields](/images/imported/04_ComputedFields.png)
+
+Filed computing is launched at night.
+
+# Customer search
+
+Custom and computed fields are located in the same tab in your customer card:
+
+![05_ComputedFields](/images/imported/05_ComputedFields.png)
+
+You can use filters to filter out the customers with the filed value needed:
+
+![06_ComputedFields](/images/imported/06_ComputedFields.png)
+
+# Display in the campaign
+
+Computed field parameters are listed in **Recipient.CustomField**
+
+To display products for a customer, use a parameter of this type: **Recipient.CustomField.\{Filed system name\}**.
+
+The available parameters depend on the type of calculated field.
+
+- If you defined the product - all parameters for the product are available:
+
+![](/images/imported/07_ComputedField.png)
+
+- If you were looking for the most common value of the custom field - parameters for displaying this field are available:
+
+![](/images/imported/NEW_10_ComputredField.png)
+
+It is also possible to display recommendations for computed products and categories.
+
+![NEW_11_ComputedFields](/images/imported/NEW_11_ComputedFields.png)
+
+# Use in the flow
+
+In the flow you can use “Preferred product changed” event, which allows you to react to a decrease in the cost of a product from a calculated field:
+
+![NEW_12_ComputedFields](/images/imported/NEW_12_ComputedFields.png)
+
+Example:
+
+["The price of the most viewed or purchased product has dropped" flow](https://intercom.help/maestraio/v1/docs/the-price-of-the-most-viewed-or-purchased-product-has-dropped-flow)

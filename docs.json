@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Maestra Help Center",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#5DA600",
+    "light": "#97EA2D",
+    "dark": "#7ECE17"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
     "tabs": [
       {
@@ -19,7 +19,39 @@
               {
                 "group": "Customers",
                 "pages": [
+                  "customers-orders-and-products/customers/how-customer-de-anonymization-works",
+                  "customers-orders-and-products/customers/how-maestra-builds-a-unified-customer-profile",
+                  "customers-orders-and-products/customers/how-to-add-a-customer-manually-via-the-user-interface",
+                  "customers-orders-and-products/customers/how-to-bulk-import-customers-from-a-file",
+                  "customers-orders-and-products/customers/how-to-manage-invalid-mobile-phone-numbers-and-email-addresses",
                   "customers-orders-and-products/customers/who-is-a-customer"
+                ]
+              },
+              {
+                "group": "Actions",
+                "pages": [
+                  "customers-orders-and-products/actions/how-to-create-an-action-template"
+                ]
+              },
+              {
+                "group": "Orders",
+                "pages": [
+                  "customers-orders-and-products/orders/what-is-an-order"
+                ]
+              },
+              {
+                "group": "Products",
+                "pages": [
+                  "customers-orders-and-products/products/how-to-set-up-a-product-feed-import",
+                  "customers-orders-and-products/products/how-to-set-up-a-regional-product-feed-import",
+                  "customers-orders-and-products/products/how-to-upload-multiple-product-feeds-in-a-single-file",
+                  "customers-orders-and-products/products/what-is-a-product"
+                ]
+              },
+              {
+                "group": "Data Export",
+                "pages": [
+                  "customers-orders-and-products/data-export/how-to-set-up-data-export-for-analytics"
                 ]
               }
             ]
@@ -27,30 +59,42 @@
           {
             "group": "Filters",
             "pages": [
-              "filters/how-the-order-first-action-filter-works",
-              "filters/how-the-order-status-filter-works",
               "filters/how-to-create-filters",
-              "filters/how-to-filter-customers-by-total-revenue",
-              "filters/how-to-find-customers-by-average-order-value",
-              "filters/how-to-find-customers-with-orders",
-              "filters/how-to-find-customers-with-send-failures-or-undeliveries",
-              "filters/how-to-find-customers-without-orders",
-              "filters/how-to-find-orders-for-a-specific-period",
-              "filters/how-to-find-orders-with-a-specific-order-price",
-              "filters/how-to-find-orders-with-applied-promotions",
-              "filters/how-to-find-orders-with-earned-points",
-              "filters/how-to-simplify-a-filter"
+              "filters/how-to-simplify-a-filter",
+              {
+                "group": "Filtering by Campaign Engagement",
+                "pages": [
+                  "filters/filtering-by-campaign-engagement/how-to-find-clicks-on-specific-links-in-campaigns",
+                  "filters/filtering-by-campaign-engagement/how-to-find-customers-who-interacted-with-a-specific-campaign",
+                  "filters/filtering-by-campaign-engagement/how-to-find-customers-who-interacted-with-more-than-one-campaign",
+                  "filters/filtering-by-campaign-engagement/how-to-find-customers-with-send-failures-or-undeliveries"
+                ]
+              },
+              {
+                "group": "Filtering by Orders",
+                "pages": [
+                  "filters/filtering-by-orders/how-the-order-first-action-filter-works",
+                  "filters/filtering-by-orders/how-the-order-status-filter-works",
+                  "filters/filtering-by-orders/how-to-filter-customers-by-total-revenue",
+                  "filters/filtering-by-orders/how-to-find-campaigns-sent-for-a-specific-order",
+                  "filters/filtering-by-orders/how-to-find-customers-by-average-order-value",
+                  "filters/filtering-by-orders/how-to-find-customers-with-orders",
+                  "filters/filtering-by-orders/how-to-find-customers-without-orders",
+                  "filters/filtering-by-orders/how-to-find-orders-for-a-specific-period",
+                  "filters/filtering-by-orders/how-to-find-orders-with-a-specific-order-price",
+                  "filters/filtering-by-orders/how-to-find-orders-with-applied-promotions",
+                  "filters/filtering-by-orders/how-to-find-orders-with-earned-points"
+                ]
+              }
             ]
           },
           {
             "group": "Segments",
             "pages": [
-              "segments/customer-lifecycle-segmentation-smart-engagement-strategies",
               "segments/how-does-rfm-segmentation-work",
               "segments/how-to-add-customers-into-a-static-segment-using-ui",
               "segments/how-to-create-a-static-customer-segment",
               "segments/how-to-filter-customers-into-segments",
-              "segments/how-to-segment-your-subscribers-based-on-activity",
               "segments/types-of-customer-segments",
               "segments/what-to-do-if-you-cannot-update-a-segment"
             ]
@@ -59,65 +103,182 @@
             "group": "Flows",
             "pages": [
               "flows/how-the-multibranches-mode-work-in-the-condition-block-of-the-flow",
-              "flows/how-to-create-a-next-best-action-flow",
               "flows/how-to-test-a-flow",
-              "flows/the-price-of-the-most-viewed-or-purchased-product-has-dropped-flow",
               "flows/what-are-flows-and-how-do-you-use-them",
-              "flows/what-is-a-transactional-flow"
+              "flows/what-is-a-transactional-flow",
+              {
+                "group": "Examples",
+                "pages": [
+                  "flows/examples/how-to-create-a-next-best-action-flow",
+                  "flows/examples/the-price-of-the-most-viewed-or-purchased-product-has-dropped-flow"
+                ]
+              }
             ]
           },
           {
             "group": "Campaigns",
             "pages": [
-              "campaigns/action-templates-for-campaigns",
-              "campaigns/active-subscribers",
-              "campaigns/email-list-hygiene",
               "campaigns/filtering-out-fake-clicks-keeping-your-click-rate-clean",
-              "campaigns/how-does-the-test-mode-work-in-automated-campaigns",
-              "campaigns/how-to-add-senders-email-address",
-              "campaigns/how-to-create-a-bulk-email-campaign",
-              "campaigns/how-to-create-a-bulk-mobile-push-campaign",
-              "campaigns/how-to-create-a-bulk-sms-campaign",
-              "campaigns/how-to-create-an-action-template",
-              "campaigns/how-to-create-automated-email-campaign",
-              "campaigns/how-to-find-campaigns-sent-for-a-specific-order",
-              "campaigns/how-to-find-clicks-on-specific-links-in-campaigns",
-              "campaigns/how-to-find-customers-who-interacted-with-a-specific-campaign",
-              "campaigns/how-to-find-customers-who-interacted-with-more-than-one-campaign",
-              "campaigns/how-to-greet-contacts-by-name-in-your-campaigns",
               "campaigns/how-to-send-a-campaign-using-a-file",
-              "campaigns/how-to-set-up-control-groups-and-ab-tests-for-campaigns",
-              "campaigns/how-to-shorten-links-in-sms-mms-and-other-channels",
               "campaigns/how-to-test-an-automated-campaign",
               "campaigns/how-to-test-your-campaign",
-              "campaigns/how-to-use-manual-import-in-emails",
-              "campaigns/inactive-subscribers",
-              "campaigns/maestras-basic-template-variables-web-version-unsubscribe-mailing-name",
               "campaigns/smart-send",
               "campaigns/types-of-campaigns-available-in-maestra",
-              "campaigns/what-is-email-deliverability",
-              "campaigns/what-to-do-if-you-have-a-high-bounce-rate",
-              "campaigns/what-to-do-if-you-have-a-high-email-spam-complaint-rate",
-              "campaigns/what-to-do-if-you-have-a-high-email-unsubscribe-rate",
-              "campaigns/what-to-do-if-you-have-a-low-email-click-through-rate",
-              "campaigns/what-to-do-if-you-have-a-low-email-open-rate",
-              "campaigns/why-gmail-clips-emails"
+              {
+                "group": "Email campaigns",
+                "pages": [
+                  "campaigns/email-campaigns/how-to-create-a-bulk-email-campaign",
+                  "campaigns/email-campaigns/how-to-create-automated-email-campaign",
+                  {
+                    "group": "Get started",
+                    "pages": [
+                      "campaigns/email-campaigns/get-started/how-to-add-senders-email-address",
+                      "campaigns/email-campaigns/get-started/maestras-basic-template-variables-web-version-unsubscribe-mailing-name"
+                    ]
+                  },
+                  {
+                    "group": "Email authentication methods",
+                    "pages": [
+                      "campaigns/email-campaigns/email-authentication-methods/setting-up-dkim-and-dmarc"
+                    ]
+                  },
+                  {
+                    "group": "Email deliverability",
+                    "pages": [
+                      "campaigns/email-campaigns/email-deliverability/active-subscribers",
+                      "campaigns/email-campaigns/email-deliverability/email-health-report",
+                      "campaigns/email-campaigns/email-deliverability/email-list-hygiene",
+                      "campaigns/email-campaigns/email-deliverability/how-to-segment-your-subscribers-based-on-activity",
+                      "campaigns/email-campaigns/email-deliverability/inactive-subscribers",
+                      "campaigns/email-campaigns/email-deliverability/what-ips-does-maestra-use-to-send-emails",
+                      "campaigns/email-campaigns/email-deliverability/what-is-email-deliverability",
+                      "campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-high-bounce-rate",
+                      "campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-high-email-spam-complaint-rate",
+                      "campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-high-email-unsubscribe-rate",
+                      "campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-low-email-click-through-rate",
+                      "campaigns/email-campaigns/email-deliverability/what-to-do-if-you-have-a-low-email-open-rate",
+                      "campaigns/email-campaigns/email-deliverability/which-email-metrics-impact-deliverability",
+                      "campaigns/email-campaigns/email-deliverability/why-gmail-clips-emails"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "SMS campaigns",
+                "pages": [
+                  "campaigns/sms-campaigns/how-to-create-a-bulk-sms-campaign",
+                  "campaigns/sms-campaigns/how-to-shorten-links-in-sms-mms-and-other-channels"
+                ]
+              },
+              {
+                "group": "Mobile Push Campaigns",
+                "pages": [
+                  "campaigns/mobile-push-campaigns/how-to-create-a-bulk-mobile-push-campaign",
+                  "campaigns/mobile-push-campaigns/technical-limitations-for-push-notifications"
+                ]
+              },
+              {
+                "group": "Common Settings",
+                "pages": [
+                  "campaigns/common-settings/action-templates-for-campaigns",
+                  "campaigns/common-settings/how-does-the-test-mode-work-in-automated-campaigns",
+                  "campaigns/common-settings/how-to-use-manual-import-in-emails"
+                ]
+              },
+              {
+                "group": "A/B Tests",
+                "pages": [
+                  "campaigns/ab-tests/how-to-set-up-control-groups-and-ab-tests-for-campaigns"
+                ]
+              },
+              {
+                "group": "Message template engine",
+                "pages": [
+                  "campaigns/message-template-engine/adding-a-condition-ifelse-ifend-if",
+                  "campaigns/message-template-engine/data-processing-and-formatting-methods",
+                  "campaigns/message-template-engine/how-to-greet-contacts-by-name-in-your-campaigns",
+                  "campaigns/message-template-engine/how-to-use-elements-of-a-collection-with-the-forend-for-loop-and-the-set-keyword",
+                  "campaigns/message-template-engine/how-use-variables-to-create-a-product-grid-layout-for-html",
+                  "campaigns/message-template-engine/what-is-the-message-template-engine"
+                ]
+              },
+              {
+                "group": "Webhooks",
+                "pages": [
+                  "campaigns/webhooks/how-to-use-webhook-responses-in-flows",
+                  "campaigns/webhooks/webhook-logs",
+                  "campaigns/webhooks/what-is-a-webhook-and-how-to-create-one"
+                ]
+              }
             ]
           },
           {
             "group": "Personalization",
             "pages": [
-              "personalization/guidelines-for-coding-pop-ups-and-embedded-forms",
-              "personalization/how-to-create-embedded-form",
-              "personalization/how-use-variables-to-create-a-product-grid-layout-for-html",
-              "personalization/types-of-product-recommendation-presets",
-              "personalization/what-is-the-message-template-engine",
               {
                 "group": "Pop-up forms and embedded blocks",
                 "pages": [
+                  "personalization/pop-up-forms-and-embedded-blocks/guidelines-for-coding-pop-ups-and-embedded-forms",
+                  "personalization/pop-up-forms-and-embedded-blocks/how-to-create-embedded-form",
                   "personalization/pop-up-forms-and-embedded-blocks/how-to-create-pop-ups"
                 ]
+              },
+              {
+                "group": "Product recommendation",
+                "pages": [
+                  "personalization/product-recommendation/types-of-product-recommendation-presets"
+                ]
               }
+            ]
+          },
+          {
+            "group": "Mobile app personalization",
+            "pages": [
+              "mobile-app-personalization/creating-an-in-app-message",
+              "mobile-app-personalization/free-in-app-to-collect-subscriptions-to-push-notifications"
+            ]
+          },
+          {
+            "group": "Ad Optimization",
+            "pages": [
+              "ad-optimization/how-to-set-up-the-ad-optimization-module"
+            ]
+          },
+          {
+            "group": "Loyalty",
+            "pages": [
+              "loyalty/how-discounts-are-distributed-across-order-line-items",
+              "loyalty/how-to-add-a-promo-code-into-a-campaign",
+              "loyalty/how-to-import-promo-codes-into-a-project",
+              "loyalty/how-to-manually-issue-promo-codes-from-the-pool-using-filters"
+            ]
+          },
+          {
+            "group": "Reports",
+            "pages": [
+              "reports/attribution-model",
+              "reports/business-metrics-report",
+              "reports/campaigns-report",
+              "reports/customer-lifecycle-segmentation-smart-engagement-strategies",
+              "reports/goals",
+              "reports/promotions-report"
+            ]
+          },
+          {
+            "group": "API integrations",
+            "pages": [
+              "api-integrations/api-v3-methods-basics",
+              "api-integrations/computed-fields",
+              "api-integrations/how-to-create-a-custom-field",
+              "api-integrations/what-is-a-deviceuuid"
+            ]
+          },
+          {
+            "group": "Administration",
+            "pages": [
+              "administration/faq-billing",
+              "administration/how-to-create-an-external-system",
+              "administration/multibrand"
             ]
           },
           {
@@ -127,149 +288,32 @@
               "security/how-two-factor-authentication-works",
               "security/passkey-faq",
               "security/passkey-login-administration-and-setup",
-              "security/setting-up-dkim-and-dmarc",
               "security/single-sign-on-sso",
-              "security/what-are-passkeys",
-              "security/what-ips-does-maestra-use-to-send-emails"
-            ]
-          },
-          {
-            "group": "Administration",
-            "pages": [
-              "administration/faq-billing",
-              "administration/how-to-set-up-data-export-for-analytics",
-              "administration/multibrand",
-              "administration/staff-session-duration"
-            ]
-          },
-          {
-            "group": "API & integrations",
-            "pages": [
-              "api-integrations/api-v3-methods-basics",
-              "api-integrations/how-to-create-an-external-system",
-              "api-integrations/how-to-set-up-a-product-feed-import",
-              "api-integrations/how-to-set-up-a-regional-product-feed-import",
-              "api-integrations/how-to-upload-multiple-product-feeds-in-a-single-file",
-              "api-integrations/how-to-use-webhook-responses-in-flows",
-              "api-integrations/webhook-logs",
-              "api-integrations/what-is-a-webhook-and-how-to-create-one"
-            ]
-          },
-          {
-            "group": "Reports",
-            "pages": [
-              "reports/attribution-model",
-              "reports/business-metrics-report",
-              "reports/campaigns-report",
-              "reports/email-health-report",
-              "reports/promotions-report"
-            ]
-          },
-          {
-            "group": "Loyalty",
-            "pages": [
-              "loyalty/goals",
-              "loyalty/how-discounts-are-distributed-across-order-line-items",
-              "loyalty/how-to-add-a-promo-code-into-a-campaign",
-              "loyalty/how-to-import-promo-codes-into-a-project",
-              "loyalty/how-to-manually-issue-promo-codes-from-the-pool-using-filters"
-            ]
-          },
-          {
-            "group": "Ad optimization",
-            "pages": [
-              "ad-optimization/how-to-set-up-the-ad-optimization-module"
-            ]
-          },
-          {
-            "group": "Mobile app personalization",
-            "pages": [
-              "mobile-app/creating-an-in-app-message",
-              "mobile-app/free-in-app-to-collect-subscriptions-to-push-notifications",
-              "mobile-app/technical-limitations-for-push-notifications"
-            ]
-          },
-          {
-            "group": "Customers, orders & products",
-            "pages": [
-              "customers-orders-products/computed-fields",
-              "customers-orders-products/how-customer-de-anonymization-works",
-              "customers-orders-products/how-maestra-builds-a-unified-customer-profile",
-              "customers-orders-products/how-to-add-a-customer-manually-via-the-user-interface",
-              "customers-orders-products/how-to-bulk-import-customers-from-a-file",
-              "customers-orders-products/how-to-create-a-custom-field",
-              "customers-orders-products/what-is-a-deviceuuid",
-              "customers-orders-products/what-is-a-product",
-              "customers-orders-products/what-is-an-order"
-            ]
-          },
-          {
-            "group": "General",
-            "pages": [
-              "general/adding-a-condition-ifelse-ifend-if",
-              "general/data-processing-and-formatting-methods",
-              "general/how-to-manage-invalid-mobile-phone-numbers-and-email-addresses",
-              "general/how-to-use-elements-of-a-collection-with-the-forend-for-loop-and-the-set-keyword",
-              "general/test",
-              "general/testing",
-              "general/which-email-metrics-impact-deliverability"
+              "security/staff-session-duration",
+              "security/what-are-passkeys"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "For developers",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "API",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "for-developers/v3-api"
             ]
           }
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    "global": {}
   },
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
+  "navbar": {},
   "contextual": {
     "options": [
       "copy",
@@ -282,11 +326,5 @@
       "vscode"
     ]
   },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  }
+  "footer": {}
 }

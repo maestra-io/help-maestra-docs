@@ -1,0 +1,175 @@
+---
+title: "How to Use Webhook Responses in Flows"
+---
+
+In [flows](/flows/what-are-flows-and-how-do-you-use-them), you can not only call a webhook but also receive a response to the request and move a customer along the flow depending on the results received.
+
+You can use both the webhook’s successful delivery status itself and specific values from the webhook response.
+
+# Request status flow
+
+Task example: Let’s say we need a customer to verify their account using a Flash Call invoked by a webhook. Maestra terminates the flow if the webhook delivery is successful and the service responds with 2xx (the success status code). If the service responds with an error, the customer needs to be sent an email with a verification link.
+
+## Setting up a webhook
+
+Follow the [guide](/campaigns/webhooks/what-is-a-webhook-and-how-to-create-one) to create a webhook.
+
+For your webhook to receive responses, follow these steps:
+
+1. Add `$\{WebhookRequest.TransactionalId\}` to the URL, header, or request body.
+
+![00_webhook_responses](/images/imported/00_webhook_responses.png)
+
+![01_webhook_responses](/images/imported/01_webhook_responses.png)
+
+2. Add the `Content-Type: application/json` header
+
+You can specify the header in the integration point or in a specific webhook.
+
+![02_webhook_responses](/images/imported/02_webhook_responses.png)
+
+3. Enable response processing with the Should await response in JSON option:
+
+![03_webhook_responses](/images/imported/03_webhook_responses.png)
+
+## Setting up a flow
+
+To use webhook responses, your [flow](/flows/what-are-flows-and-how-do-you-use-them) should include:
+
+1. A Steps block that sends the webhook:
+
+![05_webhook_responses](/images/imported/05_webhook_responses.png)
+
+When you select an appropriate webhook, a notification appears allowing you to check the response.
+
+2. A Condition block that depends on the Webhook Response:
+
+![06_webhook_responses](/images/imported/06_webhook_responses.png)
+
+- If the service responds to the request with a 2xx HTTP status code, the event is transferred to the "Yes" branch.
+- If the response contains a 5xx or 429 code, the webhook is re-sent 3 more times every 5 minutes. After three failed attempts, the event is transferred to the "No" branch.
+- If the service responds with a 4xx code (except 429) or the system cannot generate the webhook because of errors in the Template Engine, the event is also transferred to the "No" branch.
+
+3. Next flow steps for request and failed requests ("Yes" and "No" branches).
+
+![07_webhook_responses](/images/imported/07_webhook_responses.png)
+
+# Response data flow
+
+Task example: Let’s imagine a service that generates unique promo codes for customers. A webhook should send a user’s phone number to the service, receive a promo code for the user, and record the response in the customer profile.
+
+## Setting up a webhook
+
+Follow this [guide](/campaigns/webhooks/what-is-a-webhook-and-how-to-create-one) to create a webhook.
+
+To ensure your webhook can receive responses, follow these steps:
+
+1. Add `$\{WebhookRequest.TransactionalId\}` to the URL, header, or request body.
+
+![00_webhook_responses](/images/imported/00_webhook_responses.png)
+
+![01_webhook_responses](/images/imported/01_webhook_responses.png)
+
+2. Add the `Content-Type: application/json` header
+
+You can specify the header in the integration point or in a specific webhook.
+
+![02_webhook_responses](/images/imported/02_webhook_responses.png)
+
+3. Enable response processing with the Should await response in JSON option:
+
+![03_webhook_responses](/images/imported/03_webhook_responses.png)
+
+3.1. Click Add custom field.
+
+- Name — choose a name for the variable to which the value from the webhook response will be assigned.
+- Full name — this is generated automatically from the Webhooks prefix, the system name of your webhook, and the previously specified name of the variable. The full name will be used in flows to record in a customer profile and in campaigns to substitute the value. For example, the full name of the `code` variable is `Webhooks.WebWebhook1.code`
+- Path in the response body — where to find the value for the variable.
+
+### How to fill in the path in the response body
+
+To do this, you need to know what the response from the service looks like.
+
+For example, it returns the following code:
+
+```
+`{
+    "firstName": "Paul",
+    "promocode": {
+        "promocodeValue": "QWERTY",
+        "promocodeId": "1"
+    },
+    "subjects": [
+        "Art",
+        "History"
+    ],
+    "subscriptions": [
+        {
+            "pointOfContact": "Email",
+            "isSubscribed": "true"
+        },
+        {
+            "pointOfContact": "SMS",
+            "isSubscribed": "false"
+        }
+    ]
+}`
+```
+
+Paths to various parameters:
+
+- a non-nested parameter (`"Paul"`) — just its key (`firstName`);
+- a parameter in an object (`"QWERTY"`) — top-level objects and its key name after a dot (`promocode.promocodeValue`);
+- a parameter in an array (`"Art"`) — the array name and the item’s index in square brackets (`subjects[0]`);
+- a parameter of an array object (`"true"`) — the array name and the item’s index in square brackets, the key name after a dot (`subscriptions[0].isSubscribed`).
+
+So, the path to the promo code in the response body will be `promocode.promocodeValue`:
+
+![04_webhook_responses](/images/imported/04_webhook_responses.png)
+
+Check whether your expression is correct using online services like [https://jsonpath.com](https://jsonpath.com)
+
+## Setting up a flow
+
+To use webhook responses, your [flow](/flows/what-are-flows-and-how-do-you-use-them) should include:
+
+1. A Steps block that sends a webhook:
+
+![08_webhook_responses](/images/imported/08_webhook_responses.png)
+
+When you select an appropriate webhook, a notification appears allowing you to check the response.
+
+2. A Condition block that depends on the Webhook Response.
+
+The condition is set automatically and checks whether your webhook delivery is successful:
+
+- If the service responds to the webhook call with a 2xx HTTP status code and the variable from the response fulfills the condition, the event is transferred to the "Yes" branch.
+- If the response contains a 5xx or 429 code, the webhook is re-sent 3 more times every 5 minutes. After three failed attempts, the event is transferred to the "No" branch.
+- If the service responds with a 4xx code (except 429) or the system cannot generate the webhook because of errors in the Template Engine, the event is also transferred to the "No" branch.
+
+2.1. Add a condition for the variable.
+
+You can select the following options for the condition:
+
+- Value is available — whether a value for the variable has been passed in the response or not;
+- Exists / Equals / Contains / Starts with / Not equal / Not contain — conditions for the contents of a value of the variable.
+
+![09_webhook_responses](/images/imported/09_webhook_responses.png)
+
+3. Maestra can record the variable in the customer profile or add it to a campaign without saving it in the system. The data of the function is available only in the "Yes" branch after the response has been checked.
+
+- To record a value in a customer’s profile, add another Steps block and configure them to edit a profile with the data from the webhook:
+
+![10_webhook_responses](/images/imported/10_webhook_responses.png)
+
+If necessary, create a [custom field](https://intercom.help/maestraio/v1/docs/how-to-create-a-custom-field) to save data.
+
+The system records responses only in string fields.
+
+- To add a value to a campaign, use a webhook parameter written as `WebhookVariables.GetValue("Full name of a webhook parameter")` or copy it to the flow:
+
+![11_webhook_responses](/images/imported/11_webhook_responses.png)
+
+Use it in your campaign layout the same way that you would use any other parameter of the [Template Engine](/campaigns/message-template-engine/what-is-the-message-template-engine):
+
+![12_webhook_responses](/images/imported/12_webhook_responses.png)

@@ -1,0 +1,87 @@
+---
+title: "How to Create a Bulk Mobile Push Campaign"
+---
+
+1. Go to **Campaigns** and click **Create**:
+
+![00_mobilepush](/images/imported/00_mobilepush.png)
+
+2. Select the MobilePush channel:
+
+![01_mobilepush](/images/imported/01_mobilepush.png)
+
+3. Select the **bulk** type and the folder in which your campaign will be created:
+
+![02_mobilepush](/images/imported/02_mobilepush.png)
+
+If you don’t yet have any folders, create a new one.
+
+4. Enter your campaign title and select a Topic if applicable:
+
+Please note that to select an app, you need to have an Android or iOS app integration point with an integrated app:
+
+![03_mobilepush](/images/imported/03_mobilepush.png)
+
+Android and iOS campaigns are set up separately.
+
+5. Select the Message profile — standard or manual. If you select manual, you can choose to disable the global control group.
+
+6. Fill in the **Sending timeframe fields**.
+
+Use the **Date** to specify when the campaign will begin sending: immediately after saving or according to a schedule.
+
+The **Sending interval** is the interval in which your customers will receive the notification. Note that their time zones will be taken into account. If you set only the sending hours, messages will be sent immediately (as quickly as possible).
+
+**Sending speed** is unlimited by default. You can throttle sending speed as necessary.
+
+**Relevancy** is the timeframe in which your bulk campaign is valid. Specify an interval (for example, 3 days from the time the message was sent) or a date (for example, until 01/07/2023 00:00 (UTC-05:00) America/New York).
+
+![04_mobilepush](/images/imported/04_mobilepush.png)
+
+**More on the Relevancy section:**
+
+To send mobile push notifications, Maestra sends a push notification to Firebase or APNs, then Firebase or APNs sends this push to the app.
+
+The period specified in the **Relevancy** section is applied to both these steps with the countdown beginning at the same time. The only difference is what you receive when the sending period expires.
+
+**For example**, if you select a 3-day **Relevancy** period, you will either:
+
+a) see a "**Not sent**" status if Maestra fails to send your push notification to Firebase or APNs during these 3 days;
+
+b) get no Firebase or APNs failure information in your project if Maestra successfully sent the push to Firebase/ APNs and they failed to send the push notification during its time-to-live (TTL) — this is because Firebase and APNs do not send delivery failure statuses to Maestra.
+
+7. Enter your push notification text and a clickable URL. Optionally, add a title, image, button, or any additional push components.
+
+Click **Save**.
+
+You can view how your push notification will be displayed on a mobile device in the interface:
+
+![05_mobilepush](/images/imported/05_mobilepush.png)
+
+To test the push notification, click **Send test message** and find your contact details.
+
+8. There are 3 ways to specify campaign recipients:
+
+- Using a [customer segment,](/segments/how-to-filter-customers-into-segments)
+- By creating a [filter](/filters/how-to-create-filters),
+- By uploading a file for [manual import.](/campaigns/common-settings/how-to-use-manual-import-in-emails) This works the same as in a bulk email campaign, but without creating new customers.
+
+Using **Filter** or **Manual import**, you can view all the conditions that are automatically applied to bulk campaigns.
+
+9. Click **Send now** to launch your campaign immediately:
+
+![06_mobilepush](/images/imported/06_mobilepush.png)
+
+This button is active if the **Campaign profile**, **Sending timeframe**, **MobilePush**, and **Recipients** sections are all filled in, and an app has been selected.
+
+To check that a section has been filled in, look for a tick next to the section title. Once everything is ready to go, your campaign’s status will change to **Ready to send:**
+
+![07_mobilepush](/images/imported/07_mobilepush.png)
+
+**Scheduled sending**
+
+If you schedule your message for a later date/time, its status switches to **Sending scheduled**.
+
+Please note that once you click **Send now**, the system will launch your campaign immediately. You need to click **Save and exit** to launch your campaign later:
+
+![08_mobilepush](/images/imported/08_mobilepush.png)

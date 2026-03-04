@@ -1,0 +1,22 @@
+---
+title: "How to filter customers by total revenue"
+---
+
+The nested conditions in the revenue filter work the same way as in [order filters](/filters/filtering-by-orders/how-to-find-customers-with-orders).
+
+The key difference is that the top-level condition here is **total revenue value**, not **order**.
+
+Next, set the range **from … to** (upper bound is not inclusive) and define which orders should be used to calculate revenue.
+
+Revenue is calculated based on the **[order total after discount excluding refunds](/filters/filtering-by-orders/how-to-find-orders-with-a-specific-order-price)**.
+
+**Use case:** let's find customers whose **total revenue** is **$3,000* or more** over the last month.
+
+**The currency depends on your project settings.*
+
+1. Go to **Customer Data Platform→ Customers.**
+
+  ![](/images/imported/How-to-find-customers-with-total-revenue-from-N.png)
+2. Set up the filter.
+
+  ![](/images/imported/How-to-find-customers-with-total-revenue-from-N-(2).png)Revenue is calculated using **placed, paid, and delivered items**. Canceled and returned items are not included in the total.

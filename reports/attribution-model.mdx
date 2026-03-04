@@ -19,7 +19,7 @@ title: "Attribution model"
 
 - **Attribution** is a set of rules that determine whether a target action occurred as a result of marketing campaigns and, if so, which ones.
 
-- A [Goal](https://intercom.help/maestraio/en/articles/11899963-goals) is a desired customer action. Campaigns are launched to increase the performance of this metric. A goal can be set as an order in any status and touchpoint.
+- A [Goal](/reports/goals) is a desired customer action. Campaigns are launched to increase the performance of this metric. A goal can be set as an order in any status and touchpoint.
 
 Attribution allows you to evaluate the effectiveness of channels and campaigns in meeting your goals, allowing you to make decisions on how to allocate the marketing budget across different activities.
 
@@ -34,7 +34,7 @@ Meaning, that If there were several campaign interactions before the order, the 
 - Orders are not attributed: - To campaigns excluded in the attribution settings; - To lead generation forms and pop-ups;**Deleted data** does not affect revenue metrics and conversion.
 
 # Attribution settings
-Go to **Settings** → **System **→ **Goals and attribution settings** and select tab **Attribution**:
+Go to **Settings** → **System** → **Goals and attribution settings** and select tab **Attribution**:
 
   ![00_Attribution.png](/images/imported/00_Attribution-281-29.png)
 - **Attribution window** (1 to 30 days) - maximum number of days between campaign interaction and order first action.- **Do not attribute goals to campaigns** - transactional or other campaigns that do not affect conversion rate and should not take over revenue from other marketing campaigns. For example, an SMS with an authorization code at a checkout or double opt-in email.- **Goal** settings are on the next tab:
@@ -72,7 +72,7 @@ When you add an attribution flag to the export settings, campaigns that triggere
   ![07_Attribution](/images/imported/07_Attribution.png)
 
 ## Why data from an external analytics system might not match data from Maestra reports
-1. The external analytics systems might not account the fact of cancelations and returns of orders, i.e. statistics is generated based on the order value immediately after the order is placed. In Maestra you can configure the exclusion of such orders through setting up [goals](https://intercom.help/maestraio/en/articles/11899963-goals) - in this case they are not included in reports and not accounted in the final revenue.
+1. The external analytics systems might not account the fact of cancelations and returns of orders, i.e. statistics is generated based on the order value immediately after the order is placed. In Maestra you can configure the exclusion of such orders through setting up [goals](/reports/goals) - in this case they are not included in reports and not accounted in the final revenue.
 2. If the loyalty program is connected, you need to compare the amounts that are transferred to Maestra and to the external analytics system: the cost of the order with promotions is transferred to Maestra, other systems may have other settings.
 3. If the loyalty program is connected, you need to compare the amounts that are transferred to Maestra and to the external analytics system: the cost of the order with promotions is transferred to Maestra, other systems may have other settings.
 4. If the difference is significant, then there may be possible issues in the integration, namely with the installation of the tracker, or fake orders (an order for a large amount of money, much beyond the average check). You need to make sure that Maestra tracker is installed on the website.

@@ -14,65 +14,12 @@ For more on parameters, please refer to this guide.
 
 The testing method depends on the campaign type and parameters:
 
-Type
-
-Send a test message
-
-Preview a test message
-
-Test mode for an automated campaign
-
-Send to your own contact from a flow
-
-Generate a test request
-
-**Bulk campaign**
-
-+
-
-+
-
-+
-
-+
-
--
-
-Automated campaign without event-based and custom parameters
-
-+
-
-+
-
-+
-
-+
-
-+*
-
-Automated campaign with event-based parameters
-
--
-
--
-
-+
-
-+
-
-+**
-
-Automated campaign with custom parameters
-
--
-
--
-
-+
-
--
-
-+
+| Type | Send a test message | Preview a test message | Test mode for an automated campaign | Send to your own contact from a flow | Generate a test request |
+| --- | --- | --- | --- | --- | --- |
+| **Bulk campaign** | + | + | + | + | - |
+| Automated campaign without event-based and custom parameters | + | + | + | + | +* |
+| Automated campaign with event-based parameters | - | - | + | + | +** |
+| Automated campaign with custom parameters | - | - | + | - | + |
 
 *Exception: a bulk campaign where messages are sent based on a CustomParameters file. This type of campaign can only be tested by sending real messages to test accounts.
 

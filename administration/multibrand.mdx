@@ -13,7 +13,7 @@ Modules and billing are shared across all brands.
 1. Go to **Settings** → **System** → **Brands**, and click "Add": ​
   ![](/images/imported/2025-12-03_20-48-07.png)
 2. Enter brand name, system name and industry, and click "Save Brand". ​
-  ![](/images/imported/2025-12-03_20-54-31.png) Choosing an industry sets the benchmarks for your “[Email Health](https://help.maestra.io/en/articles/11909119-email-health-report)” metrics.
+  ![](/images/imported/2025-12-03_20-54-31.png) Choosing an industry sets the benchmarks for your “[Email Health](/campaigns/email-campaigns/email-deliverability/email-health-report)” metrics.
 
 ## After you add a brand
 After you add your first additional brand to a project, any existing entities (like flows, campaigns, settings, or imports) continue to work for the original brand as they did before. The new brand starts with its own empty configuration, so you’ll need to review the brand-specific settings and complete the required setup steps to activate it before you can use it.
@@ -39,7 +39,7 @@ After you add your first additional brand to a project, any existing entities (l
 ---
 **Entity: Saved filters: "Customer—Subscription"**
 - ***After you add a brand***
-  - Becomes a filter for the original brand.  For example, the filter **“Subscription — Subscribed” **will change to **“Subscription — Subscribed in Brand 1 .”**
+  - Becomes a filter for the original brand.  For example, the filter **“Subscription — Subscribed”** will change to **“Subscription — Subscribed in Brand 1 .”**
 - ***Required updates***
   - Adjust filters and segments for different brands, where necessary.
 - ***What gets added***
@@ -216,7 +216,7 @@ After you add your first additional brand to a project, any existing entities (l
   - Nothing changes
 
 ---
-**Entity: **Report Subscriptions
+**Entity:** Report Subscriptions
 - ***After you add a brand***
   - Report subscriptions stay tied to the initial brand.
 - ***Required updates***
@@ -320,7 +320,7 @@ After you add your first additional brand to a project, any existing entities (l
 ---
 **Entity: Loyalty program participants**
 - ***After you add a brand***
-  - **Loyalty program participants **stay tied to the initial brand.
+  - **Loyalty program participants** stay tied to the initial brand.
 - ***Required updates***
   - Specify for the new brand if needed 
 - ***What gets added***
@@ -419,7 +419,7 @@ After you add your first additional brand to a project, any existing entities (l
 ---
 **Entity: Autodeletion**
 - ***After you add a brand***
-  - Saved Subscription filters apply to the original brand by default. For example, **“Subscription—Subscribed”** filter will become **“Subscription—Subscribed to Brand 1”. ** The "Action—Registration" and "Action—First Interaction" filters will become set 'in any brand'. For example, the "Customer Action—Customer Registration" filter will turn into the "Customer Action—Customer Registration in Any Brand" filter.
+  - Saved Subscription filters apply to the original brand by default. For example, **“Subscription—Subscribed”** filter will become **“Subscription—Subscribed to Brand 1”.**  The "Action—Registration" and "Action—First Interaction" filters will become set 'in any brand'. For example, the "Customer Action—Customer Registration" filter will turn into the "Customer Action—Customer Registration in Any Brand" filter.
 - ***Required updates***
   - Update any auto-deletion filters that use these conditions, if needed.
 - ***What gets added***
@@ -453,16 +453,33 @@ Before disabling the brand, you need to delete or edit the entities associated w
   ![](/images/imported/2025-12-03_21-12-31.png)
 
 ## After You Disable a Brand
-What happens to existing entities within the project that are linked to a deactivated brand.**Entity****What happens****Subscriptions in Customer Profile**Subscriptions for the disabled brand will not be displayed in customer's profile.  ​ If only one brand remains, the brand breakdown in the Subscriptions menu is removed. The data for the remaining brand still appears, but it’s no longer labeled by brand. You also no longer need to specify a brand in filters, since only one brand remains.**Saved filters: "Customer—Subscription in Brand"**Filters are retained when the project contains two brands and more. If one brand remains, filters are switched to "Customer—Subscription"**Saved filters: "Customer Action—Customer Registration in Brand" and "Customer Action—First Interaction in Brand"**Filters are retained when the project contains two brands and more. If one brand remains, filters are switched to "**Customer **Action—**Customer **Registration" and "**Customer **Action—First Interaction"**Saved filters: "Action—Brand"**Filters by brand are retained even if only one active brand remains on the project**Products**Products are retained**Campaigns**Completed, paused campaigns, and drafts remain in the deactivated brand**Technical Specification**If only one active brand remains in the project:
-- You can still specify the active brand in the Subscriptions node for API methods that involve subscription handling (steps: "Customer—Register" / "Customer—Authorized—Add" / "Authorized—Edit" / "Unauthorized—Register or Add" / "Customer—Import" / "Customer—Create and Subscribe to Campaigns").
-- The /customer/subscriptions/subscription/pointOfContact field  will no longer be available in the API methods that return data ("Customer—Receive Data on Current Customer" / "Action—"Merge Customers")
-- The following fields will be removed from exports:
-  - Download Customer Discount Cards discountCards/ discountCard/ customer/ subscriptions/ subscription/ brand
-  - Download Customers customers/ customer/ subscriptions/ subscription/ brand
-  - Download Merged Customers customerMerges/ customerMerge/ resultingCustomer/ subscriptions/ subscription/ brand**FTP export**These fields will be removed from API exports If only one active brand remains in the project::
-- Customer Discount Cards Export—discountCards/ discountCard/ customer/ subscriptions/ subscription/ brand
-- Download Customers—customers/ customer/ subscriptions/ subscription/ brand
-- Download Merged Customers—customerMerges/ customerMerge/ resultingCustomer/ subscriptions/ subscription/ brand**API methods**
-1. Data related to inactive brands will not be processed. 
-2. Requests sent to deleted endpoints (integration points) will fail with an error.
-3. [Product imports](https://developers.maestra.io/docs/prodimportcsv) can still include a brand, but it must be an active one.**Email, SMS, and SMPP connection settings**Settings for the deactivated brand are hidden**Webhooks**Do not use brands. However, data related to a deactivated brand may still be passed in the request body.**Staff**Staff access can be restricted by the inactive brand. Adjust access permissions if necessary**Permissions**If only one active brand remains on the project, the "Brand View" permission will no longer be required for creating flows and campaigns**Reports**Reports for deactivated brands are hidden
+What happens to existing entities within the project that are linked to a deactivated brand.
+- 
+- 
+- 
+  - 
+  - 
+  - 
+- 
+- 
+- 
+1. 
+2. 
+3. 
+
+| **Entity** | **What happens** |
+| --- | --- |
+| **Subscriptions in Customer Profile** | Subscriptions for the disabled brand will not be displayed in customer's profile. ​ If only one brand remains, the brand breakdown in the Subscriptions menu is removed. The data for the remaining brand still appears, but it’s no longer labeled by brand. You also no longer need to specify a brand in filters, since only one brand remains. |
+| **Saved filters: "Customer—Subscription in Brand"** | Filters are retained when the project contains two brands and more. If one brand remains, filters are switched to "Customer—Subscription" |
+| **Saved filters: "Customer Action—Customer Registration in Brand" and "Customer Action—First Interaction in Brand"** | Filters are retained when the project contains two brands and more. If one brand remains, filters are switched to "**Customer** Action—**Customer** Registration" and "**Customer** Action—First Interaction" |
+| **Saved filters: "Action—Brand"** | Filters by brand are retained even if only one active brand remains on the project |
+| **Products** | Products are retained |
+| **Campaigns** | Completed, paused campaigns, and drafts remain in the deactivated brand |
+| **Technical Specification** | If only one active brand remains in the project:You can still specify the active brand in the Subscriptions node for API methods that involve subscription handling (steps: "Customer—Register" / "Customer—Authorized—Add" / "Authorized—Edit" / "Unauthorized—Register or Add" / "Customer—Import" / "Customer—Create and Subscribe to Campaigns").The /customer/subscriptions/subscription/pointOfContact field will no longer be available in the API methods that return data ("Customer—Receive Data on Current Customer" / "Action—"Merge Customers")The following fields will be removed from exports:Download Customer Discount Cards discountCards/ discountCard/ customer/ subscriptions/ subscription/ brandDownload Customers customers/ customer/ subscriptions/ subscription/ brandDownload Merged Customers customerMerges/ customerMerge/ resultingCustomer/ subscriptions/ subscription/ brand |
+| **FTP export** | These fields will be removed from API exports If only one active brand remains in the project::Customer Discount Cards Export—discountCards/ discountCard/ customer/ subscriptions/ subscription/ brandDownload Customers—customers/ customer/ subscriptions/ subscription/ brandDownload Merged Customers—customerMerges/ customerMerge/ resultingCustomer/ subscriptions/ subscription/ brand |
+| **API methods** | Data related to inactive brands will not be processed. Requests sent to deleted endpoints (integration points) will fail with an error.[Product imports](https://developers.maestra.io/docs/prodimportcsv) can still include a brand, but it must be an active one. |
+| **Email, SMS, and SMPP connection settings** | Settings for the deactivated brand are hidden |
+| **Webhooks** | Do not use brands. However, data related to a deactivated brand may still be passed in the request body. |
+| **Staff** | Staff access can be restricted by the inactive brand. Adjust access permissions if necessary |
+| **Permissions** | If only one active brand remains on the project, the "Brand View" permission will no longer be required for creating flows and campaigns |
+| **Reports** | Reports for deactivated brands are hidden |

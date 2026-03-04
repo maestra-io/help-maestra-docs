@@ -1,0 +1,315 @@
+---
+title: "How Maestra Builds a Unified Customer Profile"
+---
+
+Maestra’s Customer Data Platform (CDP) constantly ingests data from websites, mobile apps, in‑store POS, call centers, and external CRMs. Because the same person often appears under different identifiers, Maestra automatically **deduplicates** (merges) records to keep one 360‑degree profile.
+
+A profile collects all known information about a customer: personal data, IDs, devices (cookies), purchase history, page views, and e‑mail activity. 
+
+The system decides two records describe the same person when **one or more identifiers match** — phone, e‑mail, device, or other IDs—and no contradictions exist. *Example:* two contacts will **not** merge if the e‑mail matches but the phone numbers differ.
+
+| **Principle** | **What it means** |
+| --- | --- |
+| **Unique Contact Rule** | The same email, mobile number, loyalty card, or any other field flagged as *unique* can belong to **only one** customer record. |
+| **Match & Verify** | When two customers share at least one identical unique contact **and** there are no conflicting fields, the records merge. |
+| **Priority Model** | If conflicts exist (different phones, emails, personal data) the system chooses the *higher‑priority* record. Priority is calculated from recent activity, orders, and freshness of data. |
+| **History Preservation** | All former MaestraIDs and External IDs remain searchable so legacy API calls keep working. |
+| **Always‑On Engine** | Deduplication cannot be disabled; instead you tune it with flags such as **Do not merge customers with different External ID** or **Contact grants account access to the account**. |
+
+### **Example 1**
+
+1. A visitor subscribes to web‑push on the site. Maestra stores the browser ID and push‑subscription data.
+2. The same browser subscribes to the e‑mail newsletter.  Maestra creates a record containing the e‑mail address and browser data.
+3. Because both actions happened in the same browser and no data conflict exists, the records merge.
+
+**Result:** one profile containing the e‑mail address, device, subscription data, plus the combined history of page views, message opens, and web‑push interactions.
+
+### **Example 2**
+
+1. A user signs up for the newsletter on a landing page from a work PC. Maestra stores **email**, the browser, and newsletter‑subscription data.
+2. The same person places a one‑click order on the main site from a mobile phone, entering a phone number, **email,** and a name.  Maestra creates a second record with the e‑mail, phone, name, and mobile browser.
+3. Because the e‑mails match and no contradictions exist, the records merge.
+
+**Result:** one profile with the name, phone, e‑mail, both browsers, newsletter subscription, page‑view history, message interactions, and order information.
+
+**Important.** E‑mail addresses, phone numbers, and unique IDs must be unique: a given phone or e‑mail can belong to **only one** customer.
+
+If matching data are found and no contradictions exist, records merge (see Examples 1 & 2).
+
+If phone numbers match but e‑mails differ, merging is impossible. Which profile keeps the phone is decided by the priority system; the phone stays with the higher‑priority customer.
+
+---
+
+## **Customer Priority During Merging and When Resolving Conflicts (E‑mail / Phone / ID)**
+
+Priority rules are applied in two cases:
+
+1. The system *cannot* merge records because of conflicting e‑mails, phones, or unique IDs (and a setting blocks merges with differing unique IDs).
+2. The system *can* merge (e.g., e‑mails match) but must choose which record’s personal data and custom fields to keep.
+
+| **#** | **Priority criterion** | **Typical example** |
+| --- | --- | --- |
+| 1 | A contact that **grants account access** is present. | Phone flagged “login by SMS” |
+| 2 | That contact is **confirmed**. | User clicked confirmation link or entered SMS code |
+| 3 | **Any** contact or loyalty‑card number grants access. | Card‑number login enabled |
+| 4 | Presence of **orders, promo codes, or reward points**. | Recent e‑commerce purchase |
+| 5 | Any **confirmed contacts** at all. | Confirmed e‑mail address |
+| 6 | The **latest personal activity** and/or registration date. | Most recent visit, open, or sign‑up |
+
+If two records tie on one criterion, the next criterion breaks the tie.
+
+### **Example A – Must Choose Which Record Keeps the Phone**
+
+*Criterion: contact grants account access*
+
+- **Customer 1** already in the database: phone grants account access, plus an e‑mail.
+- Import brings **Customer 2** with the *same* phone but a different e‑mail. Because e‑mails differ, merge is impossible; the phone must stay with one record. The phone remains with Customer 1 because that phone grants account access.
+
+### **Example B – Orders Tie; Fall Back to Latest Activity Date**
+Both customers have orders; e‑mails differ.
+Neither phone nor e‑mail grants access; no cards.
+Because orders tie, we look at the date of the **last personal activity** (site visit, message open, order).
+The phone stays with the customer whose last activity is more recent.
+
+---
+
+## **Identifiers Used in Maestra**
+
+| **Identifier** | **Grants access to account?** | **Must be unique?** | **Stored in history?** | **Notes** |
+| --- | --- | --- | --- | --- |
+| MaestraID | ✖ | ✔ | ✔ | Assigned internally; several MaestraIDs can merge. |
+| Unique ID (external) | Optional | ✔ | ✔ | CRM/site ID; merging depends on settings. |
+| ID (non‑unique) | ✖ | ✖ | ✖ | May move between customers if merging fails. |
+| Mobile phone | Optional | ✔ | ✖ | Used for comms; can move (settings‑dependent). |
+| E‑mail | Optional | ✔ | ✖ | Same rules as phone. |
+| Loyalty‑card number | Optional | ✔ | ✔ | Card login if enabled. |
+| Device GUID / cookie | ✖ | ✖ | ✖ | Tracks site & app behavior; many per customer. |
+| Mobile device ID | ✖ | ✖ | ✖ | Appears when the mobile app registers. |
+| Card‑hash | ✖ | ✖ | ✖ | Sent with order data; can identify a bank card. |
+
+### **Detailed description of customer identifiers**
+
+- **MaestraID** — assigned to every customer inside Maestra. It acts as the primary unique key when Maestra is the main system of record. Customers with different MaestraIDs *can* be merged. All historical MaestraIDs are kept in the profile, so you can reference the customer by any ID they have ever had.
+- **Unique identifier** — comes from an external system (CRM, online store, ERP). It uniquely identifies the customer; registering another profile with the same ID is forbidden. Customers whose unique IDs differ *may* merge (depending on integration settings). Historical values of the unique ID are stored; API calls and imports can use any of them (again, subject to settings).
+- **Identifier (non‑unique)** — this ID can be re‑used. If two profiles cannot merge, the ID may switch from one customer to another. The system does **not** keep a history for non‑unique IDs.
+- **Mobile phone** — used for text messages, and two‑factor log‑in. A phone number can belong to only one customer at a time, but it can migrate to another profile if allowed by the settings.
+- **E‑mail** — used for e‑mail marketing and account access. Behaves like phone: unique per customer at any given moment, but may move if the settings allow.
+- **Discount‑card number** — identifies the customer’s loyalty card. May grant account access if “log‑in by card” is enabled.
+- **Device (GUID / cookie)** — browser or app identifier. It is attached to the *last* identified customer who used the device. A shared device can trigger profile merges provided there are no conflicting identifiers. One customer can accumulate many devices (laptop, phone, tablet), and all activity from them feeds into the same profile.
+- **Mobile device ID** — behaves like the device GUID but is issued by the mobile SDK when the customer launches the app.
+- **Payment‑card hash** — a tokenized bank‑card fingerprint sent with order data. If two profiles share the same card hash and have no conflicting identifiers, they merge.
+
+### **Example 1.1 – Landing Page + Site Registration**
+**Scenario**: Paul sees an ad for a contest from SuperSneakers, visits the landing page, and leaves the e‑mail *[paul.peterson@example.com](mailto:paul.peterson@example.com)*.
+1. **Landing‑page opt‑in.** Maestra creates a profile containing the e‑mail and the browser’s device ID.
+2. **First order & site registration.** After receiving a promo e‑mail Paul follows the link, registers on the main site, and places an order—providing his name and phone (415) 555‑0122.
+3. Maestra registers a *second* profile with name, phone, site‑account ID 535, the same device, and the order details. 
+4. Because the two profiles share the **same device** and have no conflicting data, they merge automatically.**Result**: a unified profile that contains the e‑mail, phone, two devices (home and work later), the site‑account ID, full order and browsing history, and an active e‑mail subscription.
+Later, at the office, Paul logs into his account. The site sends the new device ID to Maestra, so the work browser is attached to the same profile: Paul is now tracked seamlessly across both browsers.
+
+### **Example 1.2 – Linda Enters the Picture**
+Linda, Paul’s wife, likes his new sneakers and visits the SuperSneakers site from the **same browser**.
+- While she browses, Maestra still thinks it is Paul, so page views are stored in his profile.
+- Linda chooses shoes and completes checkout, creating her own account in the process.
+- Maestra realises this is a different person, creates a new customer, and re‑attaches the device to Linda. All subsequent activity from that browser is linked to her—until Paul signs in again, at which point the device switches back.**Key point**: a device is always attached to the *last* identified customer who used it, keeping data accurate even in a shared household.
+
+### **Example 1.3 – Someone Mistypes the Paul’s Phone**
+The SuperSneakers site has a **“Request a consultation”** form that passes phone and e‑mail to Maestra.
+1. Evan submits the form with *[evan@example.com](mailto:evan@example.com)* and phone (415) 555‑0122—the number already belonging to Paul.
+2. Maestra creates a customer with that phone and e‑mail.
+3. Because a phone must be **unique**, Maestra must decide who keeps it. Paul has an order history while Evan does not, so **Paul is higher priority.**
+4. The phone remains with Paul. Evan’s profile keeps only his e‑mail and device ID.
+
+### **Example 1.4 – Order via Call Center**
+Paul places an order through the call centre, giving the same phone number.During the nightly import of call‑centre orders Maestra receives a record with phone (415) 555‑0122. The phone matches Paul’s profile, so the order is added to his history— no duplicate customer is created.
+
+### **Example 2 – Unified Browsing History Across Devices**
+
+1. Linda subscribes to the newsletter on her **home computer**; Maestra stores her e‑mail and the desktop browser’s device ID.
+2. Later she opens a promo e‑mail on her **phone** and clicks the personalised link.
+3. The unique tracking link lets Maestra capture the phone browser’s device ID and understand that it belongs to the same customer.**Result**: page views from both devices flow into one profile, enabling truly cross‑device personalisation.
+
+### **Example 3 – Merge After Editing Data**
+
+- Scott subscribes to the newsletter from his **desktop**. Maestra creates a profile with his e‑mail and device.
+- On **mobile** he places an order, entering a phone number; Maestra creates a second profile (phone + device + order).
+- Later Scott adds the **same e‑mail** to his mobile account. Because duplicate e‑mails are not allowed, Maestra must choose: delete or merge.
+- There are **no conflicts** (one profile has phone, the other has e‑mail), so the two records merge into a single rich profile that unifies order, browsing, and messaging history.
+
+### **Example 4 – Phone Removed from One Customer Due to Conflict**
+
+- Evan subscribes to the newsletter; profile with e‑mail and device. He later requests a callback and leaves his phone number.
+- Because that device was previously used by Paul, the phone is temporarily attached to Paul’s profile.
+- The store imports **another customer** whose phone matches Evan’s but whose e‑mail differs. Two customers now claim one phone.
+- Evan is deemed higher priority because he is active (opens e‑mails, browses products). The phone is *moved* to Evan; it is removed from the imported customer, and the event is logged in both histories.
+
+### **Example 5 – Merge by Device ID**
+Evan first visits the site and subscribes to **web‑push** notifications. The next day, from the *same browser*, he subscribes to the e‑mail newsletter.Because both actions come from a single device and there are no conflicting contacts, the two temporary profiles merge into one that now contains the device ID, e‑mail address, and both subscriptions.
+
+---
+
+## **Why Were Customers Merged?**
+Possible reasons:
+1. All data matched exactly—e‑mail, phone, device.
+2. Non‑conflicting data were entered from the **same device** (e.g., first a web‑push opt‑in, then an e‑mail opt‑in).
+3. A merge was triggered via the API, explicitly specifying which record has priority.
+4. A manual merge was performed in the admin UI.
+5. Both customers confirmed the same contact (e‑mail or phone).You can see the reason on the **Change History** tab inside the customer profile.
+
+---
+
+## **Priority Rules for Segmentation After Merging**
+When customers merge, the **history of segment membership** is taken from one record:
+1. For each segmentation, compare the membership dates.
+2. Keep the record with the **most recent** date.
+3. If conflicting segments exist inside one segmentation, keep the segment whose *membership date* is most recent.
+
+| Segmentation | Customer 1Date | Customer 2Date |
+| --- | --- | --- |
+| Subscribed to mailings | Jan 2021 | Feb 2019 |
+| Buys bread | Jan 2020 | **Mar 2020** |
+| Loyalty level 1 / 2 | **Jan 2021** | Aug 2020 |
+| Doesn’t open e‑mails | — | **Feb 2021** |
+
+**After merging** the unified customer has:
+
+| **Segmentation** | **Date** |
+| --- | --- |
+| Subscribed to mailings | Jan 2021 |
+| Buys bread | Mar 2020 |
+| Loyalty level 1 | Jan 2021 |
+| Doesn’t open e‑mails | Feb 2021 |
+
+*If dates tie, the segment with the **higher ID** wins.*
+
+---
+
+## **Deduplication Settings**
+In an **integration** settings you can choose which contacts:
+- Must be confirmed, and/or
+- Grant account access.Once a flag is enabled, all *new* contacts behave accordingly; existing contacts are unaffected.
+To change existing records you can, for example, re‑import them via the same integration point with the desired flags.
+You can also forbid merging customers with different **unique IDs** by toggling “Do not merge clients with different IDs” in the unique‑ID settings.
+
+### **Can I Forbid Customer Merging?**
+Yes. In the unique identifier settings you can tick **“Do not merge customers with different IDs.”**
+
+### **Can I Disable Deduplication Completely?**
+No. Contacts must stay unique.
+The system must always decide which customer “owns” **a phone or e‑mail** and whether merging is allowed.
+
+---
+
+## **What Counts as Personal Data? How Are They Edited?**
+Personal data = last name, first name, middle name, birth date, gender.When customers merge, the *entire* set of personal data comes from the **priority** customer—​they are not combined.Editing can:
+1. Add data that don’t conflict (e.g., birth date and last name added to a record that previously had only a first name).
+2. Overwrite conflicting data (e.g., a new birth date contradicts the old one; all personal data are cleared and only the new birth date is kept).**Recommendation:** When editing personal data, always send the *full* known set.
+
+---
+
+## **What Is “History‑ID Search”?**
+For **MaestraID** and for a **Unique ID** (unless merging by different IDs is forbidden), the system supports searching *in the history of IDs*.After a merge, the priority customer’s unique ID becomes the primary ID; the other ID remains in history. API calls and imports can still reference *any* historical ID.For MaestraID the same applies; priority does **not** affect which MaestraID remains primary.
+
+### **Example**
+Customer 1: CRM ID 301 + **email**
+Customer 2: CRM ID 103 + **email**
+E‑mails match → records merge → resulting customer keeps CRM ID 103; ID 301 goes to history.
+Later, an API edit call using ID 301 adds a phone—​it still works.
+
+---
+
+## **Reading a Customer’s History After Merging**
+All changes are listed under **Change History**:
+- Personal data
+- E‑mails & phones
+- Identifiers
+- Custom fields
+- Merge (deduplication) events
+- Removal of contacts/IDs in favor of a higher‑priority customerIf a merge occurred, histories of all merged customers are interleaved chronologically under the single profile.
+
+---
+
+## **Common Errors and Their Meanings**
+
+### **“Technical IDs must be unique…”**
+Re‑registering a Unique ID that already exists is forbidden.
+This error appears in file‑import results or API logs.
+Typical causes:
+- The system could not unambiguously decide which client to edit, tried to create a new one, and hit a duplicate Unique ID.
+- An API v3 operation did not find a client by the selected identifier and attempted to create one, again causing a duplicate.Same logic applies to creating a client with a phone/e‑mail flagged “grants account access” if another such client already has it.
+
+### **“A user with this mobile phone is already registered…”**
+Thrown when an integration point requires that phone numbers granting account access be unique, and a registration attempts to reuse a phone already flagged that way.
+Solution: inform the end user they’re already registered and offer password recovery.
+Similar messages appear for e‑mail.
+
+### **“Unable to uniquely determine the customer”**
+Identifiers in import/edit belong to **different** customers, so the system cannot choose which one to update.
+Often, one ID resides in another customer’s history.
+
+---
+
+## **Why Did a Phone Number or E‑Mail Disappear?**
+Possible reasons:
+1. **Another customer with the same contact appeared.** Phones and e‑mails are unique, so the contact stayed with the *higher‑priority* customer. You can see the related customer on **Personal Info → Related Customers**.
+2. **The contact was removed during profile editing.**For the exact date and reason check the **Change History** tab of the customer profile.
+
+### **Priority examples**
+
+| **Example** | **Situation** | **Why the contact moved** | **Result** |
+| --- | --- | --- | --- |
+| 1. Order priority | **Customer 1:** phone + email, long‑time subscriber, *no* orders. **Customer 2:** same phone, different email, recently placed an order. | An order outranks mere opens; **Customer 2** is higher priority. | The phone is detached from **Customer 1** and attached to **Customer 2.** |
+| 2. Personal‑activity priority | **Customer 1:** phone + email, many personal actions (e‑mail clicks, product views). **Customer 2:** same email, different phone, no personal actions. | Personal activity outweighs lack of activity, so **Customer 1** wins. | The shared e‑mail remains with **Customer 1**; the conflicting phone stays with its owner. |
+
+### **Case study – incorrect integration (loyalty program)**
+A loyalty program runs on the web site *and* in physical stores.
+- **Customer 1** registers at the cash desk: phone_1 **grants account access**, email_1 is for information‑only mailings; 100 points on the card.
+- **Customer 2** registers on the website: email_1 **grants account access**, 50 points on the card.If the “grants account access” protection were disabled, both records would merge (because of the shared email). The priority would be decided solely by the contact that grants access, which is ambiguous and can lead to data being attached to the wrong person.**Correct integration:** always require the phone number on the website so that both registrations share phone_1; no merge is required.
+
+---
+
+## **Matching Contacts Didn’t Merge—Why?**
+Possible causes:
+1. The Unique‑ID option **“Do not merge customers with different IDs”** is enabled. Then even matching e‑mails/phones won’t merge if Unique IDs differ.
+2. Customers have **different contacts that grant account access.** Merging is forbidden when those contacts differ—even if other contacts match.A loyalty‑card number can also block merging if “login by card” is enabled.
+
+---
+
+## **What Happens to Name, Birthday, Etc. After a Merge?**
+Last name, first name, middle name, gender, birth date, and time‑zone are taken from the **priority** customer.
+Custom fields follow the same rule, **except**: if the lower‑priority customer has values that the higher‑priority one lacks, those values are preserved.
+All activity history from both records is combined.
+
+---
+
+## **Which Segment Does the Customer Fall Into After a Merge?**
+**Static segments**
+- If only one precursor was in the static segment, the merged profile stays in that segment.
+- If precursors were in *different* segments inside the *same* segmentation, the merged profile stays in the segment whose **membership date** is later.**Calculated segments**
+- The merged customer is included in **all** calculated segments that any precursor belonged to.
+- If the customer no longer meets a segment’s conditions, they drop out at the next recalculation.
+
+---
+
+## **Sessions: Why Does a Customer Have Activity That Happened *Before* They Entered the Database?**
+The Maestra JS‑tracker logs every visitor’s actions, even anonymous ones.
+A **session** is a continuous chain of actions where the gap between events ≤ 30 minutes.
+Anonymous actions are linked retroactively to the profile once the user is identified according to de‑anonymization rules.
+
+---
+
+## **What Happens to Subscriptions When Customers Merge?**
+Subscriptions are combined. If the statuses conflict, we resolve by priority:
+1. **Subscribed**
+2. **Awaiting confirmation**
+3. **Unsubscribed**Examples:
+- Customer 1 unsubscribed; Customer 2 subscribed → **Subscribed**
+- Customer 1 subscribed; Customer 2 awaiting confirmation → **Subscribed**
+- Customer 1 unsubscribed; Customer 2 awaiting confirmation → **Awaiting confirmation**
+
+---
+
+## **What Happens to Customer Identifiers After a Merge?**
+The **primary Unique ID** stays with the priority customer; the other moves to history.
+API calls and imports can still use any historical ID.
+All MaestraIDs of merged customers are also stored in history.**Important:** If “Do not merge customers with different IDs” is enabled, **history‑ID search is disabled** for that Unique‑ID type.

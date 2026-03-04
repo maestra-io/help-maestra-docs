@@ -1,0 +1,73 @@
+---
+title: "How to Set Up a Regional Product Feed Import"
+---
+
+Since August 2025, the system no longer creates bulk tasks for feed import.
+​
+​**How it worked before**
+After you added a feed to your project, the system would automatically check it at the set intervals. A product import was only triggered if the feed contained new or updated data since the last import. You could download an original file with new data or a resulting file in the “Bulk tasks” tab.
+
+​**How it will be now**: bulk tasks for feed import are no longer created. Data update logic stays the same. You can view your feed's update history on its page. [See more](/customers-orders-and-products/products/how-to-set-up-a-product-feed-import).
+
+First of all, areas must be added to the project.
+
+## Adding a regional feed
+
+1. Go to the **Integration setup** tab. Click "Create integration": 
+
+![](/images/imported/--2025-10-03--11_04_46AM.png)
+
+Select the "Product feeds" preset:
+
+![](/images/imported/--2025-10-03--11_08_11AM.png)
+
+Another way to add your feed
+
+Go to the **Products** tab and click **"Import"** → **"Add product feed"**:
+​
+
+![](/images/imported/123.png)
+
+2. Fill in the fields on the settings page:
+
+![](/images/imported/--2025-10-03--1_02_50PM.png)
+
+**Mandatory fields:**
+
+- **Feed type** — Google/YML.
+- **External system** — the system we take incoming data from.
+- **Brand** — relevant for multi-brand projects. Select the brand you need to upload the product data for.
+- **URL** — your file address.
+- **Update every n hours** — the time period after which the system downloads the file by the specified URL and updates the data if necessary. After adding the feed, data download will start immediately, and then continue with the selected frequency. [See more on the update algorithm](/customers-orders-and-products/products/how-to-set-up-a-product-feed-import).
+
+If you specify a number that is a multiple of 12, you will be able to specify the exact time at which the data should be updated.
+
+**Optional fields:**
+
+- **Area** — select the area you need to download the feed for. Technically, this field is optional, however you need to select an area for a regional feed import setup. Otherwise, your feed will not be counted as regional.
+- **Launch update at** — the exact time the data update is needed if necessary. After adding the feed, data download will start immediately, and then continue with the selected frequency. This option becomes available when you enter a number divisible by 12 in the **Update every n hours** field.
+- **Authorization** — fill in the field if the file for the download is secured by password. To add the feeds secured by password, you need to have the "Managing secret data" permission.
+
+3. Click "Add". After this is done, the feed will be displayed in the "Product feeds" tab of the **Integration setup** section.
+
+![](/images/imported/--2025-10-03--1_06_41PM.png)
+
+4. Check your feed download status on the following page: **Integration monitoring → Product feeds**.
+
+![](/images/imported/--2025-10-03--1_18_02PM.png)
+
+## Features of regional feeds
+
+- The following fields are not processed in regional fields: vendor code, shelfLife, categories (external product category IDs), and product group ID.
+
+- For clients with a filled area, the system primarily relies on regional product data in the client's zone: when generating recommendations, outputting product information using template variables, and launching flows with product change events.If the client's area is not specified or regional product data in the client's zone is missing, the system uses data from the master feed.
+
+- If the product is specified both in the master feed and in the regional feed, the system will add regional data to the product card. However, when the product is specified in the regional feed only, a new product card will be created based on the regional data.  In this case, there will be no drop-down list for area selection on the product page. When the product data appear in the master feed, the regional data will be passed to the product page in the correct area.
+
+*`Only the regional feed contains product information:`*
+
+![](/images/imported/--2025-10-03--4_17_14PM.png)
+
+*`Both master feed and regional feed contain product information:`*
+
+![](/images/imported/--2025-10-03--4_17.jpg)

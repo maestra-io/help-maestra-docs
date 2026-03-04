@@ -1,0 +1,143 @@
+---
+title: "Data Processing and Formatting Methods"
+---
+
+The system supports different methods depending on the data types used by variables. To learn more about campaign variables, please see [this article.](/campaigns/message-template-engine/what-is-the-message-template-engine)
+
+## String methods
+
+---
+
+- **ToUpper** (string): changes all letters to uppercase.  Example: $\{Recipient.OnlyStandardFirstName\} — Alex $\{ToUpper(Recipient.OnlyStandardFirstName)\} → ALEX
+
+---
+
+- **ToLower** (string): changes all letters to lowercase.  Example: $\{item.AdditionalData.Colour\} — Red $\{ToLower(item.AdditionalData.Colour)\} → red
+
+---
+
+- **Capitalize** (string): capitalizes the first letter of the first word in the string.  Example: $\{item.Description\} — wide black belt $\{Capitalize(item.Description)\} → Wide black belt
+
+---
+
+- **CapitalizeAllWords** (string): capitalizes the first letter of each word.  Example: $\{item.Description\} — wide black belt $\{CapitalizeAllWords(item.Description)\} → Wide Black Belt
+
+---
+
+- **ReplaceIfEmpty** (string1, string2): displays string 1. If empty, it displays string 2.   Example:  $\{Recipient.OnlyStandardFirstName\} — "" (empty string) $\{Recipient.AdditionalData.Nickname\} — CoolGuy93 $\{ReplaceIfEmpty(Recipient.OnlyStandardFirstName, Recipient.AdditionalData.Nickname)\} → CoolGuy93
+
+---
+
+- **IsEmpty** (string): checks if the string is empty. Example: $\{Recipient.OnlyStandardFirstName\} — Alex $\{IsEmpty(Recipient.OnlyStandardFirstName)\} → true
+
+---
+
+- **Length** (string): counts the number of characters in the variable.  Example: $\{Recipient.LastName\} — Smith $\{Length(Recipient.LastName)\} → 5
+
+---
+
+- **Truncate** (string, character count): cuts off the string to the defined length and adds an ellipsis at the end. This ellipsis is counted as three characters. Example: $\{item.Description\} — item description $\{Truncate(item.Description, 10)\} → item de...To remove a fixed quantity of characters from the end of a string, use the **Length()** function. X number of characters are removed from the end and three are added as an ellipsis instead.
+For example, the method below removes the last seven characters:
+$\{item.Description\} — Ruby ring No.123 $\{Truncate(item.Description, Length(item.Description) — 4)\} → Ruby ring...
+
+---
+
+- **Substring** (string, start, length (optional)): returns a substring that starts from the start character and contains the character count specified in **Length()**.  If **Length()** is omitted, the whole string is returned: $\{Recipient.LastReceivedPromoCode.WithTypeUnique.Value\} — BGDK4444  $\{Substring(Recipient.LastReceivedPromoCode.WithTypeUnique.Value, 1, 4)\} → BGDKUse the **Length()** function if you want to cut off a fixed number of characters from the end of a string.
+For example, to remove the last four characters:
+$\{Recipient.LastReceivedPromoCode.WithTypeUnique.Value\} — ABCDE1234 ​$\{Substring(Recipient.LastReceivedPromoCode.WithTypeUnique.Value, 1, Length(Recipient.LastReceivedPromoCode.WithTypeUnique.Value) — 4)\} → ABCDE
+To return the last four characters:
+$\{Substring(Recipient.LastReceivedPromoCode.WithTypeUnique.Value) — 3)\} → 1234
+
+---
+
+- ChooseRandomText (random string count, but at least one): randomly chooses a string from the list of variables. $\{ChooseRandomText("text1″, "text2″, "text3″)\} → text2
+
+---
+
+## Methods for numeric values
+
+- **FormatDecimal** (numeric value, format): formats any numeric values.  **Example**: $\{balance\} — 20,000.12  $\{FormatDecimal(balance, 'N0′)\} → 20,000 $\{FormatDecimal(balance, 'N1′)\} → 20,000.1 $\{FormatDecimal(balance, 'N2′)\} → 20,000.12Please note that this method returns a numeric value as a string. To use it with some other numeric function, each variable must be unformatted.
+
+#### Example: $\{balance\} — 20,000.12
+$\{FormatDecimal (balance, 'N0')\} → 20,000$\{Forms(balance, 'bonus', 'bonuses')\} → bonuses$\{Forms(balance, 'bonus', 'bonuses')\} → bonuses
+When combined:$\{FormatDecimal(balance, 'N0')\}$\{Forms(balance, 'bonus', 'bonuses')\} → 20,000 bonuses
+
+---
+
+- **Forms** (numeric value, form1, form2, form3): returns a grammatically correct word form with respect to the numeric value.  Example: $\{Recipient.AdditionalData.Age\} — 30 $\{Forms(Recipient.AdditionalData.Age, 'year old', 'years old')\} → years old
+
+---
+
+- **AppendForms** (numeric value, form1, form2, form3): returns a numeric value and a relevant word form divided by the space character.  Example: $\{Recipient.AdditionalData.Age\} — 30 $\{AppendForms(Recipient.AdditionalData.Age, 'year old', 'years old')\} → 30 years old
+
+---
+
+- **Floor** (numeric value): returns a max integer value that does not exceed the variable.  Example: $\{balance\} — 10.9 $\{Floor(balance)\} → 10This method rounds up a numeric value to the nearest integer.
+
+---
+
+- **Ceiling** (numeric value): returns a minimum integer value that is more than or equal to the variable.  Example: ceiling (10.6) returns 11. $\{balance\} — 10.6 $\{Ceiling(balance)\} → 11
+
+---
+
+- **GetRandomNumber** (numeric value, numeric value): returns an integer value within a specified range, including the first number.  Example: $\{GetRandomNumber(1, 10)\} returns a random number from 1 to 9.
+
+---
+
+## Methods for date & time
+
+- **FormatDateTime** (date, format): formats date & time values.  Example: $\{CustomerAction.DateTimeWashington\} — 03/12/2024 10:30:00 $\{FormatDateTime(CustomerAction.DateTimeWashington, "d")\} → 03/12/2024
+
+---
+
+- **ToUnixTimeStamp**(date) — convert a date to [Unix Time Stamp](https://www.unixtimestamp.com/index.php) format: $\{Order.DateTime\} → 03/12/2024 15:00:00 (On a project with UTC+3:00 timezone) $\{ToUnixTimeStamp(Order.DateTime)\} → 1710255600  You can calculate **the number of days between dates**: $\{Recipient.CustomField.Date1\} → 03/07/2024 00:00:00 $\{Recipient.CustomField.Date2\} → 03/12/2024 00:00:00  $\{(ToUnixTimeStamp(Recipient.CustomField.Date2)-ToUnixTimeStamp(Recipient.CustomField.Date1)) / 86400\} → 5  $\{(ToUnixTimeStamp(Recipient.CustomField.Date1)-ToUnixTimeStamp(Recipient.CustomField.Date2)) / 86400\} → −5  You can calculate **the number of hours between dates**: $\{Recipient.CustomField.Date1\} → 03/12/2024 12:00:00 $\{Recipient.CustomField.Date2\} → 03/12/2024 22:00:00  $\{(ToUnixTimeStamp(Recipient.CustomField.Date2)-ToUnixTimeStamp(Recipient.CustomField.Date1)) / 3600\} → 10  $\{(ToUnixTimeStamp(Recipient.CustomField.Date1)-ToUnixTimeStamp(Recipient.CustomField.Date2)) / 3600\} → −10
+
+---
+
+- **AddDays** (date, numeric value): returns the date value that is the sum of the date and the specified quantity of days.   Example: The resulting date is earlier or later by X days: $\{Formatdatetime(Recipient.BirthDate, "dd/MM") \} — 05/03  $\{Formatdatetime(AddDays(Recipient.BirthDate, 5), "dd/MM") \} → 10/03 $\{Formatdatetime(AddDays(Recipient.BirthDate, −5), "dd/MM") \} → 05/03
+
+---
+
+- **GetDay** (date): returns the day in the date as a numeric value. You can apply arithmetic methods to this value.  Example: $\{Recipient.BirthDate\} — 03/10/1984 00:00:00 $\{GetDay(Recipient.BirthDate)\} → 10
+
+---
+
+- **GetMonth** (date): returns the month in the date as a numeric value. You can apply arithmetic methods to this value.  Example: $\{Recipient.BirthDate\} — 03/15/1993 0:00:00 $\{GetMonth(Recipient.BirthDate)\} → 3
+
+---
+
+- **GetYear** (date): returns the year in the date as a numeric value. You can apply arithmetic methods to this value.  Example: $\{Recipient.BirthDate\} — 04/20/1975 0:00:00 $\{GetYear(Recipient.BirthDate)\} → 1975  $\{Message.SendingDateTime\} — 10/20/2024 $\{GetYear(Message.SendingDateTime)\} → 2024
+
+## Methods for collections
+
+- **TableRows** (collection, quantity of columns): transforms a collection of elements into a set of rows with cells. This can then help create HTML tables.  For more information, please refer to [this article.](/campaigns/message-template-engine/how-use-variables-to-create-a-product-grid-layout-for-html)
+- **Count** (collection): returns the number of elements in a collection / list. Example: $\{Count(Order.Items)\} → 5 corresponds to the five line items in the order.
+- **collection.Take(N)**: returns the first N elements of the collection.  Example: Products.GetBySegment("WomenWear").Take(3)  collection of a maximum of three line items.
+
+## Boolean methods (true/false)
+
+- **If** (conditional statement, string1, string2): returns string1 if the statement is true or string2 if the statement is false.  Example: $\{Order.AdditionalData.FreeShipping\} — true $\{If(Order.AdditionalData.FreeShipping, "free", "$2″)\} → free
+
+---
+
+## Methods for images
+
+- **ResizeImage** (URL, width, height): resizes images. You can send test emails to check how this method works. Images are resized as emails are composed.  Example: `<img src="${ResizeImage(PictureUrl, 200, 100)}"`  The method returns the resized image within the specified width and height. This method does not crop the image and does not change the aspect ratio.
+
+## Hash functions
+
+- **MD5** (string): returns the [MD5](https://en.wikipedia.org/wiki/MD5) hash value. $\{ MD5(Recipient.Email) \} ​
+- **SHA1** (string): returns the [SHA1](https://en.wikipedia.org/wiki/SHA-1) hash value. $\{SHA1(Recipient.Email)\} ​
+- **SHA256** (string): returns the [SHA256](https://en.wikipedia.org/wiki/SHA-2) hash value. $\{SHA256(Recipient.Email)\}
+- **SHA512** (string): returns the [SHA512](https://en.wikipedia.org/wiki/SHA-2) hash value. ​
+- **SHA512** (string): returns the [SHA512](https://en.wikipedia.org/wiki/SHA-2) hash value. $\{SHA512(Recipient.Email)\}
+You can use hash tokens as an authentication method in campaigns. 
+**toBase64**(string): encodes using the [Base64](https://en.wikipedia.org/wiki/Base64) algorithm.$\{toBase64(Recipient.Email)\}
+
+## Methods for codes
+**processHtml** (argument) tracks clicks in the HTML block.$\{processHtml('<a href="https...">Hi</a>')\}
+You can also put your code into an item’s description and get its value using the variable:$\{processHtml(Products.SearchInIdentity("c1").GetByValue("2134").Description)\}**Please note:**
+- The code in the block should not contain any variables. This is not to be confused with an entire block returned using a variable (as in the example with a product description).
+- You can use multiple blocks in one email. The system will record clicks for each of the blocks.
+- Clicks can be viewed in the customer's profile. UTM parameters are also saved.
+- Clicks will not be shown in reports or heatmaps.

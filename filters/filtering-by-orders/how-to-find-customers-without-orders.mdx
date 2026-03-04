@@ -1,0 +1,39 @@
+---
+title: "How to find customers without orders"
+---
+
+Go to **Customer Data Platform→ Customers**.
+
+![](/images/imported/Find-customers-without-orders.png)
+
+The filter logic is the same as for finding [customers with orders](/filters/filtering-by-orders/how-to-find-customers-with-orders).
+
+The difference is that instead of **"order — at least one"**, select **"order — none"**.
+
+In this screenshot, we’re filtering for customers who don’t have any orders with the following statuses: Placed, Paid, or Delivered. That means they might have cancelled or returned orders, **but none that are** **Placed, Paid, or Delivered**.
+
+You can apply the same logic or specify a particular status if needed.
+
+![](/images/imported/How-to-find-customers-without-orders.png)
+
+Please note that the filter is based on the **order’s latest status**.
+
+For example, if an order goes through several statuses — Placed → Paid → Delivered — it will be considered as Delivered in the filter.
+
+If an order goes from Placed → Paid → Canceled, it will be considered as Canceled in the filter.
+
+Skip the status filter if you need to include customers **without orders at all.**
+
+![](/images/imported/How-to-find-customers-without-orders-(1).png)
+
+## **Use cases**
+
+How to find customers with no orders in the following statuses: Placed / Paid / Delivered **in the last 6 months.**
+
+![](/images/imported/How-to-find-customers-without-orders-(2).png)
+
+How to find customers who **have orders** in the following statuses: Placed / Paid / Delivered **, but not within the last month**.
+
+![](/images/imported/How-to-find-customers-without-orders-(3).png)
+
+*These are customers who didn’t place an order in the last month but had orders before.*

@@ -34,7 +34,7 @@ Based on these shares, the system distributes loyalty points proportionally:
 
 ---
 
-**Some rewards **offer additional discount distribution options.
+**Some rewards** offer additional discount distribution options.
 ​
 You can apply a discount in one of the following ways:
 
@@ -68,8 +68,8 @@ The total order value is $**90**.
 The system calculates each item's share of the total order value and distributes the discount accordingly:
 
 - T-shirt — (60 / 100) × 10 = **$6** discount
-- Socks — (10 / 100) × 10 = **$1 **discount
-- Sunglasses — (30 / 100) × 10 = **$3 **discount
+- Socks — (10 / 100) × 10 = **$1** discount
+- Sunglasses — (30 / 100) × 10 = **$3** discount
 
 The total order value is $**90**.
 
@@ -130,12 +130,12 @@ Otherwise, the attempt to create the order will fail with the following error:
 For redeem points promotions, order lines are not split if points cannot be evenly distributed proportionally by price.See the next section for details.
 
 ## Multiplicity Rule for Loyalty Point Discounts
-In promotions **that use loyalty points**, a customer may not always be able to redeem all available points for an order.This happens when a discount** cannot be proportionally distributed **across an order line**.** In this case, the system does **not split the order line**. Instead, it allows the customer to redeem only the **maximum number of points that can be evenly applied across the items in the line**.
+In promotions **that use loyalty points**, a customer may not always be able to redeem all available points for an order.This happens when a discount  **cannot be proportionally distributed** across an order line **.** In this case, the system does **not split the order line**. Instead, it allows the customer to redeem only the **maximum number of points that can be evenly applied across the items in the line**.
 
 ---
 
 ## Example
-A promotion allows customer to pay **100% of the order value using loyalty points**.A customer purchases **three identical pairs of socks**, each priced at $**10**, and wants to redeem **13 loyalty points **for the order.The system distributes the discount **evenly across all items in the order**. Since all items have the same price, each item should receive **one third of the total points**.Because **13 points cannot be evenly divided by 3**, the system applies the **largest amount that can be divided evenly **across all items.As a result, **12 points** are applied to the order — **4 points per item**. Redeeming all **13 points** is not possible in this case. ​
+A promotion allows customer to pay **100% of the order value using loyalty points**.A customer purchases **three identical pairs of socks**, each priced at $**10**, and wants to redeem **13 loyalty points** for the order.The system distributes the discount **evenly across all items in the order**. Since all items have the same price, each item should receive **one third of the total points**.Because **13 points cannot be evenly divided by 3**, the system applies the **largest amount that can be divided evenly** across all items.As a result, **12 points** are applied to the order — **4 points per item**. Redeeming all **13 points** is not possible in this case. ​
   ![](/images/imported/--2026-01-08--14_57_08.png) If a **decimal points balance** were used, the system could apply **12.99 points**, allocating **4.33 points** to each pair.
 
 ---
