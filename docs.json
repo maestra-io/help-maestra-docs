@@ -22,6 +22,12 @@
             ]
           },
           {
+            "group": "Customers",
+            "pages": [
+              "customers/who-is-a-customer"
+            ]
+          },
+          {
             "group": "Customization",
             "pages": [
               "essentials/settings",
@@ -43,6 +49,142 @@
               "ai-tools/cursor",
               "ai-tools/claude-code",
               "ai-tools/windsurf"
+            ]
+          },
+          {
+            "group": "Campaigns",
+            "pages": [
+              "campaigns/how-to-send-a-campaign-using-a-file"
+            ]
+          },
+          {
+            "group": "Filters",
+            "pages": [
+              "filters/how-to-create-filters",
+              "filters/how-to-simplify-a-filter"
+            ]
+          },
+          {
+            "group": "General",
+            "pages": [
+              "general/action-templates-for-campaigns",
+              "general/active-subscribers",
+              "general/adding-a-condition-ifelse-ifend-if",
+              "general/advanced-security",
+              "general/api-v3-methods-basics",
+              "general/attribution-model",
+              "general/business-metrics-report",
+              "general/campaigns-report",
+              "general/computed-fields",
+              "general/creating-an-in-app-message",
+              "general/customer-lifecycle-segmentation-smart-engagement-strategies",
+              "general/data-processing-and-formatting-methods",
+              "general/email-health-report",
+              "general/email-list-hygiene",
+              "general/faq-billing",
+              "general/filtering-out-fake-clicks-keeping-your-click-rate-clean",
+              "general/free-in-app-to-collect-subscriptions-to-push-notifications",
+              "general/goals",
+              "general/guidelines-for-coding-pop-ups-and-embedded-forms",
+              "general/how-customer-de-anonymization-works",
+              "general/how-discounts-are-distributed-across-order-line-items",
+              "general/how-does-rfm-segmentation-work",
+              "general/how-does-the-test-mode-work-in-automated-campaigns",
+              "general/how-maestra-builds-a-unified-customer-profile",
+              "general/how-the-multibranches-mode-work-in-the-condition-block-of-the-flow",
+              "general/how-the-order-first-action-filter-works",
+              "general/how-the-order-status-filter-works",
+              "general/how-to-add-a-customer-manually-via-the-user-interface",
+              "general/how-to-add-a-promo-code-into-a-campaign",
+              "general/how-to-add-customers-into-a-static-segment-using-ui",
+              "general/how-to-add-senders-email-address",
+              "general/how-to-bulk-import-customers-from-a-file",
+              "general/how-to-create-a-bulk-email-campaign",
+              "general/how-to-create-a-bulk-mobile-push-campaign",
+              "general/how-to-create-a-bulk-sms-campaign",
+              "general/how-to-create-a-custom-field",
+              "general/how-to-create-a-next-best-action-flow",
+              "general/how-to-create-a-static-customer-segment",
+              "general/how-to-create-an-action-template",
+              "general/how-to-create-an-external-system",
+              "general/how-to-create-automated-email-campaign",
+              "general/how-to-create-embedded-form",
+              "general/how-to-filter-customers-by-total-revenue",
+              "general/how-to-filter-customers-into-segments",
+              "general/how-to-find-campaigns-sent-for-a-specific-order",
+              "general/how-to-find-clicks-on-specific-links-in-campaigns",
+              "general/how-to-find-customers-by-average-order-value",
+              "general/how-to-find-customers-who-interacted-with-a-specific-campaign",
+              "general/how-to-find-customers-who-interacted-with-more-than-one-campaign",
+              "general/how-to-find-customers-with-orders",
+              "general/how-to-find-customers-with-send-failures-or-undeliveries",
+              "general/how-to-find-customers-without-orders",
+              "general/how-to-find-orders-for-a-specific-period",
+              "general/how-to-find-orders-with-a-specific-order-price",
+              "general/how-to-find-orders-with-applied-promotions",
+              "general/how-to-find-orders-with-earned-points",
+              "general/how-to-greet-contacts-by-name-in-your-campaigns",
+              "general/how-to-import-promo-codes-into-a-project",
+              "general/how-to-manage-invalid-mobile-phone-numbers-and-email-addresses",
+              "general/how-to-manually-issue-promo-codes-from-the-pool-using-filters",
+              "general/how-to-segment-your-subscribers-based-on-activity",
+              "general/how-to-set-up-a-product-feed-import",
+              "general/how-to-set-up-a-regional-product-feed-import",
+              "general/how-to-set-up-control-groups-and-ab-tests-for-campaigns",
+              "general/how-to-set-up-data-export-for-analytics",
+              "general/how-to-set-up-the-ad-optimization-module",
+              "general/how-to-shorten-links-in-sms-mms-and-other-channels",
+              "general/how-to-test-a-flow",
+              "general/how-to-test-an-automated-campaign",
+              "general/how-to-test-your-campaign",
+              "general/how-to-upload-multiple-product-feeds-in-a-single-file",
+              "general/how-to-use-elements-of-a-collection-with-the-forend-for-loop-and-the-set-keyword",
+              "general/how-to-use-manual-import-in-emails",
+              "general/how-to-use-webhook-responses-in-flows",
+              "general/how-two-factor-authentication-works",
+              "general/how-use-variables-to-create-a-product-grid-layout-for-html",
+              "general/inactive-subscribers",
+              "general/maestras-basic-template-variables-web-version-unsubscribe-mailing-name",
+              "general/multibrand",
+              "general/passkey-faq",
+              "general/passkey-login-administration-and-setup",
+              "general/promotions-report",
+              "general/setting-up-dkim-and-dmarc",
+              "general/single-sign-on-sso",
+              "general/smart-send",
+              "general/staff-session-duration",
+              "general/technical-limitations-for-push-notifications",
+              "general/test",
+              "general/testing",
+              "general/the-price-of-the-most-viewed-or-purchased-product-has-dropped-flow",
+              "general/types-of-campaigns-available-in-maestra",
+              "general/types-of-customer-segments",
+              "general/types-of-product-recommendation-presets",
+              "general/webhook-logs",
+              "general/what-are-flows-and-how-do-you-use-them",
+              "general/what-are-passkeys",
+              "general/what-ips-does-maestra-use-to-send-emails",
+              "general/what-is-a-deviceuuid",
+              "general/what-is-a-product",
+              "general/what-is-a-transactional-flow",
+              "general/what-is-a-webhook-and-how-to-create-one",
+              "general/what-is-an-order",
+              "general/what-is-email-deliverability",
+              "general/what-is-the-message-template-engine",
+              "general/what-to-do-if-you-cannot-update-a-segment",
+              "general/what-to-do-if-you-have-a-high-bounce-rate",
+              "general/what-to-do-if-you-have-a-high-email-spam-complaint-rate",
+              "general/what-to-do-if-you-have-a-high-email-unsubscribe-rate",
+              "general/what-to-do-if-you-have-a-low-email-click-through-rate",
+              "general/what-to-do-if-you-have-a-low-email-open-rate",
+              "general/which-email-metrics-impact-deliverability",
+              "general/why-gmail-clips-emails"
+            ]
+          },
+          {
+            "group": "Pop Up Forms And Embedded Blocks",
+            "pages": [
+              "pop-up-forms-and-embedded-blocks/how-to-create-pop-ups"
             ]
           }
         ]
@@ -102,15 +244,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {

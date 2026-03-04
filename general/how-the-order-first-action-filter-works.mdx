@@ -1,0 +1,47 @@
+---
+title: "How the order first action filter works"
+---
+
+[Orders](https://help.maestra.io/en/articles/11843001-what-is-an-order) often go through several statuses (e.g., placed → paid → delivered). The exact set of statuses may vary by project. 
+
+We need to consider this when setting up filters.
+
+## Use case 1
+
+**Find customers who placed an order in February 2026.**
+
+To filter orders by date, we’ll use order events. The key question is: **which event should we use?**
+
+Let’s look at an example:
+
+- Order placed: February 28
+- Order paid: February 28
+- Order delivered: April 5
+
+If you pull a revenue report on April 1 based on the *latest event status*, this order will be attributed to **February revenue**.
+
+If you pull the same report on April 6, the order will now be attributed to **April revenue**, since the latest status changed to “Delivered” on April 5.
+
+Because the *latest event* can change over time, filtering based on current order status creates inconsistencies in historical reporting.
+
+Unlike the latest event, the **first order event (Order Placed)** is fixed and does not change. It provides a stable, reliable timestamp for segmentation and reporting.
+That’s why we recommend to filter these customers based on the **first order event (Order Placed)**.
+​
+
+![](/images/imported/How-the-order-status-filter-works-(3).png)
+
+*The filter looks for customers who placed an order in February 2021 and who have completed, paid, or had their order delivered.*
+
+*You can read about the statuses in the article.*
+
+---
+
+The same rule applies when searching for orders.
+
+## Use case 2
+
+**Find orders placed in March.**
+
+Another reason to use the **first order event** is that a single order can have multiple events over time (placed, paid, fulfilled, delivered, etc.). Filtering by the **first event (Order Placed)** guarantees one unique event per order, ensuring accurate order counts in your filter.
+
+![](/images/imported/How-the-order-status-filter-works-(4).png)

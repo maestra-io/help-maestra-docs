@@ -1,0 +1,105 @@
+---
+title: "How to Use Manual Import in Emails"
+---
+
+There are a number of cases in which you may want to use a manual import. For example:
+
+- If you need to send an email where messages lack certain values/parameters that are not yet available in the system: e.g., a promo code (one-time code) or another custom parameter.
+- If you need to send an email to addresses that are listed in a specific file.
+
+**Please note that**
+​
+— if a customer’s email is not in the database, this customer will be imported with a "**subscribed**" status;
+
+— if a customer’s subscription data is missing, the customer will be "**subscribed**";
+
+— if the email campaign in question belongs to specific topic, the customer will be subscribed to this topic only (instead of the email channel as a whole);
+
+— if a customer has unsubscribed, they will not receive the email(s);
+
+— if the file contains 2 or more duplicate emails, the message will be sent two or more times;
+
+— if the user that creates this email does not have permission to import new customers, the messages will only be sent to customers that are already in the database. New customers listed in the file will not be imported and the messages will not be sent to them.
+— please note that the new customers will not be imported even if you have extended permissions when you copy the email created by a user without the permission to add new customers. To import them, you will have to create the email from scratch.
+
+## Steps
+
+### 1. Follow this guide to create an email.
+
+### 2. Insert your parameter into the email layout.
+
+This step allows you to input a parameter that is not yet available in the system into the email: e. g., a one-time promo code.
+
+2.1. Give your parameter a name.
+
+The name must be unique within the system.
+
+For example, you can use the name of the email: DiscountsWithPromo01102022.
+
+2.2. Put the name in the email as a parameter:
+
+$\{CustomParameters.**DiscountsWithPromo01102022**\}
+
+**DiscountsWithPromo01102022** is the parameter name from Step 2.1.
+
+The preceding part — CustomParameters. — must always remain unchanged in your parameter.
+
+This is what it will look like in your layout:
+
+```
+`Your promo code: ${CustomParameters.DiscountsWithPromo01102022}`
+```
+
+And this what it will look like in your template:
+
+![custom_parameters_00](/images/imported/custom_parameters_00.png)
+
+After adding the parameter, your email will look like this:
+
+![custom_parameters_01](/images/imported/custom_parameters_01.png)
+
+Please ignore the error message in red: it will disappear as soon as you select your recipients.
+
+### 3. Select the recipients.
+
+Click **Recipients** → **Manual import**:
+
+![custom_parameters_02](/images/imported/custom_parameters_02.png)
+
+Select the data source type depending on what your file contains. In our case, these are email addresses.
+
+3.1. Download the file with the mailing template:
+
+![custom_parameters_03](/images/imported/custom_parameters_03.png)
+
+3.2. Add your values into the template:
+
+![custom_parameters_04](/images/imported/custom_parameters_04.png)
+
+The **CustomerIdentity** column should contain the list of emails you’ll be sending to. Please make sure that there are no duplicates in the file. Otherwise, your message will be sent multiple times to the same customer.
+
+The **DiscountsWithPromo01102022** column contains parameter values. Please make sure that the column name is the name of the parameter that you entered into your email.
+
+### 3.3. Upload the file:
+
+![custom_parameters_05](/images/imported/custom_parameters_05.png)
+
+You can see here that the error message has disappeared and the number of recipients for the email is now displayed.
+
+## How to test your message
+
+1. Create a file with a list of test emails.
+
+2. Assign test values of your unique parameter to the test emails.
+
+3. Upload the file into your email.
+
+4. Send a real email based on the test file.
+
+5. Check to see that everything works correctly.
+
+6. Duplicate your email.
+
+7. Upload the list of real recipients.
+
+8. Send the duplicated email to your recipients.

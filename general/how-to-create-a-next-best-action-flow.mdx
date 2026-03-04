@@ -1,0 +1,81 @@
+---
+title: "How to Create a Next Best Action flow"
+---
+
+## Why is the algorithm useful?
+
+— It identifies customers who are likely to make a purchase following a personalized offer (personalized product recommendations) and automatically sends them relevant emails.
+
+— It maximizes the open and conversion rates to make up to 10x revenue compared to non-ML algorithms, which periodically send emails after an order.
+
+## How to set up a flow
+
+### 1. Launch the algorithm.
+
+Go to **Campaigns** → **Next Best Action:**
+
+![00_nba](/images/imported/00_nba.png)
+
+After launching the "Next Best Action" algorithm module will be in a demo mode so it can only be activated up to 10 times per day.
+
+To access all features without restrictions, contact your manager to enable the module.
+
+### 2. Create the flow.
+
+2.1. Select the **Time for Next Best Action** event that would trigger this flow:
+
+![01_nba](/images/imported/01_nba.png)
+
+To make the event accessible, launch the algorithm at least in the demo mode.
+
+2.2. Add the **Delay **block to set the delay time before the next step. You may also configure node schedule and limit sending hours:
+
+![02_nba](/images/imported/02_nba.png)
+
+2.3. Then add your specific **conditions**. Don’t forget to check if customers are subscribed with valid contact details:
+
+![03_nba](/images/imported/03_nba.png)
+
+Make sure the contact details and the subscription you are checking in the condition block match your communication channel.
+
+2.4. Send an email:
+
+![04_nba](/images/imported/04_nba.png)
+
+2.5. You can limit how often the flow should run for each customer:
+
+![05_nba](/images/imported/05_nba.png)
+
+2.6. Your flow is ready, now you can launch it:
+
+![06_nba](/images/imported/06_nba.png)
+
+## How the algorithm works
+
+The algorithm is powered by a neural network.
+
+It analyzes the following customer actions:
+
+1. Purchasing a cheap product;
+
+2. Purchasing a medium-price product;
+
+3. Purchasing an expensive product;
+
+4. Viewing a cheap product;
+
+5. Viewing a medium-price product;
+
+6. Viewing an expensive product;
+
+7. Receiving an email;
+
+8. Opening an email;
+
+9. Clicking on an email links.
+
+The neural network also transmits intervals between such actions. The target variable is the last 5 customer actions. They are what the neural network learns to predict.
+
+The output AI model shall predict whether it is reasonable to send an email this day.
+
+If the model decides to send it, the **Next Best Action** flow is triggered.

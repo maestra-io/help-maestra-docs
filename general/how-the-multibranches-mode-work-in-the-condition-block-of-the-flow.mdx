@@ -1,0 +1,368 @@
+---
+title: 'How the "MultiBranches" Mode Work in the "Condition" Block of the flow'
+---
+
+**MultiBranches** is a mode in the Condition block that allows a flow node to split into multiple branches based on the value of a single attribute. 
+
+Instead of using a cascade of identical conditions, you can use one compact block with multiple branches.
+
+Benefits:
+
+1. Conditions are checked once, reducing the number of Condition blocks in the flow.
+2. Reduces load on the flow.
+3. Speeds up audience flow through the blocks.
+4. Minimizes the risk of setup errors.
+
+## How to Set Up
+
+Add a new Condition block to your flow and select MultiBranches mode.
+
+![](/images/imported/01_j.png)
+
+Choose the type of divide condition and add your variants in the branch settings:
+
+![](/images/imported/02_j.png)
+
+If you add multiple values to one branch, the system uses OR logic — the customer only needs to match one of them to move down that branch.
+
+You can use up to 50 branches in a single block.
+
+Conditions are evaluated **top to bottom**, allowing you to prioritize. 
+
+**Example**: Send reminders for short-term promotions first, then long-term then public promotions.
+​
+
+![](/images/imported/03_j.png)
+
+After saving, an Other branch appears. You can leave it unconnected or use it for customers who do not match any of the block’s conditions.
+​
+
+![](/images/imported/04_j.png)
+
+## Condition by Customer
+
+Available for any launch settings.
+
+#### Customer Segment
+
+Determines whether the customer belongs to a segment. Both [static](https://help.maestra.io/en/articles/11888563-how-to-create-a-static-customer-segment) and [scheduled](https://help.maestra.io/en/articles/11887995-how-to-filter-customers-into-segments) segments can be used.
+​
+​**Example**: Sending messages based on customer activity or lifecycle stage:
+Loyal customers → personalized communication
+
+New customers → welcome email
+
+Inactive customers → brand reminder
+​
+
+![](/images/imported/05_j.png)
+
+​
+
+#### Birthday
+
+Routes customers based on their birthday.
+
+Conditions like "Arrived  less" than or "Coming in less" than includes today.
+
+Example: Today is 09.10. Customers in the condition "Coming in less than 7 days" include birthdays:
+
+Today, 09.10
+
+From 10.10 to 16.10
+
+**Example**: Send different communications based on the birthday timing:
+
+- Birthday today → congratulations and reminder about promo codes or points
+- Coming in less than a week → award points and suggest a gift
+- Coming in less than a month → curated ideas and recommendations
+- Default → customers without a birthday set; you can request it in exchange for a bonus
+
+![](/images/imported/06_j.png)
+
+#### Mobile Device
+
+Identifies the customer’s active app.
+
+Useful for sending mobile push notifications.
+
+Instead of multiple blocks for checking the app, use one multi-branch block.
+​
+
+![](/images/imported/07_j.png)
+
+​
+
+#### Customer Custom Fields
+
+Allows routing customers based on a value in a custom field.
+
+​**Example**: If a custom field stores the number of purchases:
+
+- More than 10 → notification about increased cashback
+- 3–10 → promo code for 15% off
+- 1–2 → free shipping
+- Default → customers with no orders, offer 20% off the first purchase
+
+![](/images/imported/08_j.png)
+
+## Event-Based Conditions
+
+Availability of conditions is determined by the flow context.
+
+### **By Product**
+
+Available in flows triggered by these events:
+
+- "Order product delivered"
+- "Order product paid"
+- "Product list changed"
+- "Product in the product list changed"
+- "Browsed product changed"
+- "Preferred product changed"
+- "Product related action added"
+
+#### By Product from event
+
+Checks if the product from the event matches the product in the branch condition. Search it by name, SKU, or external product ID.
+
+​**Example:**
+
+Goal: Encourage the customer to buy a new collection product added to favorites.
+
+The customer adds the product to favorites → triggers "Product list changed" event.
+
+Multi-branch evaluates the product variant, then sends a targeted message and awards points for 24 hours.
+​
+
+![](/images/imported/09_j.png)
+
+#### By Product segment from event
+
+Routes customers by the segment of the product in the event. Supports [static](https://help.maestra.io/en/articles/11888563-how-to-create-a-static-customer-segment) and [scheduled](https://help.maestra.io/en/articles/11887995-how-to-filter-customers-into-segments) segments.
+​
+
+**Example**:
+
+Price increased for a previously browsed product → triggers "Browsed product changed" event.
+
+Determine the segment of the viewed product and suggest alternatives from the same segment.
+​
+
+![](/images/imported/10_j.png)
+
+#### By Product Category from Event
+
+Determines the product category and routes customers to branches based on the options.
+​
+​**Example:**
+A product from a customer’s favorites became out of stock. The "Product in the product list changed" event triggers the flow. 
+
+The goal is to offer the customer a selection of alternative products from the same category.
+​
+
+![](/images/imported/11_j.png)
+
+#### By Product Custom Fields from Event
+
+Allows routing customers based on product custom fields from the event.
+​
+​**Example:**
+1. The product’s custom field ("Promo Price") stores the promo price of the product.
+
+2. A product in the customer’s favorites goes on sale and updates the "Promo Price" custom field → triggers "Product in the Product list changed" — "Product Custom Field Changed" event.
+3. Depending on the promo price, the customer receives targeted messages.
+​
+
+![](/images/imported/12_j.png)
+
+### **By Session**
+
+Available in flows triggered by "Customer left the website or app" event.
+
+#### Product viewed in Session
+
+Checks if the product viewed in the session matches the product in the branch. Search product by name, SKU, or external ID.
+
+​**Example:**
+
+1. Customer viewed a product and left the website.
+2. Goal: check if this product is on promotion.
+3. Check if the viewed product matches one of the branches and send a special promo code to the customer.
+
+![](/images/imported/13_j.png)
+
+#### Product segment viewed in Session
+
+Route customers based on product segment they viewed during the session.
+​
+Example.
+1. Customer watched a free webinar on the website.
+2. Goal: sell a course that matches the customer’s interests.
+
+3. Identify the product’s topic segment and recommend relevant courses.
+​
+
+![](/images/imported/14_j.png)
+
+​
+
+#### Category of Product viewed in Session
+
+Determines product category and routes customers to flow branches.
+
+​**Example**:
+
+Customer browsed but didn’t purchase → determine the category of the viewed product and engage the customer with a personalized product selection from the same category, along with a special offer tailored to each branch.
+​
+
+![](/images/imported/15_j.png)
+
+#### Custom Field of Browsed Product  in Session
+
+Checks custom  field of the product browsed during the session and routes customers according to the branch conditions.
+​
+​**Example:**
+
+1. Customer viewed a product but didn’t buy.
+2. Identify the product’s brand from its additional field and send a personalized email with brand-specific recommendations and a special offer.
+
+![](/images/imported/16_.png)
+
+### 
+**By Order**
+
+Available in flows triggered by these events:
+
+- New order
+- Order status changed
+- Order data was updated
+- Order product delivered
+- Order product paid
+
+#### Product in Order
+
+Allows you to route customers based on the presence of a specific product in their order. Products can be searched by name, SKU, or external product ID.
+​
+​**Example**:
+​
+A customer purchased an educational course.
+The goal is to determine which course the customer bought and send a targeted email based on the topic:
+
+- Courses like *“Investments”* or *“Financial Literacy”* → send a finance-related email
+- Courses like *“Latin”* or *“German”* → send a language-related email
+- Courses like *“Python for Beginners”* or *“JavaScript Basics”* → send a programming-related email
+
+![](/images/imported/17_j.png)
+
+#### Product Segment in Order
+
+Routes customers according to the segment of the product purchased in the triggering order.
+​
+​**Example:**
+​
+Goal: Send a post-purchase message to drive cross-sell.
+​
+​**Branch conditions:**
+
+- If the customer bought **Microwaves** → send an email featuring compatible cookware
+- If the customer bought **Vacuum Cleaners** → send an email promoting smart mops
+- If the customer bought **Irons** → send a special offer on steamers
+- **None of the above** → send personalized recommendations or related products
+
+![](/images/imported/18_j.png)
+
+#### Product Category in Order
+
+Determines the product category in order and routes customers to branches based on the options.
+​
+​**Example:**
+
+1. Customer cancels an order. 
+2. Identify the product category and recommend a selection of popular items from the same category to encourage the customer to make another purchase.
+
+![](/images/imported/19_j.png)
+
+#### Touchpoint of first action with Order
+
+Routes customers by point of contact of first action with Order.
+
+**Example**:
+Depending on the store (touchpoint) where the order was placed, send the customer a survey asking about their experience. This allows you to collect feedback separately for each store location.
+
+![](/images/imported/20_j.png)
+
+#### Product Custom Fields in Order
+
+Checks products custom field from the order and routes customers according to the condition branches.
+​
+​**Example**: 
+
+The product's custom field contains a specific attribute, such as “season.” Based on the value of the purchased product, send curated collections tailored to that season.
+
+![](/images/imported/21_j.png)
+
+#### Order Custom field
+
+Checks a custom field in the order and routes customers according to the condition branches.
+
+​**Example**:
+
+The order’s custom field contains the delivery method. Based on this value, different transactional notifications about the delivery are sent.
+​
+
+![](/images/imported/22_j.png)
+
+### By Action
+
+Available in flows triggered by events:
+
+1. Customer Actions events: "Action added", "Product related actions added"
+2. Order events: "New Order", "Order data was updated", "Order status changed"
+3. Loyalty events: "Specified balance changed", "Customer balance now negative", "Bonus points now available", "Card status changed", "Discount card changed"
+4. "Browsed product changed"
+5. "Authentication code requested"
+6. "Customer registered"
+
+#### By customer action
+
+Checks which action template was assigned to the customer and routes them to the corresponding branches.
+​
+​**Example:**
+
+An interactive campaign is running on the website, where customers complete tasks. After each stage, the corresponding action is assigned  to the customer’s profile.
+​
+​**Goal:**
+Depending on the stage, send customers different messages with information about the next step and issue relevant rewards (bonuses, promo codes, etc.).
+
+![](/images/imported/23_J.png)
+
+#### By action touchpoint
+
+Routes customers by point of contact of action.
+
+​**Example**:
+A brand may have multiple websites for different language audiences. Communications with the customer should use the appropriate language.
+
+1. Customer registers and triggers the “Customer Registered” event
+2. The system checks the registration touchpoint to determine which site the customer signed up on.
+3. Send a welcome email in the corresponding language.
+
+![](/images/imported/24_j.png)
+
+#### By action custom field
+
+Routes customers by custom field of action.
+
+​**Example**:
+In the “Gift Selection” popup, the customer is assigned an action, and the selected gift is recorded in a custom field.
+
+![](/images/imported/25_j.png)
+
+## Numeric Condition Rules
+
+When checking integer or decimal fields, both the lower and upper bounds are included.
+
+- “Less than 3” includes values: 3, 2, 1, 0, -1, etc.
+- “Greater than 3” includes values: 3, 4, 5, etc.
+- “In the range from 1 to 5” includes values: 1, 2, 3, 4, 5.

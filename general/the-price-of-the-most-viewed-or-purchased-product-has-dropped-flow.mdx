@@ -1,0 +1,70 @@
+---
+title: "The price of the most viewed or purchased product has dropped flow"
+---
+
+The task: to send a communication about the reduced price of a product from the [computed field](https://intercom.help/maestraio/en/articles/11900149-computed-fields) — the product the customer buys most often.
+
+**Before creating the flow**
+​
+
+Add an automated mailing in the required channel: [email](https://intercom.help/maestraio/en/articles/11898625-how-to-create-a-trigger-email-campaign), SMS, mobile push, or web push.
+
+A [parameter](https://intercom.help/maestraio/en/articles/11899281-what-is-the-message-template-engine) for product output —
+
+Recipient.CustomField.\{A system name of a field\}
+
+Create [flow](https://intercom.help/maestraio/en/articles/11890158-what-are-flows-and-how-do-you-use-them):
+
+1. Launch — by the "Preferred product changed" event:
+
+![00](/images/imported/00.png)
+
+When the "Price" field of a product is changed, it is checked whether the price has decreased compared to the previous value by a specified percentage or amount.
+
+If it has, a flow is triggered for clients who have this product recorded in the specified computed field.
+
+- This happens every time, including:
+
+- When the price decreases even further
+
+- When the price increases and then decreases again relative to the previous price
+
+- It does not trigger when the price is filled in.
+
+If the product previously had no price data, the price should change after it is filled in so that the flow is triggered.
+
+For clients with a filled area:
+
+- If the product has regional price data for the client’s zone, the flow triggers on changes to the product in the client’s region.
+
+- If the product has regional data but not for the client’s zone, the flow is not triggered.
+
+- If the product has regional data for the client’s area but the price information in that area is not filled, the flow triggers based on changes in the main feed.
+
+- If the product has no regional data, the flow triggers based on changes in the main feed.
+
+2. We don't set a delay, but we restrict the exit from the block so as not to send an email at night:
+
+![01](/images/imported/01.png)
+
+3. Make sure that the product is familiar and in stock:
+
+![02](/images/imported/02.png)
+
+4. We check the validity of the contact and subscription status in the mailing channel:
+
+![04](/images/imported/04.png)
+
+If there are other mechanics for price reduction (in the list or by views), set a delay so as the mechanic with the highest priority is processed first. And in the rest, set checking the absence of communications over the recent period.
+
+5. Then — send the mailing:
+
+![05](/images/imported/05.png)
+
+- In the mailing, you can output the related products for the product; parameter — Recipient.CustomField.\{the field name\}.Recommendations.
+- Use A/B testing to evaluate the efficiency of using recommendations and select the most suitable algorithm.6. Restrict the number of times the scenario is applied to a customer so as not to send a few mailings at a time:
+
+  ![06](/images/imported/06.png)
+7. The flow is ready, you can launch it:
+
+  ![07](/images/imported/07.png)

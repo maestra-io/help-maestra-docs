@@ -1,0 +1,157 @@
+---
+title: "How to Create Automated Email Campaign"
+---
+
+**Automated email campaigns** are sent from flows or API methods triggered by specific events.
+
+Note: Ensure that your email campaign has a "Ready to Use" status and is located in the same folder (or subfolder) as your automation flow.
+
+## How to Create a Campaign
+
+1. Go to **Campaign Manager ** → **Create Campaign** → **Automations** → **Automated campaign**. 
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(35).png)
+
+2. Select channel, folder, brand and click **Create**.  
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(2).png)
+
+## Campaign Settings
+
+#### Campaign Name
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(3).png)
+
+- Campaign Name is used to help you locate the campaign among others and manage it in reports, filters, or exports.
+- If you use a [utm-tag](https://help.maestra.io/en/articles/11898514-how-to-create-a-bulk-email-campaign#h_6da7478263) with the $\{Message.MailingUtmName\} variable, the campaign name will be included in the tag automatically.
+
+#### Campaign
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(5).png)
+
+- **Subject Line**. Supports [variables](https://intercom.help/maestraio/en/articles/11899281-what-is-the-message-template-engine) and emojis.
+- **Preview text: **
+  - Body text – the email client will show the first line of the content;
+  - Custom – you can enter a custom preview text (supports variables/emojis);
+  - Blank – the area after the subject will be blank in inbox previews.
+- **[Sender](https://intercom.help/maestraio/en/articles/11908956-how-to-add-sender-s-email-address)**[ ](https://intercom.help/maestraio/en/articles/11908956-how-to-add-sender-s-email-address)- set the name and email address that appear in the recipient’s inbox, indicating who the message is from.
+
+#### Choose how to create an email
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(6).png)
+
+Create your message using one of the following options:
+
+- **Maestra Editor** – modern drag-and-drop editor;
+- **HTML Editor** – custom HTML code, including manual insertion of [variables](https://intercom.help/maestraio/en/articles/11899281-what-is-the-message-template-engine);
+- **Legacy editor** – earlier version of visual email editor;
+- **URL** – fetch template from a hosted link;
+- **ZIP** – upload a ZIP archive of your template.
+
+Once your template is complete, you can also:
+
+- **Add an AMP version** for interactive elements (e.g. quizzes, surveys).
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(7).png)
+
+- Review and edit all **links in the message** and update their type if needed (e.g., when using custom subscription confirmation or unsubscribe links).
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(8).png)
+
+## Send Test Message
+
+Once your campaign is ready, you can preview it.
+
+**Exception**: Campaigns with event variables. You can check these campaigns using [test mode](https://help.maestra.io/en/articles/11898318-how-to-test-an-automated-campaign).
+
+To send a live test, click “**Send Test Message**”.
+
+During a test send, the selected customer will receive the message via email.
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign--289-29.png)
+
+You can select recipients from the existing list (previously added for testing) or add additional ones using the “**Add Recipient**” button. Then, click “**Send to Selected**.”
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(10).png)
+
+You can only send test emails to customers that already exist in your database. To create a new account in the database, please follow the [instructions](https://intercom.help/maestraio/en/articles/11840644-how-to-add-a-customer-manually-via-the-user-interface).
+
+Test results are not recorded on the customers card. You can see their statuses in a list by clicking on the link.
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(11).png)
+
+Click Preview to view your message without sending it.
+
+![](/images/imported/How-to-Create-Automated-Email-Campaign-(12).png)
+
+## General Settings
+
+- **Brand** – relevant for multibrand projects.
+- **Topic **– allows recipients to flexibly manage their subscriptions and receive communications only on topics they’re interested in.
+- **Tags **– use tags to group campaigns by an additional attribute when channel, topic, and folder filters are not sufficient. Filtering campaigns by tags is easy, including within reports.
+
+**Campaign profile** – defines who can receive the message and under what rules. 
+​
+​**Available Profiles:**
+
+- **Default** – for marketing messages. Basic recipient checks are applied: - Valid email adress - Active email subscription (Subscribed to email channel or selected topic) - Not part of the global control group (if enabled).  Note: this is not the same as the campaign control group. - Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).You can disable these checks using the toggles available in the campaign profile. However, subscription checks can only be bypassed in transactional campaigns, and only for critical service messages that must be delivered to the customer (such as order status updates).
+
+- **Opt-In** – for confirming pending subscriptions. Applies checks for: - Valid email - Pending opt-in status for the email channel (or for the selected topic, if the campaign includes one) - Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).You can override Smart Sending using toggle in the profile.
+- **Transactional** campaigns are those that customers request and expect to receive as quickly as possible. No checks are applied.
+
+## Sending restrictions
+
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(13).png)
+
+- **Sending Interval**: You can limit the sending hours by project time zone or recipient time zone.
+- **Relevant for**: Set how long the campaign should stay relevant by selecting an expiration period from the list or entering specific dates manually. If the recipient’s mail server doesn’t accept the email right away, Maestra will keep trying to deliver it within this timeframe.
+
+## **UTM Tracking**
+
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(14).png)
+UTMs help attribute traffic and performance to the correct campaign and channel.You can either:
+- Use saved default UTM parameters
+- Customize UTMs per campaign.
+
+## When Setup Is Complete
+
+#### Campaign Readiness Check
+Once all required fields are completed — indicated by a green check mark next to each section header — the system automatically changes the campaign status from "Draft" to "Ready to Send."
+
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(15).png)
+To make your campaign available in Flows, change its status to "Ready to Use" by clicking the "Finish Editing" button.
+
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(16).png)
+Once the campaign is set up, you cannot change the brand, campaign profile (except the priority settings), or A/B test settings.
+
+## A/B Testing and Control Groups
+
+- **A/B testing** lets you try different subject lines, templates, or sender names to see which version performs best — boosting opens, clicks, and revenue.
+- **Control Groups** let you exclude part of your audience to see how your campaign really performs by comparing their behavior to those who got the message.
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(18).png)
+The following metrics are available for email campaigns:
+- **Open rate** — the percentage of customers who opened the campaign during the testing period (does not work with control group).
+- **Click rate** — the percentage of customers who clicked at least once during the testing period (available if click tracking is enabled, does not work with control group).
+- **Target Actions** — a list of the specific user actions that were completed during testing.
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(20).png)
+
+## Campaign Results
+
+#### Filters
+Each campaign generates statuses like Sent, Opened, Clicked, or Unsubscribed. Some statuses are assigned automatically when the campaign is sent (e.g., Sent), while others appear in the customer’s activity feed only if they’ve interacted with the message (e.g. Opened, Clicked, or Unsubscribed).
+
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(21).png)
+You can use these statuses to create filters:
+- Customers who interacted with the email campaign
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(22).png)
+- Campaign statuses
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(23).png)
+
+## Reports
+After the campaign is sent, detailed reports become available:
+- **Performance metrics**
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(24).png)
+- **Heatmaps**
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(27).png)
+- **Campaigns report**
+  ![](/images/imported/How-to-Create-Automated-Email-Campaign-(25).png)

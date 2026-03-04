@@ -1,0 +1,177 @@
+---
+title: "Passkey login administration and setup"
+---
+
+Passkey login is enabled by default for all projects. If you experience any issues, please contact Maestra Support.
+
+If you use [SSO (Single Sign-On)](https://help.maestra.io/en/articles/11900245-single-sign-on-sso) and enforced login is enabled, passkey authentication is not required.
+
+# Managing Passkeys: Owner/Admin Guide
+
+To manage passkeys, you need the **View user settings** and **Edit users **permissions. By default, these permissions are granted to project owners and administrators. If needed, you can assign them to other team members.
+
+We recommend granting passkey management access to at least two staff members in case one of them loses access to their passkey.
+
+Owners, administrators, and any staff members with the above permissions can:
+
+- View which users have passkeys set up.
+- Send an email to create a new passkey for users who’ve lost access or need an additional passkey for another device.
+- Reset existing passkeys.
+
+## **How to send a setup email to a new user**
+
+You can add new users manually or via import. After adding them, go to the staff editing page and click **Send new passkey. ** The user will receive an email with a link to set up their passkey.
+
+![](/images/imported/Administration-and-setup-of-passkey-login-(13).png)
+
+## **How to set up an additional passkey for a user**
+
+Each employee can have up to three passkeys.
+
+A user may need an additional passkey if they access Maestra from multiple devices that cannot share the same passkey. For example, when one is stored locally in Windows Hello or Google Password Manager under a corporate account.
+
+To set up an additional passkey:
+
+1. Go to **Settings → Security → Users.**
+2. Open the user’s profile.
+3. Click **Send new passkey.**
+
+![](/images/imported/Administration-and-setup-of-passkey-login-(13).png)
+
+## **Helping users with passkey issues**
+
+If a user reports that:
+
+- Their password manager has changed, but the passkeys weren’t transferred.
+- They lost the device on which their passkey was set up.
+- A passkey has been compromised.
+
+follow these steps:
+
+1. Go to **Settings → Security → Users.**
+2. Open the user’s profile.
+3. Click **Reset keys.**
+4. Send a new key.
+
+When passkeys are reset, all existing passkeys are permanently deleted and cannot be recovered.
+
+![](/images/imported/Administration-and-setup-of-passkey-login-(14).png)
+
+# Passkey Setup: From Email Invitation to Sign-In
+
+## **New users**
+
+Once the project owner creates your profile, you’ll receive an email with a link to set up your access.
+
+- The link is one-time use and valid for a limited period: 24 hours for regular users; 72 hours for project owners. 
+- The expiration time is shown in the email.
+- The link cannot be reused after setup.
+- If the link expires before you complete setup, contact the project owner to issue a new one.
+
+1. Follow the link from the email. ​
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(12).png)
+2. In the window that opens, click **Set up.** ​*​*
+  ![](/images/imported/Administration-and-setup-of-passkey-login.png)
+3. Choose where to store your passkey:The options available in the system window depend on your browser, device operating system, and installed password managers.
+
+#### Using iCloud Keychain
+It is available for selection in the system window when setting up the passkey on Apple devices.Once configured, you can access the project from any Apple device that is logged into your iCloud account.
+1. In the system window, select "iCloud Keychain."
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(4).png)
+2. Confirm saving the passkey in the keychain.
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(3).png)
+
+#### Using Apple or Android mobile phone
+This option is available in the system window of your browser if it supports passkeys and your device supports Bluetooth.After setting up your passkey, access the project by scanning the QR code and confirming your login with the passkey on your phone. Use your mobile phone camera (Apple or Android) to scan the QR code.
+**To set up the access key on a Macbook, follow these steps:**
+1. In the system window, select "Use a phone, tablet, or security key."
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(5).png)
+2. Use your device's camera to scan the QR code and save the security key for logging in.
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(15).png)
+If your phone cannot read the QR code, use authentication apps to save the passkey. For example, Google Authenticator or Microsoft Authenticator.
+3. Follow the instructions on your phone after scanning the QR code.
+**To set up the passkey on a Windows computer, follow these steps:**
+1. In the system window, select "Iphone, Ipad or Android device". ​
+  ![](/images/imported/2025-12-02_18-33-36.png)
+2. Use your device's camera to scan the QR code and save the passkey for logging in.
+
+  ![](/images/imported/2025-12-02_18-35-24.png)
+If your phone cannot read the QR code, use authentication apps to save the access key. For example, Google Authenticator or Microsoft Authenticator.
+3. Follow the instructions on your phone after scanning the QR code.If the system prompts you to insert a security key into the USB port but does not show you how to save the key using your phone, follow these steps:
+  ![](/images/imported/2025-11-25_16-50-15.png)
+1. Make sure your device supports Bluetooth, and that it is turned on on both your phone and computer during setup.
+2. If Bluetooth was turned off, turn it on and refresh the page to start setting up the keys again. When the system window appears asking if you want to continue with USB port, click "Cancel".  ​
+  ![](/images/imported/2025-12-02_19-12-06.png) 3. After that, the system may offer other ways to save the security key. Select "Iphone, Ipad or Android device". ​
+  ![](/images/imported/2025-12-02_18-33-36.png)If the above method does not work and the system does not offer any options except for a USB key, please contact Maestra Support.
+
+#### Using Google Password Manager
+It is available for selection in the system window of the Chrome browser. To save the passkey, you need to be authorized in your Google account.Once configured, you can access the project from any device logged into your Google account.
+If you need to access the project from a device that does not have access to your Google account, you can use QR login with your phone, which must be logged into your Google account. When logging in, select the "Use a phone, tablet, or security key" option, scan the QR code, and confirm the use of the key saved in Google Password Manager. This method is available only if your device supports Bluetooth.
+1. In the system window, select "Google Password Manager"
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(7).png)
+2. Save the passkey in your Google account. 
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(16).png)
+
+#### Using Chrome profile
+This option is available for selection in the system window of the Chrome browser.The passkey is stored locally in the current Chrome profile on the device and is not synchronized. Therefore, logging into the project with this key will not be possible from other devices or browsers.
+1. In the system window, select "Your Chrome profile"
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(8).png)
+2. Save the access key in your profile.
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(17).png)
+3. To complete saving your passkey, confirm your identity with your PIN, fingerprint, or Face ID.
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login--2818-29.png)
+
+#### Using Windows Hello
+Available for selection in the system window on Windows computers that have PIN or fingerprint sign-in enabled.The passkey will be stored locally on your Windows device. If you use multiple devices under the same Microsoft account, the passkey will sync across them.
+1. In the system window, select “Windows Hello or external security key.” ​
+  ![](/images/imported/2025-11-25_16-54-06.png)
+2. Verify your identity by entering your PIN or scanning your fingerprint.
+
+  ![](/images/imported/2025-11-25_16-52-50.png)If the system asks you to insert a security key into a USB port and doesn’t display the option to store the passkey using Windows Hello: ​
+  ![](/images/imported/2025-11-25_16-50-15.png)
+1. Make sure your computer has PIN or fingerprint sign-in enabled. If not, change your sign-in method accordingly.
+2. After enabling PIN or fingerprint login, refresh the page and start the passkey setup process again. When prompted to insert a USB security key, click “Cancel”**.** ​
+  ![](/images/imported/2025-11-26-16_27_06.jpg)After that, the system should offer alternative storage options. Select “Windows Hello or external security key”. ​
+  ![](/images/imported/2025-11-25_16-54-06.png)
+If the steps above don’t resolve the issue and the system still only offers a USB key option, please contact Maestra Support.
+
+#### Using Bitwarden Password Manager
+
+In this section, we’ll look at how to store your passkey in the Bitwarden password manager. You can also use other password managers, such as 1Password, Dashlane and others.
+1. Register an account on the [Bitwarden website](https://bitwarden.com/).
+2. Sign in to your Bitwarden account and install the browser extension. ​
+  ![](/images/imported/2025-11-25_17-07-53.png)
+3. Complete the extension setup following Bitwarden’s [instructions](https://bitwarden.com/browser-start/#browser-start-instruction).
+4. Go to the Maestra passkey setup page and click “Set up”.  ​
+  ![](/images/imported/Administration-and-setup-of-passkey-login.png)
+5. The Bitwarden extension will automatically prompt you to save your passkey. Click “Save passkey as new login”. ​
+  ![](/images/imported/Screenshot-2025-12-02-at-4_19_23PM.png)To sign in using the passkey stored in Bitwarden:
+- Enter your username or email.
+- Confirm authentication by selecting the appropriate passkey. ​
+  ![](/images/imported/Screenshot-2025-12-02-at-4_21_21PM.png) 4. That’s it — passkey saved.
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(20).png)
+
+## Existing users
+The system will prompt existing users to set up a passkey during their next login to Maestra. Follow the same setup steps described above, starting from step 2. If needed, you can postpone the setup and return to it later.
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login.png)
+
+## How to set up passkeys on a new device
+
+- **If your passkey is stored in a password manager or iCloud Keychain:** Log in to your account on the a device — the passkey will sync automatically.
+- **If your passkey is linked to a specific device:** Contact the project owner or administrator to generate an additional passkey for a new device.
+
+# How to log into Maestra using a passkey
+
+1. Enter your email or username on the login page.
+
+  ![](/images/imported/Administration-and-setup-of-passkey-login-(21).png)
+2. Confirm your identity using your passkey.  ​
+  ![](/images/imported/Screenshot-2025-12-01-at-2_43_57PM.png)

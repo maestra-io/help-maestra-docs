@@ -1,0 +1,62 @@
+---
+title: "How to Create a Custom Field"
+---
+
+Custom fields are used to enter data that are not covered by the set of main fields.
+
+To create a custom field, simply follow these steps
+
+1. Go to **Integration settings** → **Custom fields**:
+
+![field_1](/images/imported/field_1.png)
+
+2. Click **Create custom field**:
+
+![field_2](/images/imported/field_2.png)
+
+3. Fill in the fields:
+
+![field_3](/images/imported/field_3.png)
+
+1. **Entity**: select the entity that your field will belong to. Entities include: Customer, Customer action, Touchpoint, Product, Product list item, Order, Promotion, Order line, Area, Discount card, and Prize.
+
+** 2. Name:** this name will be displayed in filter conditions.
+
+** 3. System name:** this will be used in imports and in the API.
+ 4. **Field type:**
+
+- Integer: the field value must be an integer number, e.g., 123456
+- String: the field value can be any string of up to 1,000 characters
+- Boolean: true / false
+- Decimal: e.g., 12345.67
+- Date: e.g., 03/12/2021
+- Date & time: e.g., 03/12/2021 04:30
+- Enumerated: the field offers a drop-down list. For more details, see here
+- Unique ID: one cannot sign up with the same ID twice
+- Social network ID: this ID does not have to be unique and can be used more than once when signing up.
+
+## How to merge (for the Integer and Decimal types):
+
+**Take value from priority customer:** the inserted value will be taken from the higher-priority customer.
+
+**Take greatest value:** the inserted value will be the highest of all the values available for the customer’s custom field.
+
+# Additional settings
+
+**Allow multiple values in a single field, separated by a "|" symbol in a .csv file:** you can enter multiple values in a single field.
+
+**Erase previous data if field value is blank in new import:** the system removes field values if the field name is submitted but the field value is blank.
+
+**Example:** Age is imported with a blank field value in a method or CustomFieldAge. If this entity is not imported, then the system will keep the previous value.
+
+**Field is public:** the field can be requested or edited without applying a secret key.
+
+**Create enum field value if the field value has not been found (for the Enumerated type):** the system will auto-add the new Enumeration value from the import file.
+
+**Do not merge customers with different IDs (for the Unique ID type):** the system will not merge a new customer with their duplicate.
+
+The system will replace the ID for the new customer. Thus, no history search will be available for the new customer.
+
+4. Click **Create custom field:**
+
+![field_4](/images/imported/field_4.png)

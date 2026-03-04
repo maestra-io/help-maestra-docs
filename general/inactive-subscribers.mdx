@@ -1,0 +1,44 @@
+---
+title: "Inactive Subscribers"
+---
+
+# Subscribers who have recently become inactive
+
+Follow these steps to create a segment with subscribers who have recently become inactive:
+
+![00_inactive_subscribers](/images/imported/00_inactive_subscribers.png)
+
+- Select customers who have been in your database for over 45 days. This helps us filter out customers who have been on the list for more than 45 days and exclude new subscribers.
+- Select customers who received emails within the last 90 days, but didn’t click on any of them.
+- Next, add a filter condition for subscribers who opened or clicked your emails prior to the 90-day period specified in the previous step. This will help us find customers who used to be active but have since stopped engaging with emails.
+- Email subscription. This filter helps us select customers who are subscribed to your mailing list — they can be subscribed to manual or automated campaigns.
+- Email address is valid. This filter helps us select the customers who can receive our emails.
+
+As this is a complex segment with multiple filter conditions, we recommend saving it as a segment with scheduled updates.
+
+# Inactive subscribers
+
+To identify customers who haven’t opened or clicked on any emails for more than 6 months, use the following criteria:
+
+![01_inactive_subscribers](/images/imported/01_inactive_subscribers.png)
+
+- The customer has been on the list for more than 45 days (see the example in the screenshot below). This condition eliminates recent subscribers.
+- Received emails over the last 90 days but haven’t opened or clicked any in over 180 days (6 months or more). These conditions help you identify customers who stopped interacting with your emails a long time ago but are still receiving them.
+- Email subscription. This filter helps us identify customers who are still on your email list and are subscribed to manual or automated campaigns.
+- Email address is valid. This condition helps filter customers who can receive emails.
+
+# Subscribers who have never opened or clicked campaigns
+
+To identify customers who subscribed to your emails over a year ago, but ignored them since, you can select the following conditions:
+
+![02_inactive_subscribers](/images/imported/02_inactive_subscribers.png)
+
+- Customers who subscribed to the mailing list more than 365 days ago. This condition helps you identify and clean up customers who have been subscribed to your mailing list for a long time.
+- Customers who have received more than 10 emails in total. This filter helps us ensure the customers we select have received enough emails that they could have engaged with.
+- The number of emails sent here depends on the frequency of sending — i.e., edit this number based on whether you send campaigns daily or weekly.
+- The goal with this step is to identify the majority of customers who don’t interact with your emails and avoid inadvertently deleting active ones. You can build various segments based on the number of emails sent and choose a value that significantly reduces the number of customers in the segment as it increases.
+- No opens or clicks across all time — this condition selects inactive customers, who never engage with emails.
+- Email subscription. This filter helps you select customers who are still on your email list and are subscribed to manual or automated email campaigns.
+- Email address is valid. This filter helps select customers who can receive your emails.
+
+We recommend saving this as a segment with scheduled updates. Unsubscribe the customers who fall into this segment and automatically unsubscribe any customers who meet this segment’s criteria in the future.

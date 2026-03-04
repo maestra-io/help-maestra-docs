@@ -1,0 +1,52 @@
+---
+title: "How to Create a Static Customer Segment"
+---
+
+To create a static customer segment:
+
+1. Go to **Customer Data Platform** → **Segments**:
+
+![00_stsegment_new](/images/imported/00_stsegment_new.png)
+
+2. Click **Create segmentation** → For **customers**:
+
+![01_stsegment_new](/images/imported/01_stsegment_new.png)
+
+3. Enter the name and description of the segmentation.
+
+The system will automatically generate the system name and external ID. However, you can also enter your own values.
+
+- The **segmentation name** will be used in the project interface.
+- The** segmentation system name** will be used to filter customers in the [Template Engine.](https://intercom.help/maestraio/en/articles/11899281-what-is-the-message-template-engine)
+- The **segmentation external ID** will be used in API methods.
+
+![](/images/imported/--2025-07-30--3_53_33PM.png)
+
+4. **Add** relevant segments:
+
+![03_stsegment_new](/images/imported/03_stsegment_new.png)
+
+![07_stcustsegment](/images/imported/07_stcustsegment.png)
+
+Segmentation cannot be launched without at least one created segment.
+
+5. Click **Launch**:
+
+![04_stsegment_new\(1\)](/images/imported/04_stsegment_new-281-29.png)
+
+Once you’ve launched a segmentation, you’ll no longer be able to edit the system name or external ID.
+
+Please note that you can only use segmentations that have been launched. Drafts cannot be used in filters, promotions, messages, etc.
+
+Click **Save and exit** to exit without launching the segmentation.
+
+---
+
+You can add customers into segmentation
+
+- [Using filters](https://intercom.help/maestraio/en/articles/11888976-how-to-add-customers-into-a-static-segment-using-ui)
+- By importing files (this applies to customers who are already in the database)
+- Through flows (Use the *"Include customer in segment"* step within your automated flows) ​
+
+---
+A customer **cannot belong to multiple segments** within the same segmentation. When added to Segment B, they are automatically removed from Segment A.

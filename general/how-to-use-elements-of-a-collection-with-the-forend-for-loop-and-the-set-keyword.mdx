@@ -1,0 +1,50 @@
+---
+title: 'How to Use Elements of a Collection with the "for...end for" Loop and the "set" Keyword'
+---
+
+Some parameters contain a set of objects — e.g., all items in an order — rather than a single value.
+
+In your template, you can add a block for each of these kinds of objects:
+
+```
+`@{ for item in Order.Items }
+Price: ${ item.Price }
+@{ end for }`
+```
+
+In this example, `item` is an arbitrary name attributed to one order item so that you can use its parameters. Inside the `for...end for` block you can access a particular order item. In addition, this block can include an arbitrary HTML code, conditions, and even nested loops.
+
+If the example above contains three order items, the output will be:
+
+> Price: 5
+
+> Price: 10
+
+> Price: 25
+
+Also, you can use the "set" keyword in `@{ set a = a + 1 }` to add a counter.
+
+### Here are some possible use cases:
+
+To display the total purchase value:
+​
+
+```
+`@{ set Total = 0 }
+@{ for product in Session.GetAddedToListProducts("Cart").Take(10) }
+@{ set Total = Total + product.Price }
+@{ end for }`
+```
+
+To list the product IDs separated by a comma:
+​
+
+```
+`@{ set Ids = "" }
+@{ for product in Products.GetBySegment("PopularInStock").Take(10) }
+@{ if Ids != "" }
+@{ set Ids = Ids & "," }
+@{ end if }
+@{ set Ids = Ids & product.IDs.C1 }
+@{ end for }`
+```

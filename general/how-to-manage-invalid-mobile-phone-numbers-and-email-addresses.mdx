@@ -1,0 +1,155 @@
+---
+title: "How to Manage Invalid Mobile Phone Numbers and Email Addresses"
+---
+
+When customers register, subscribe, or place orders, they may enter invalid contact details (e.g. 19777777777, not@real.com).
+
+If the system batch merges customers having such contact details, it mixes up valid phone numbers and emails with invalid ones.
+
+A blocklist is used to prevent adding invalid contact details. This list already contains the most common invalid details. You may add other contact details to the list or remove redundant ones.
+
+## **What happens to invalid details**
+
+- No data will be saved if the customer enters **only** invalid contact details when registering, subscribing, or placing orders.
+- If the customer enters both invalid and valid details and/or IDs, their valid data will be saved, and invalid contact details will be discarded.
+- Upon editing, invalid contact details will not be saved.
+- Maestra filters data automatically every time it’s uploaded: whether files are imported manually or automatically, or when API methods are called.
+
+## **API v3 Methods**
+
+The same rules apply to asynchronous and synchronous API methods without mandatory validation.
+
+If for a specific API method the **"API method returns validation errors"** option is enabled and the contact details are invalid, the system will not save the data.
+
+To view notifications about invalid contact details, go to **Integration settings** → **API error logs.**
+
+## **What to do with invalid contact details detected during import**
+
+Imagine you import a customer base or an order base and an issue is generated on too many merges or edits of customer details. This can indicate that there were invalid contact details in the import file.
+
+What to do:
+
+1. Analyze recurring phone numbers and emails, including those that triggered merges and edits (shown in the issue notification).
+2. If they are invalid, add them to the list of invalid contact details.
+3. Delete the imported data.
+4. Re-import it. The invalid contact details will be discarded.
+
+## **How to add and delete invalid contact details using the Postman API**
+
+### **How to add contact details to the blocklist:**
+
+```
+`POST https://projectname-services.maestra.com/v2/import?operation=ImportFakeContacts&csvCodePage=65001
+
+Content-Type:text/csv
+Accept:application/xml
+Authorization: Basic Auth. Your login and password to access the Maestra project. 
+
+Contact;ContactType
+1@1.com;Email
+fale@fake.com;Email
+77777777777;MobilePhone
+78888888888;MobilePhone
+111111;TechnicalIdentity
+844fcf8b-783c-4297-a0ad-ec5ee966a962;Device`
+```
+
+### **How to delete contact details from the blocklist:**
+
+```
+`POST https://projectname-services.maestra.com/v2/import?operation=DeleteFakeContacts&csvCodePage=65001
+
+Content-Type:text/csv
+Accept:application/xml 
+Authorization: Basic Auth. Your login and password to access the Maestra project. 
+
+Contact;ContactType 
+1@1.com;Email 
+fale@fake.com;Email 
+78005553535;MobilePhone
+78004453535;MobilePhone 
+111111;TechnicalIdentity 
+844fcf8b-783c-4297-a0ad-ec5ee966a962;Device`
+```
+
+## **List of invalid contact details**
+
+This list is specific for every project. The list below contains common invalid emails and phone numbers. You can add or delete contact details from this list.
+
+**Email addresses:**
+
+```
+`11111@hotmail.com
+123@hotmail.com
+1@1.com
+1@hotmail.com
+0000@hotmail.com
+12345@hotmail.com
+000@hotmail.com
+demo@example.com
+00@hotmail.com
+net@net.com
+123456@hotmail.com
+m@il.com
+mail.@hotmail.com
+mail@hotmail.com
+mail@hotmail.com
+mymail@hotmail.com
+n@hotmail.com
+1111@hotmail.com
+net@hotmail.com
+1@1.com
+net@ya.com
+net@yahoo.com
+No@hotmail.com
+no@no.com
+nomail@hotmail.com
+nomail@nomail.com
+nomail@nohotmail.com
+noname@legkomarket.com
+noname@hotmail.com
+Nonnon@hotmail.com
+not@hotmail.com
+not@real.email
+not@real.com
+notreal@hotmail.com
+pisem@net.com
+QWERT@hotmail.com
+qwerty@hotmail.com
+shop@reee.com
+unknown@site.com
+1@1
+q@q
+fale@fake.com`
+```
+
+**Cell Phone Numbers:**
+
+```
+`10000000000
+11111111111
+11234567890
+12222222222
+12222224545
+13333333333
+14444444444
+15346456456
+15555555555
+16666666666
+17777777777
+18888888888
+19000010000
+19111111111
+19123456789
+19151234567
+19222222222
+19333333333
+19444444444
+19555555555
+19666666666
+19777777777
+19880000000
+19888888888
+19995555555
+19999999999`
+```

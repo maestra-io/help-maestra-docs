@@ -1,0 +1,88 @@
+---
+title: "Smart Send"
+---
+
+The Smart Send feature lets you **limit messages a customer can receive per day** across your brand and channels.
+
+# **How to enable and set it up**
+
+Go to **Settings → Communication boosters → Smart Send** and turn the feature on.
+
+![](/images/imported/Smart-Sending.png)
+
+Smart Send starts working immediately after activation.
+
+By default, the daily limit is **30 messages per day**.
+
+## How to set a **total** **brand** **limit.** 
+
+You can define the total number of marketing campaigns (i.e., Emails, SMS, Push) customers can receive per day within a brand.
+
+![](/images/imported/Smart-Sending-(1).png)
+
+- The limit counted by: the Sent status
+- Timeframe: calendar day (12:00 AM–11:59 PM) based on the project time zone
+- Channels: Email, SMS, Viber, Mobile Push, Web Push
+
+**The following campaigns are not** **counted**:
+
+- Transactional messages
+- Test messages
+
+## How to set **channel-level limits. ** 
+
+![](/images/imported/Smart-Sending-(2).png)
+
+You can also define limits for specific channels.
+
+The sum of channel limits can be higher than the total brand limit.
+
+In this case, sending may be stopped either because:
+
+- the channel limit is exceeded, or
+- the total brand limit is exceeded.
+
+For example, suppose Smart Sending is configured as shown above.
+
+A customer has already received 1 SMS and 1 email today. For the rest of the day, they can receive up to two push notifications.
+
+If no value is set for a specific channel, the channel limit automatically equals the total brand limit.
+
+The following settings are equal.
+
+![](/images/imported/Smart-Sending-(3).png)
+
+How to disable limitations for customer segment
+
+![](/images/imported/Smart-Sending-(4).png)
+
+- To do this use a **[static](https://help.maestra.io/en/articles/11888563-how-to-create-a-static-customer-segment) **segment only.
+- If a customer is added to or removed from the segment, the changes are applied the next day only.
+
+Make sure to save your Smart Sending settings.
+
+When you **edit** Smart Send settings, **changes apply immediately**.
+​
+
+# **What happens when the limit is reached**
+
+Messages exceeding the limit will not be sent.
+
+The customer will receive a non-sent status with the reason:
+
+**[Smart Sending] Customer received the maximum number of messages for Today**
+
+![](/images/imported/--2026-03-02--14_01_13.png)
+
+# **How to ignore Smart Sending in a campaign**
+
+If you need to bypass the Smart Send for a specific campaign: go to **Campaign → General settings → Campaign profile** and enable the **High Priority** option.
+
+![](/images/imported/Smart-Sending-(6).png)
+
+In this case:
+
+- Customers who have reached their limit will not be excluded from the campaign.
+- The message will still count toward the customer’s daily limit.
+
+You can toggle this setting even for automated campaigns with the **Ready to send **status.

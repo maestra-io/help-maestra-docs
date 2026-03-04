@@ -1,0 +1,94 @@
+---
+title: "Types of Campaigns Available in Maestra"
+---
+
+When it comes to communicating with customers in Maestra, you get access to lots of options for pretty much any marketing need. In this article, we’ll give you a general overview of everything that you need to know about messages in Maestra — from communication channels to topics and A/B tests.
+
+---
+
+## Sending methods
+
+All the messages sent from Maestra can be grouped into two main categories:
+
+- **Bulk campaigns.** Messages are sent to registered subscribers using filters, segments, or files. For info on how to create bulk email campaigns, please refer [to this article on bulk emails](https://help.maestra.io/en/articles/11898514-how-to-create-a-bulk-email-campaign).
+- **Automated campaigns**. These campaigns are sent only to customers that meet the selected conditions or when a specified API method is performed. The messages are set up in the stages of an automated campaign or an API. For more info on how to create automated emails, please refer to [this guide](https://intercom.help/maestraio/en/articles/11898625-how-to-create-a-trigger-email-campaign).
+
+## Communication channels
+
+You can send messages using the following communication channels:
+
+- Email
+- SMS
+- WhatsApp
+- Viber
+- Mobile push notifications
+- Web push notifications
+
+## Types of topics
+
+You can also create topics in your project. These are basically categories that your campaigns and messages may belong to — for example, promotions, newsletters, or personal offers. All of these topics will be available for every single communication channel:
+
+![01_mestypes](/images/imported/01_mestypes.png)
+
+When you select a topic, messages will only be sent to channel subscribers who opted-in for this specific topic.
+
+## Message profile
+
+By selecting a profile you specify if you’d like to ignore contact validity, subscription status, global control groups (if enabled); specify mailing frequency control for bulk messages (if enabled); or choose whether messages are sent to people with pending subscription confirmation only (if Double Opt-In is enabled).
+
+![02_mestypes](/images/imported/02_mestypes.png)
+
+For automated campaigns, you can select the **Transactional** profile. Transactional messages are sent regardless of the subscription status, contact validity, or their inclusion in the global control group.
+
+These messages are usually important for customers, and they tend to request these messages themselves.
+
+## Demo mode
+
+Every communication channel is a service with its own line in the tariff plan. However, you can also create messages and test them using the demo mode.
+
+Please note that sending emails and messages to customers is only possible once these services have been added to your plan. To do this, please contact your customer success manager.
+
+![03_mestypes](/images/imported/03_mestypes.png)
+
+## Basic settings for campaigns
+
+To send messages, you’ll need to ensure the following settings are in place.
+
+### Email messages
+
+1. You need to register at least one [sender ](https://intercom.help/maestraio/en/articles/11908956-how-to-add-sender-s-email-address)for a project.
+2. You need to generate and [set up DKIM](https://intercom.help/maestraio/en/articles/11909019-setting-up-dkim-and-dmarc) for the sender’s domain.
+3. You cannot send messages before your sender has a confirmed DKIM.
+
+### SMS messages
+
+1. 
+
+### You need to register with a provider with an integrated SMPP protocol.
+2. You should also submit your account details to Maestra to enable communication: logins, passwords, SMPP addresses, and supported sender names (usually one). Our team will then test the integration and register the sender in the project.
+3. Your provider may contact you and ask you to provide Maestra’s IP addresses so that they are included into the whitelist. Please contact your customer success manager for these addresses.
+
+### Viber messages
+
+1. You need to register with a provider with an integrated SMPP protocol.
+2. To enable this connection, you’ll also need to submit your account details to Maestra to enable communication: logins, passwords, SMPP addresses, and supported sender names (usually one). The Maestra team will test the integration and register the sender in the project.
+
+### Mobile push notifications
+
+For the details on how to integrate with Maestra and set up the mobile push channel, please refer to the Mobile Push manual.
+
+### Web push notifications
+
+For the details on how to integrate with Maestra and set up the web push channel, please refer to the Web Push manual.
+
+## A/B testing
+
+A/B testing allows you to compare different message variants in order to test hypotheses on what affects message performance. To do this, your audience will be split into 2 or more groups, depending on how many variants you’re testing.
+
+You may want to test things like subject lines, message contents or sending time. Data is then collected over the period you select for the test. At the end of the test, the remaining subscribers will be sent the winning variant.
+
+You can also add a control group. Customers in this group will not receive any messages.
+
+For more info on A/B testing please read the guide:
+
+**[How to Set up A/B Tests for Emails](https://intercom.help/maestraio/en/articles/11899222-how-to-set-up-control-groups-and-a-b-tests-for-campaigns)**

@@ -1,0 +1,77 @@
+---
+title: "Technical Limitations for Push notifications"
+---
+
+## What are mobile push notification character limits?
+
+The limitation depends on your platform type and your screen size.
+
+The approximate values are:
+
+- push description—1000
+- push title—200
+- text for a button without parameters—20
+- text for a button with parameters—1000
+- URLs (clicks/image)—2000
+
+The total push size for the latest iOS and Android versions is limited to 4Kb.
+
+## How fast are mobile pushes sent?
+
+The total average speed for one project is 1.5 million pushes per hour for both platforms.
+
+If you simultaneously send messages in other channels, this may slow down the sending speed.
+
+## 
+What are image limitations?
+
+Image limitations depend on your SDK version. To check your current SDK version, please consult the mobile app developers.
+
+### For SDK 2.11.0 and later
+
+**iOS**
+
+- JPG and PNG files are supported
+- the recommended file size is up to 5 Mb.
+
+Avoid using long vertical images as the user has to scroll them down to see the bottom part of the image. For example, images with the 2:1 / 16:9 / 4:3 / 1:1 ratios are displayed in full while the ones that have the 1:2 / 9:16 / 2:3 / 5:7 ratios have to be scrolled down.
+
+1:2 ratio image
+
+1:2 ratio image
+
+![](/images/imported/00_mp_Limits.png)
+
+![](/images/imported/01_mp_limits.png)
+
+**Android**
+
+- JPG, PNG, and WEBP images are supported;
+- the recommended file size is up to 5 Mb
+- your image is resized automatically depending on your device width.
+
+We recommend using horizontal images such as 2:1 ones so that your image width matches your text width. If you use vertical images, they will be adjusted to the center and appear smaller in width than your text.
+
+4:1 ratio image
+
+2:3 ratio image
+
+![](/images/imported/02_mp_limits.png)
+
+![](/images/imported/03_mp_limits.png)
+
+### For SDK versions before  2.11.0
+
+**iOS**
+
+- the recommended file size is up to 5 Mb;
+- the images are displayed in 1:1 and 3:2 ratios
+- the number of pixels is limited to 1038 x 1038.
+
+On iOS your images are resized  automatically. If the image size is over 1038 pixels, it is downsized, and the margins are applied to display your image as a square. To avoid this, use the images with up to 1038 pixels in width and less than 1038 pixels in height.
+
+**Android**
+
+- the recommended file size is up to 5 Mb;
+- the aspect size is calculated automatically
+- the recommended ratio is 2:1.

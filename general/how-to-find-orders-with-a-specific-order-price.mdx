@@ -1,0 +1,106 @@
+---
+title: "How to find orders with a specific order price"
+---
+
+You can filter orders by their total amount in different ways: including or excluding discounts, subtracting canceled items or not, or even filtering by the price of each item.
+
+Let’s go through which filters work best for different tasks.
+
+## **Order total price**
+
+Filters in this category include:
+
+- **Order — Base price** (price before discounts, returns, or cancellations)
+- **Order — Order total after discount including refunds** (and cancellations)
+- **Order — Order total after discount excluding refunds **(and cancellations)
+
+![](/images/imported/How-2Bto-2Bfind-2Borders-2Bwith-2Ba-2Bspecific-2Bvalue.png)
+
+We’ll use the following order as an example.
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(2).png)
+
+This order has four items:
+
+- $46.55 ($49.00 before discount) — paid
+- $10.00 ($60.00 before discount) — paid
+- $130.00 ($171.00 before discount) — cancelled
+- $286.85 ($283.00 before discount)  — returned
+
+The order price changes depending on how discounts and returns are considered:
+
+- **Base price - before discounts, excluding returns and canceled items:** $563
+
+![](/images/imported/--2026-02-12--15_48_44.png)
+
+- **Order total after discount including refunds** (and cancellations)**: **$455.40
+
+![](/images/imported/--2026-02-12--16_15_02.png)
+
+- **Order total after discount excluding refunds **(and cancellations): $56.55
+
+![](/images/imported/--2026-02-12--15_54_10.png)
+
+**Note:** Both value boundaries in filters are inclusive.
+
+In some cases, all three values can be equal. For example, if an order has no discounts or canceled items, the total will be the same for all filters.
+
+**Total (any): **$**239.00**
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(6).png)
+
+## **Price per item**
+
+Filters in this category include:
+
+![](/images/imported/--2026-02-12--16_30_05.png)
+
+- **Order **—** Order item — Price** (price per item as submitted when the order was placed before discounts, including returns or cancellations)
+- **Order **— **Order item — Disctounted price** (price per item as submitted when the order was placed after discounts, including returns or cancellations)
+
+---
+
+![](/images/imported/--2026-02-12--16_36_18.png)
+
+- **Order **— **Order item — Product — Price** (current product price from the product feed in Maestra)
+- **Order **— **Order item — Product — Old price** (previous product price from the product feed in Maestra)
+
+#### ** Product vs. order item: What’s the difference**
+
+A **product** is a catalog item. It’s usually uploaded via an XML feed, which keeps pricing and availability up to date. You can find all products in **Customer Data Platform → Products**.
+
+When an item is purchased, the order line includes the product itself, its price at the time of purchase, the discounted price for a specific customer, the quantity, and the status. All of this together forms an **order item**. 
+
+In other words, a product is just one part of an order item. That’s why the product price and the order item price can be different.
+
+For example, a year ago a customer bought a watch for $1,000. Today the same watch costs $2,000. In this case, the **order item price** is $1,000, while the **product price** is $2,000.
+
+**Note:** Item price filters always look at the price per item, not the total for the line.
+
+For example, let's take a loot at this order line and its item. 
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(9).png)
+
+Product card on the platform:
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(11).png)
+
+You can filter:
+
+- **Price per order item before discount:** $49.00
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(13).png)
+
+- **Price per order item after discount:** $46.55
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(14).png)
+
+- **Current product price (from product feed):** $34.99
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(15).png)
+
+- **Old product price at the moment (from product feed):** $49.00
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(16).png)
+
+**Note:** Both value boundaries in filters are inclusive.

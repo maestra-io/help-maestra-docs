@@ -1,0 +1,103 @@
+---
+title: "How to Import Promo Codes into a Project"
+---
+
+Promo codes allow you to create personal offers for your customers, which you can then send via different message channels. In order for these promo codes to be uploaded to message templates, you’ll need to upload them to your project first. After that, the system will be able to give them out via flows.
+
+In short, to import promo codes into a project you’ll have to:
+
+1. Create a new pool of promo codes;
+
+2. Edit pool settings;
+
+3. Activate the pool.
+
+Read on for a detailed description of each of these steps.
+
+# 1. How to import a promo code pool
+
+Open the campaign you’d like to add promo codes to:
+
+![00_promocodes](/images/imported/00_promocodes.png)
+
+Click **Add** → **Promo code pool**:
+
+![01_promocodes](/images/imported/01_promocodes.png)
+
+# 2. How to edit the pool settings
+
+## 2.1. The pool name and general settings:
+
+![02_promocodes](/images/imported/02_promocodes.png)
+
+**Description**: write down any info that you may need to remember on this promo code pool — e.g., why you created it. The Description field is **mandatory** — you cannot activate the pool without it.
+
+**ID**: this will be a unique system title for the pool. This field is filled in automatically, but you can also edit the ID manually.
+
+**Parameter name in the message template builder:** the name of the promo code parameter that will be used to add the promo code to your message.
+
+## 2.2. How to add more promo codes to your pool:
+
+You can add new promo codes manually or generate them in the system.
+
+Use the "generate more codes" button if you’d like the platform to generate promo codes for you. If you’d like to upload more codes manually, please note that the "generate more codes" button will become inactive after the first upload.
+
+## Manual import
+
+1. Download the **Manual code import template:**
+
+![03_promocodes](/images/imported/03_promocodes.png)
+
+2. Get your file ready:
+
+![04_promocodes](/images/imported/04_promocodes.png)
+
+If a third-party system is responsible for promo code redemption, you can leave the "Code" column and remove the rest.
+
+**Issue-start** and **issue-end** specify when to assign the promo codes.
+
+**Available-from** and **available-till** are dates and times the promo codes are active and can be used.
+
+3. Upload the file.
+
+If a task number appears under the **Codes import history**, this means the codes are being imported. Please wait until the task has been completed:
+
+![05_promocodes](/images/imported/05_promocodes.png)
+
+Once the task is complete, the status will be updated. Click the task number to display the task completion report:
+
+![06_promocodes](/images/imported/06_promocodes.png)
+
+Use the "**Notify when code amount is below**" checkbox to send an automatic notification to all subscribed staff members when promo codes start running out. Uncheck this option to disable notifications.
+
+4. Click **Save**.
+
+## How to generate promo codes
+
+We go into more detail on generating promo codes in this article.
+
+### Manual import using the text box
+
+Type in your promo codes and click **Upload**:
+
+![07_promocodes](/images/imported/07_promocodes.png)
+
+## 2.3. Usage settings
+
+![08_promocodes](/images/imported/08_promocodes.png)
+
+Use the **"Check that code was issued to customer before activation"** checkbox to ensure that a promo code can be redeemed only after it has been assigned to a customer. This measure protects from fraud and brute force attacks. Codes can be marked as issued using the API, flow, or the Maestra UI.
+
+Once this option is enabled, the system will ask for the **Validity period** for an assigned promo code.
+
+**Processing** can be carried out externally or in Maestra.
+
+**Codes can be used multiple times:** if you check this option, you will not be able to undo this after the pool has been activated.
+
+You cannot simultaneously select "Code was issued before activation" and enable the multiple use option. These options are mutually exclusive.
+
+# 3. How to activate your pool
+
+Once you’ve finished editing, click **Launch** to make the pool accessible in the database:
+
+![09_promocodes](/images/imported/09_promocodes.png)

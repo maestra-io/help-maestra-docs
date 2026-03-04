@@ -1,0 +1,96 @@
+---
+title: "API v3 Methods: Basics"
+---
+
+API v3 methods are responsible for real-time data exchange between third-party systems (e.g. your CRM, ERP, POS, etc.) and Maestra.
+
+# API v3 methods feature
+
+- An API call constructor;
+- Document automation;
+- An exception History Log;
+- Integration status check;
+- Notifications on exceptions and aborted method calls.
+
+# Key features of API v3 methods
+
+API v3 methods can perform a variety of tasks, including
+
+1. Customer base management:
+
+- Adding new customers (registration, import, subscription);
+- Getting data personal data, IDs, subscriptions, bonus points balance, associated segments, etc;
+- Editing customer profiles;
+- Sending details of customer actions: viewing pages, adding items to the cart, placing orders, etc.
+
+2. Creating and updating orders.
+
+3. Getting data for website personalization.
+
+4. Exporting and importing data to sync customer’s profiles in the business system and Maestra.
+
+# How to Create an API v3 Method
+
+1. Go to **Campaigns** → **Campaign manager** and select the campaign in which you want to create your API v3 method:
+
+![apiV3_1](/images/imported/apiV3_1.png)
+
+2. Click **Add** → **API Method**:
+
+![apiV3_2](/images/imported/apiV3_2.png)
+
+3. Fill in the fields. For example:
+
+![apiV3_3](/images/imported/apiV3_3.png)
+
+4. Select relevant values for the settings:
+
+- Select the relevant API endpoint. This can be a website, landing page, POS, or mobile app. You can select multiple endpoints, but make sure they all have the same settings.
+- If **"API method requires DeviceUUID"** is checked, the DeviceUUIDs will be required for API method calls.
+- If "**API method requires a secret service key**" is checked, the data transfer or editing will not be limited for calls of an API method with a secret key. However, it won’t be possible to call the API method using a JS tracker.
+- If "**API method returns validation errors**" is checked, detailed information on the processing errors will be returned, handled by your system, and reported to your customer — for example, if the customer tries to register with an invalid email.
+
+5. Select the steps for your API method — for example, register a customer, place an order, or send a transactional email:
+
+![apiV3_4](/images/imported/apiV3_4.png)
+
+6. Click **Add**:
+
+![apiV3_5](/images/imported/apiV3_5.png)
+
+7. Click **View description**:
+
+![apiV3_6](/images/imported/apiV3_6.png)
+
+The Method description page contains a description of the request, data transfer formats, and supported data types: the request body, description of the fields, and examples of requests and responses.
+
+The system generates a specification based on selected steps and project settings:
+
+![apiV3_7](/images/imported/apiV3_7.png)
+
+# The synchronous and asynchronous mode for API method calls
+
+Depending on the settings, you can call the API method in the synchronous or asynchronous mode. Refer to the method description for the available request options.
+
+- **Requests in the async mode** ​ Maestra processes data in series. The relevant response returns the message that the call was successfully placed in the queue. Requests in the async mode are applied to the most frequent API methods for which you don’t have to wait for a response.
+Examples: product browse, category browse, and adding products to the cart or a wishlist. To analyze received errors, refer to the Integrations monitoring section.
+- **Requests in the sync mode** ​ Maestra runs an API method in real time and returns the results. Use an API method in the sync mode when you need the requested data from Maestra or method execution results.
+For error descriptions, refer to the response message body or the method’s error log.
+
+# The API methods can be called in the sync mode only if
+The "**Include data in operation response**" or "**API method returns validation errors**" checkbox is ticked:
+
+  ![apiV3_8](/images/imported/apiV3_8.png)
+
+# What a DeviceUUID is and why it is passed in the API
+A [DeviceUUID](https://intercom.help/maestraio/v1/docs/what-is-a-deviceuuid) is a unique device identifier for a browser or a mobile app. Maestra uses it to record the customer’s device and later to track all the customer’s actions. A special JS tracker provided by Maestra generates DeviceUUIDs.
+**With a DeviceUUID you can:**
+- Save the action history of anonymous customers. Without the DeviceUUID, session data is lost after 30 minutes of inactivity;
+- Track when the session ends and trigger relevant events;
+- Deduplicate customer profiles in the database by merging them, based on their DeviceUUIDs.
+
+# Debug integrations and analyze errors
+Where to view errors?
+1. The **API health status page** contains the list of all API methods with the number of related errors.
+2. The **API error logs** page — API error logs contains the list of API method calls with errors.
+3. Method response analysis: select the "**Include data in operation response**" or "**API method returns validation errors**" checkbox, and you will be able to analyze errors in a relevant method response.

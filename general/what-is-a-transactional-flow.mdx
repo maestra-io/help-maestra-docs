@@ -1,0 +1,34 @@
+---
+title: "What is a transactional flow?"
+---
+
+Ranked highest in an event processing queue, a transactional flow, as its name suggests, sends transactional messages.
+
+## How to create a transactional flow
+
+Creating a transactional flow doesn't mean the entire process has to be transaction-focused – you can select a specific section that will be given priority. When setting up a transactional flow, ensure it contains the following:
+
+1. **Triggering Event**: This could be any event, such as "Order added or changed", "Order status changed", "Authorization code requested", "Customer registered", "Subscription status updated" or "Customer custom field value has changed". ​
+2. **High Priority API Method**: The event must originate from an API method marked as "High Priority." ​
+3. **Waiting Period:** You can select a timed or fixed waiting that does not exceed 5 minutes.Note that any delay selected here does is not accounted for when calculating the guaranteed processing speed. ​
+4. **Steps Node:** This includes sending transactional communications via Email, SMS, or Mobile Push notifications, or executing a "Balance - Edit" step. ​
+5. **Sequences:** You can employ up to three consecutive transactional step nodes. The timing for each the segment is calculated separately. ​
+6. **No “Split” Node:** Split nodes are not allowed within transactional flows.**Example:**
+
+  ![00_transactional_workflow](/images/imported/00_transactional_workflow.png)
+The flow above is labeled as transactional; the green lines connect its nodes.
+You can also create a partially transactional flow.
+**For example:**
+
+  ![01_transactional_workflow](/images/imported/01_transactional_workflow.png)
+The first section of the flow ranks higher, while the node with a fixed time delay makes the other part of the flow non-transactional.
+If you use a transactional campaign but the flow has not been labeled as transactional, hover over the flash icon to see which nodes are preventing this from happening.
+**For example:**
+
+  ![02_transactional_workflow](/images/imported/02_transactional_workflow.png)
+
+## How a transactional flow works
+A flow is determined as transactional and prioritized in the event processing queue if API calls transmit events such as new added orders or changes to order data or status.
+A flow will not be prioritized in the event processing queue if:
+- new orders or order changes are added via import;
+- order statuses are changed manually by users via the interface.

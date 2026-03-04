@@ -1,0 +1,80 @@
+---
+title: "Attribution model"
+---
+
+**Changes in the attribution model**
+- Maximum attribution window is 30 days;
+
+- Individual campaigns can be excluded from attribution;
+
+- Clicks are traceable actions in all channels, except for sms where you can track clicks or deliveries based on the settings;
+
+- Deleting customer data does not affect revenue metrics;
+
+- Campaigns attribution does not intersect with website personalization and In-App personalization flows;
+
+- Lead forms do not take away conversions from notification campaigns.
+
+# What is attribution model and when to use it
+
+- **Attribution** is a set of rules that determine whether a target action occurred as a result of marketing campaigns and, if so, which ones.
+
+- A [Goal](https://intercom.help/maestraio/en/articles/11899963-goals) is a desired customer action. Campaigns are launched to increase the performance of this metric. A goal can be set as an order in any status and touchpoint.
+
+Attribution allows you to evaluate the effectiveness of channels and campaigns in meeting your goals, allowing you to make decisions on how to allocate the marketing budget across different activities.
+
+# Attribution model
+
+**We use the last-non-direct-touch attribution model** - the order is attributed to multiple touchpoints based on the last indirect interaction within each channel group (campaigns, website forms and pop-ups, In-App).
+
+Meaning, that If there were several campaign interactions before the order, the order will be attributed to the last campaign within each channel group (campaigns, website forms and pop-ups, In-App) using the following **rules**:
+
+- Attribution model measures which campaigns the customer clicked last across all communication channels, except for SMS, you can track clicks or deliveries based on the settings. ​
+- The order is attributed to a campaign when: - The order matches the settings (status and first action touchpoint) determined by the selected goal; - Number of days passed between the campaign interaction and the order first action is less than specified in the attribution settings; - There are no other website visits between the campaign interaction and the order first action, except for direct visits (entering a link in the address bar or using bookmarks) or visits with `utm_source=maestra`.
+- Orders are not attributed: - To campaigns excluded in the attribution settings; - To lead generation forms and pop-ups;**Deleted data** does not affect revenue metrics and conversion.
+
+# Attribution settings
+Go to **Settings** → **System **→ **Goals and attribution settings** and select tab **Attribution**:
+
+  ![00_Attribution.png](/images/imported/00_Attribution-281-29.png)
+- **Attribution window** (1 to 30 days) - maximum number of days between campaign interaction and order first action.- **Do not attribute goals to campaigns** - transactional or other campaigns that do not affect conversion rate and should not take over revenue from other marketing campaigns. For example, an SMS with an authorization code at a checkout or double opt-in email.- **Goal** settings are on the next tab:
+
+  ![01_Attribution](/images/imported/01_Attribution.png)
+Every project has an automatically created default goal ”Orders” that includes orders in status categories “Placed”, “Paid”, “Delivered” across all touchpoints. You can create up to 5 goals selecting the desired category status and touchpoints.
+Update schedule:- Last 30 days' data — daily by 09:00;- Last 2 years days' data — every Monday by 09:00 if a new goal is created or an attribution is edited.
+
+# Where to find attributed revenue
+
+## Reports
+
+Attribution allows you to evaluate the effectiveness of channels and individual campaigns in meeting goals, and based on the results - to allocate the advertising budget.
+- **Goals report** - lets you track your goals and the impact of channels on goals. Choose a revenue driver to see the attributed revenue to every channel.
+
+  ![02_Attribution](/images/imported/02_Attribution.png)
+- **Campaigns report** - lets you see how each campaign impacted a chosen goal.
+
+  ![03_Attribution](/images/imported/03_Attribution.png)
+- **Website campaigns report** - lets you see how each notification campaign impacted a chosen goal.
+
+  ![04_Attribution](/images/imported/04_Attribution.png)
+
+## Filters
+Filters can be used to select specific orders attributed to campaigns.
+- Filter “Associated with campaign”:
+  ![05_Attribution](/images/imported/05_Attribution.png)
+
+- Filter “Associated with flow”:
+  ![06_Attribution](/images/imported/06_Attribution.png)
+
+## Export
+When you add an attribution flag to the export settings, campaigns that triggered the conversion are added to the file.
+
+  ![07_Attribution](/images/imported/07_Attribution.png)
+
+## Why data from an external analytics system might not match data from Maestra reports
+1. The external analytics systems might not account the fact of cancelations and returns of orders, i.e. statistics is generated based on the order value immediately after the order is placed. In Maestra you can configure the exclusion of such orders through setting up [goals](https://intercom.help/maestraio/en/articles/11899963-goals) - in this case they are not included in reports and not accounted in the final revenue.
+2. If the loyalty program is connected, you need to compare the amounts that are transferred to Maestra and to the external analytics system: the cost of the order with promotions is transferred to Maestra, other systems may have other settings.
+3. If the loyalty program is connected, you need to compare the amounts that are transferred to Maestra and to the external analytics system: the cost of the order with promotions is transferred to Maestra, other systems may have other settings.
+4. If the difference is significant, then there may be possible issues in the integration, namely with the installation of the tracker, or fake orders (an order for a large amount of money, much beyond the average check). You need to make sure that Maestra tracker is installed on the website.
+5. If there are fewer orders in Maestra than in the site database or transferred to GA, you need to check the integration on the project - that order data that is transferred to GA is transferred to Maestra, and vice versa. Check that there are no order placements that Maestra does not know about (calls of order placement/change operations are not transferred to the project), for example, the order placement comes from a popup, data is transferred to GA, but the operation for data transfer to us is not configured.
+6. In Maestra, you can limit the attribution window - orders that are placed after a specified number of days will not be included in the campaigns' report. An external system may not have such restrictions or they may have other values.

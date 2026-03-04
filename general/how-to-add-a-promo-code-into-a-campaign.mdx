@@ -1,0 +1,40 @@
+---
+title: "How to add a Promo Code into a Campaign"
+---
+
+You will be likely to send promo codes to your customers.
+
+# There are two ways to do that:
+
+1. Add a promo code into a message as a custom dynamic parameter.
+
+Create a file with identifiers of the customers that contains a promo code for each customer. Follow the guidelines to create a file and send a message using it. This way is convenient if you need to send promo codes only once.
+
+2. Create a pool of promo codes, issue them to customers, and add them into messages. It is useful if you need to regularly issue promo codes manually or automatically.
+
+## Let’s have a closer look at the second way:
+
+1. Follow the [guidelines](https://intercom.help/maestraio/en/articles/11899917-how-to-import-promo-codes-into-a-project) to create a pool of promo codes.
+
+The pool must be marked as "Can be used" in the UI.
+
+2. Issue promo codes to your customers:
+
+- manually (follow the guidelines)
+- in a flow/ API method
+
+3. Add a dynamic content message template parameter to the text of your message to send the last received promo code from a pool to each customer.
+
+Template:
+
+```
+`${Recipient.LastReceivedPromoCode.WithTypePool.Value}`
+```
+
+where "Pool" is a system name of your pool of promo codes.
+
+For example, a message template parameter for the following pool:
+
+![00_addpromocode](/images/imported/00_addpromocode.png)
+
+will be: **$\{Recipient.LastReceivedPromoCode.WithTypeBirthdaypromocodes.Value\}**

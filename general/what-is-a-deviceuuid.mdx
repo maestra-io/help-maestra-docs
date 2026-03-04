@@ -1,0 +1,142 @@
+---
+title: "What is a DeviceUUID?"
+---
+
+A DeviceUUID is a unique identifier of a browser or mobile app. It helps you record users’ actions on your website and in mobile apps.
+
+# How to find your customer’s DeviceUUID
+
+1. Go to **Database** → **Customers** and open the customer’s profile. Click **All devices:**
+
+![all devices.png](/images/imported/all-20devices.png)
+
+2. Open the browser tab:
+
+![device.png](/images/imported/device.png)
+
+DeviceUUIDs for browsers and mobile apps are different — let’s go into more detail on each.
+
+# Browser DeviceUUIDs
+
+## How a browser DeviceUUID is generated
+
+When a user visits your website for the first time, our JS tracker generates and assigns a unique DeviceUUID to the specific browser they are using to visit the website. This means that two browsers on the same device will be assigned two different DeviceUUIDs.
+
+As sessions are recorded once they are closed (30 minutes after the last action) a DeviceUUID may be generated with a small delay.
+
+If the DeviceUUID was transferred using API methods only, you won’t see this ID in the customer’s profile, despite the customer’s device being identified.
+
+## Updates to the DeviceUUID
+
+The system resets the DeviceUUID if the user deletes all cookies and local storage.
+
+The system does not reset the DeviceUUID after the user clears the cache or starts a new session.
+
+## A DeviceUUID is designed to:
+
+— Track the start and the end of a session, launch a flow for these events
+
+— Record anonymous actions and record them in Maestra’s action history after the customer registers: for anonymous customers, the system uses DeviceUUID to track their actions on the website
+
+— Show recommendations to anonymous and identified customers.
+
+## The following API methods require a DeviceUUID:
+
+— When the system transmits event data from the website (item browse, category browse, adding items to the cart, etc). A DeviceUUID allows to more accurately identify customers (even those who were not authorized in this session) and to track the session lifetime.
+
+This is why the system needs a DeviceUUID upon user authentication — to sync the authenticated user with an anonymous one.
+
+— When the backend system transmits event data. With a DeviceUUID, the system can record the session and sync frontend data with that of the backend.
+
+— API methods that work with web push notifications (methods that subscribe customers and validate whether a customer has a subscription).
+
+— The system may request a DeviceUUID for other API methods that are used in various business tasks. To enable DeviceUUID transfer, check the following option in the API method’s settings:
+
+![api device.png](/images/imported/api-20device.png)
+
+## Is a DeviceUUID always generated?
+
+Yes, if the tracker has been added to the website and initialized.
+
+However, the system will not generate DeviceUUIDs for browsers with an ad-blocker installed or JavaScript disabled. In these cases, the tracker is blocked and frontend events cannot be logged in the system.
+
+## To check whether the tracker is installed:
+
+Open developer tools, go to the Elements tab, and look for the following script:
+
+```
+`<script src="https://api.maestra.io/scripts/v1/tracker.js" async></script>`
+```
+
+### To check whether the tracker has been initialized:
+
+Open developer tools, go to the Console tab, type in ’maestra’, and click apply.
+
+If the system shows you the "Uncaught ReferenceError: maestra is not defined" message, the tracker has not been initialized.
+
+## How to find a DeviceUUID in a browser:
+
+Open developer tools on the target website, click on the **Application tab**, and go to the **Cookies** section. Next, select the website and find the **maestraDeviceUUID** line:
+
+![cookies.png](/images/imported/cookies.png)
+
+# FAQ
+
+## How to transmit data to the backend system:
+
+Cookies are transmitted to the website backend system, so the DeviceUUID can be collected from there.
+
+## Does the system store DeviceUUIDs of anonymous customers (and why)?
+
+Yes, the system stores this data so that it can upload customers’ actions when they register.
+
+For more information, please refer to this article.
+
+## What if an API method requires a DeviceUUID that was not transferred?
+
+The API method will be completed with an error.
+
+The only exception is when a customer is identified only by DeviceUUID. In this case, the API method will not be completed.
+
+## What if an API method does not require a deviceUUID but it was transferred?
+
+The API method will be completed with an error.
+
+## How does the system generate a DeviceUUID in incognito mode?
+
+A new DeviceUUID is generated every time.
+
+## Does the system generate different DeviceUUIDs for different websites?
+
+No, there is one DeviceUUID for all websites.
+
+## Do DeviceUUIDs work the same in mobile browsers?
+
+Yes, the same rules apply.
+
+# Mobile app DeviceUUIDs
+
+A DeviceUUID can also be a unique identifier of a mobile app on a device. The system generates it when the SDK is first launched on a device.
+
+DeviceUUIDs are always transferred when apps request API methods. If data is transmitted using the backend system, DeviceUUIDs are optional.
+
+## iOS
+
+iOS apps can insert one of the following three values into a DeviceUUID:
+
+- **DFA**: an advertising identifier of a device. This code is generated by the phone OS. All apps on the same device get the same value. An IDFA value is generated when the user agrees to receive notifications. The user can download the AppsFlyer app to find this ID on their device.
+
+- **IDFV**: a device identifier for vendors generated by the device OS. This is a code assigned to all apps developed by the same vendor. Therefore the IDFV is the same for apps made by the same developer and differs between apps made by different developers. The user can download the AppsFlyer app to find this ID on their device.
+
+- An ID generated by Maestra. This is unique for each app. If IDFAs cannot be collected the system assigns IDFVs. If IDFVs are unavailable, the system inserts the IDs generated by Maestra.
+
+## Android
+On Android, an advertising ID is inserted into a DeviceUUID.
+This advertising ID is the device identifier generated by the device OS for advertisers. All apps on the same device get the same ID. An advertising ID can only be generated if ad tracking has not been disabled in the device settings.
+If a phone user disables ad tracking (in Settings > Privacy > Ads), access to this data may be denied. As soon as ad tracking is enabled, the system will generate a new advertising ID. However, the DeviceUUID for the project will remain the same. The change in the advertising ID does not affect web push notifications.
+If an advertising ID is unavailable, the system inserts an ID generated by Maestra.
+
+## Can the DeviceUUID change?
+The device memory stores the DeviceUUID and does not change it until an app is deleted.
+If this app is reinstalled, the device will continue using the old DeviceUUID, provided that the code was generated using an advertising ID.
+If the DeviceUUID was generated using an SDK, a new code will be generated.

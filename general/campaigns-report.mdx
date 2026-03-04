@@ -1,0 +1,96 @@
+---
+title: "Campaigns Report"
+---
+
+Campaign reports allow you to:
+
+- View a performance funnel for campaigns over a selected period: sends, delivery rate, open rate, click rate, unsubscribe rate, and conversion rate.
+- Compare campaigns with each other.
+- Group campaigns by folders, channels, or categories, and drill down into metrics of specific campaigns.
+- Track campaign performance daily, weekly, or monthly. ​Campaign statistics are updated in real time, while [attribution](https://help.maestra.io/en/articles/11900080-attribution-model) data is recalculated once a day.You can find this report under **Analytics → Campaigns**.
+
+  ![](/images/imported/Campaigns-report.png)
+
+## **Report settings** 
+By default, the report shows all campaigns for the last three months, grouped by month, with the goal set to **Orders**.
+- **Time period:** Set the range manually or use date presets (last week, last month, last six months). The end date is inclusive.
+  ![](/images/imported/Campaigns-report-(1).png)
+- **Campaign selection:** Choose specific campaigns or group them by channel (Email, SMS, Viber, Mobile Push, Web Push), type (bulk, automated, transactional), folder, tags, or brand.
+  ![](/images/imported/Campaigns-report-(3).png)
+- Select a [goal](https://help.maestra.io/en/articles/11899963-goals): which order categories and statuses to include in the revenue report. The default goal “Orders” covers statuses such as *Created*, *Paid*, and *Delivered*.
+  ![](/images/imported/Campaigns-report-(4).png)
+There are two types of Dashboard mode:
+1. **Summary ** — general statistics for the selected period.
+2. **Detailed** — performance trends over time, broken down by day, week, or month.
+
+## Summary mode
+
+  ![](/images/imported/Campaigns-report-(5).png)
+
+## **Metrics description **
+
+- **Sent** — number of messages actually sent during the selected period.
+  - **Out of X messages **— number of messages queued for sending. Some may not be sent if a contact or subscription is missing.
+- **Delivery rate** — percentage of delivered messages out of total sent during the selected period.
+  - **Delivered** — number of messages successfully delivered (calculated as sent minus undelivered).
+- **Open rate** — percentage of opened messages out of delivered during the selected period.
+  - **Opened** — number of messages opened.
+- **Click rate** — percentage of messages with at least one click out of delivered during the selected period.
+  - **Clicked** — number of messages with at least one click.
+- **Unsubscribe rate** — percentage of messages where a recipient unsubscribed out of delivered during the selected period.
+  - **Unsubscribed** — number of messages where recipients unsubscribed.
+- **Spam rate** — the percentage of delivered messages where the recipient marked the message as spam and unsubscribed during the selected period.
+  - **Spam complaints** — number of messages marked as spam.
+- **Bounce rate** — percentage of undelivered messages due to invalid or inactive email addresses, out of total sent during the selected period.
+  - **Bounced messages** — number of undelivered messages due to invalid or inactive addresses.
+- **Conversion rate **— percentage of conversions toward the selected goal, out of delivered messages.
+  - **Conversions** — number of attributed orders for the selected goal.
+- **Revenue (First touch in range)** — total revenue from orders attributed to delivered messages during the period.
+  - **Average order value** — revenue from conversions divided by the number of conversions.The table below shows these metrics for each campaign and also includes:
+- **Campaign content details:** subject, template, heatmap;
+- **Technical information:** start date,  campaign folder, type, tag, brand;
+- **Revenue per recipient:** total campaign revenue divided by the number of delivered messages.
+
+## **Detailed mode**
+
+  ![](/images/imported/Campaigns-report-(6).png)
+At the top of this report, you’ll see performance metrics over the selected period:
+- **Revenue** — total revenue for the goal from [attributed](https://help.maestra.io/en/articles/11900080-attribution-model) orders completed during the selected period.
+  - **Number of orders ** — number of attributed orders for the goal completed during the selected period.These metrics are based on orders placed during the selected period. Note that an order attributed to a campaign may be linked to a campaign sent before this period.Other metrics follow the same logic as in the [Summary report](#h_54be88c441).
+- **Campaign actions:** sends, deliveries, opens, clicks, unsubscribes, including spam rate and bounce rate.
+- **Goal conversions:** number of [attributed](https://help.maestra.io/en/articles/11900080-attribution-model) orders, their share of delivered campaigns, total revenue, and average order value.
+
+## **Charts**
+To customize a chart:
+1. Click on a metric at the top of the report.
+2. Select how to group results: daily, weekly, or monthly.
+  ![](/images/imported/Campaigns-report-(7).png)
+Absolute values are shown as bar charts on the right side. Percentages are shown as line graphs on the left side.
+
+  ![](/images/imported/Campaigns-report-(8).png)
+Hover over a point to see detailed results for that interval.
+
+  ![](/images/imported/Campaigns-report-(9).png)
+Below the chart, you can find a breakdown of all metrics by the selected interval. You can also expand rows to view results for specific campaigns.
+To group by folders, use the toggle switch.
+
+  ![](/images/imported/Campaigns-report-(11).png)
+
+## **Data deletion and reports**
+
+- Automatic deletion of events and customers does not affect reports — data remains available.
+- Deleting campaigns also does not remove them from reports; they stay visible but are marked as deleted.
+- Manual deletion of customers or events **within the last three months** will affect reports (e.g., sends and other metrics will decrease). Deleting events older than three months does not affect reports.
+
+## **Exporting reports**
+**Export to CSV from the interface**
+
+1. Select the report type, time period, campaigns, and goal. For detailed dashboard mode, also select the time grouping. ​
+2. Click **Export to .csv**.
+  ![](/images/imported/Campaigns-report-(12).png)
+Summary report example:
+
+  ![](/images/imported/Campaigns-report-(13).png)
+Detailed report example: 
+
+  ![](/images/imported/Campaigns-report-(14).png)

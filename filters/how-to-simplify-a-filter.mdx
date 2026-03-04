@@ -1,0 +1,130 @@
+---
+title: "How to Simplify a Filter"
+---
+
+Some filters cannot be updated in real time. In this case, you will see a notification saying: The filter you have built has been running for a long time. Try creating a scheduled segment.
+
+## Here’s what you can do to simplify a filter.
+
+If you need to search for customers with orders, try following these steps: go to **Database** → **Customers**, click **Add condition** and go to** Actions** → **Customer action** → **Orders** and **Product lists** → **Order** → **Additional information** → **First action information **instead of selecting **Add condition** → **Actions** → **Customer action** → **Orders and products** → **Order** → **Order first action**:
+
+**Before**
+
+**After**
+
+![](/images/imported/00_simplify_a_filter-(1).png)
+
+![](/images/imported/01_simplify_a_filter.png)
+
+---
+
+A search by quantity is more complex than the At least one condition. Therefore, try using the At least one condition instead of Set quantity → From 1:
+
+**Before**
+
+**After**
+
+![](/images/imported/06_simplify_a_filter.png)
+
+![](/images/imported/07_simplify_a_filter.png)
+
+---
+
+If you’re creating a filter for orders with specific product categories and it’s taking a while to load, try creating a Scheduled or Static segment for these products and add it to your filter:
+
+**Before**
+
+**After**
+
+![](/images/imported/08_simplify_a_filter.png)
+
+![](/images/imported/09_simplify_a_filter.png)
+
+---
+
+You can also speed up your search for balance updates: add your conditions for the bonus points account, the action template, and / or the period of a relevant update.
+
+You can specify the balance update actions by its name or category:
+​
+
+**Before**
+
+**After**
+
+![](/images/imported/10_simplify_a_filter.png)
+
+![](/images/imported/11_simplify_a_filter.png)
+
+---
+
+If you need a search for orders placed during a specific timeframe in the Actions tab, go to Database → Actions, click Add condition → Orders and products → Order → Order item → Order → Additional information → First action information:
+
+**Before**
+
+**After**
+
+![](/images/imported/12_simplify_a_filter.png)
+
+![](/images/imported/13_simplify_a_filter.png)
+
+---
+
+If your filter for actions cannot be created and you cannot simplify it, try filtering using a Scheduled segment for customers with the actions from the initial filter:
+
+**Before**
+
+**After**
+
+![](/images/imported/14_simplify_a_filter.png)
+
+![](/images/imported/15_simplify_a_filter.png)
+
+---
+
+If a segment cannot be calculated and your filter has multiple conditions, try to determine if there are any particularly difficult ones that may be slowing things down. To do this, apply your conditions one by one:
+
+![16_simplify_a_filter](/images/imported/16_simplify_a_filter.png)
+
+If your filter cannot be calculated, you can add some of its conditions as a Scheduled segment. This is because Scheduled segments are ready-to-use when you add them to the filter.
+
+## Reasons why a filter cannot be calculated
+
+Whether a filter can be calculated or not depends on the three factors:
+
+* filter conditions;
+
+* the amount of data that fits these conditions;
+
+* the database workload volume at the time when you’re creating the filter.
+
+1. **Filter conditions**
+
+Let’s take a closer look at this example:
+
+![17_simplify_a_filter](/images/imported/17_simplify_a_filter.png)
+
+To find customers that fit these conditions, system must filter them in two separate lists: those with orders and those with a subscription that matches the one selected. After that, the system will compare these lists.
+
+The more customers / orders / topics the database contains, the more data will have to be processed by the filter, and therefore the longer it will take for the selection to be completed.
+
+If you add a new condition — for example, First action information — the filter becomes more complex, because it must now search through an additional list of actions and merge the results with the data found at the previous step.
+
+Therefore, the more entities your filter includes and the more data for these entities the database contains, the more complex your filter is.
+
+** 2. Volume of data**
+
+If a Realtime filter often displays a notification that suggests building a Scheduled segment, this is an indicator that a large volume of data has built up in your project’s database.
+
+![18_simplify_a_filter](/images/imported/18_simplify_a_filter.png)
+
+To help everything work smoother, you can delete some of this data. Actions can be deleted automatically and other entities can be deleted manually.
+
+**What happens if you choose not to delete your data?**
+
+In this case, please keep in mind that your filters may work slower. Some of them will no longer be updated in real time and you will have to replace them with Scheduled segments.
+
+** 3. Database workload**
+
+Database resources are limited. Filters share these resources with other features in the system, including messages, triggers, imports and exports, multiple API method calls, etc.
+
+All of these can be quite heavy on the system, which in turn can affect how filters work — so they may be slower during peak hours and speed up when workload volumes from other system operations are lower.

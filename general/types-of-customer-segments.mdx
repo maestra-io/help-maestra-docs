@@ -1,0 +1,176 @@
+---
+title: "Types of Customer Segments"
+---
+
+You can create the following three types of customer segments:
+
+- Filter-based Scheduled segments
+- Filter-based Realtime segments
+- Static segments
+
+## 1. Filter-based Scheduled segment
+
+Key points:
+
+- You can see a full history of when customers were added to the segment or removed from it.
+- An event when a customer is added to / removed from a segment can be used to launch automations.
+- This segment can be used in promotions.
+- It can be used for a dynamic overview in reports like Global control group, Turnover and repeat orders, and A/B test reports.
+- These segments provide data that is relevant as of the latest update (i.e., not in real time)
+
+### How to create a Scheduled segment
+
+Please refer to this guide for a detailed breakdown — [How to Filter Customers into Segments](https://intercom.help/maestraio/en/articles/11887995-how-to-filter-customers-into-segments)
+
+Once you've created a Scheduled segment, you can’t switch it to Real-time. You’ll need to create a new one instead.
+
+### Adding customers to a Scheduled segment
+
+A customer must match the filter conditions you applied to create the segment.
+
+Once a customer meets these conditions, they will be added into the segment the next time the segment is updated.
+
+If you need to add a customer to your segment without waiting for the next update — for example, if they already meet the filter conditions but haven’t been included yet due to the scheduled update time select the segment and click the **Edit** button:
+
+![02_segments](/images/imported/02_segments.png)
+
+Then tick the **Update segment** checkbox and click **Save**:
+
+![03_segments](/images/imported/03_segments.png)
+
+### Removing customers from a Scheduled segment
+
+A customer should no longer meet the filter conditions of the segment group. In this case, the customer will be removed next time the segment is updated.
+
+If a customer no longer meets the segment’s filter conditions but is still included because the segment hasn’t updated yet, click the **Edit** button, tick the **Udpate segment** checkbox and click **Save** (as shown in the screenshot above).
+
+### How a Scheduled segment is displayed in a customer’s profile
+
+Go to **Customer Data Platform**→ **Customers**, select the relevant customer and go to the **Segments** tab, then click **Current segments**:
+
+![04_segments](/images/imported/04_segments.png)
+
+In the **Segment history**, you will find the date the customer was added to the segment group:
+
+![13_segments](/images/imported/13_segments.png)
+
+If the customer has been removed from the segment, you will see the date they were removed as well.
+
+### How to filter customers that belong to a Scheduled segment
+
+Select **Segment** in the filter and then search for your segment name in the drop-down list. The data displayed is correct as of the time of the last update:
+
+![06_segments](/images/imported/06_segments.png)
+
+If a segment uses other scheduled segments, the last update will be taken from the segment with the "oldest" recalculation.
+
+Use the drop-down list to filter the customers who:
+
+- don’t belong to this segment;
+- belonged to this segment on a certain date in the past;
+- were added to this segment during a specific period;
+- have never belonged to this segment.
+
+![07_segments](/images/imported/07_segments.png)
+
+## 2. Filter-based Real-time segment
+
+## Key points:
+
+- They keep data updated;
+- Segment history is not available;
+- Segment may take a while to load if it is based on complex filters. The system may suggest creating a Scheduled segment instead.
+
+### How to create a Real-time segment group
+
+Please refer to this guide for a detailed breakdown — [How to Filter Customers into Segments](https://intercom.help/maestraio/en/articles/11887995-how-to-filter-customers-into-segments)
+
+Once you've created a Real-time segment, you can’t switch it to Scheduled. You’ll need to create a new one instead.
+
+### Adding customers to a Realtime segment
+
+A customer must match the filter conditions applied to this segment group.
+
+### Removing customers from a Realtime segment group
+
+Once a customer no longer matches the filter conditions applied to the segment, they will be removed from it automatically.
+
+### How a Realtime segment group is displayed in a customer’s profile
+
+The realtime segment does not display in a customer’s profile.
+
+The segment history does not display whether a customer has been added to a segment or removed from it.
+
+Use filters to check belonging to a realtime segment.
+
+### How to filter customers that belong to a Realtime segment
+
+Simply create a filter in the **Customers tab**. Select **Segment** and search for the segment name in the drop-down list:
+
+![00_segments](/images/imported/00_segments.png)
+
+### How to filter customers that do not belong to a Realtime segment
+
+Here you’ll also need to create a filter in the Customers tab.
+
+Select **Segment **→ **Segment not** and search for the segment name in the drop-down list:
+
+![01_segments](/images/imported/01_segments.png)
+
+## 3. Static segments
+
+This segment **will not** support filters and **can only be updated manually or through flows**.
+
+## Key points:
+
+- You can see a full history of when customers were added to the segment or removed from it.
+- Events where a customer is added or removed from the segment can be used to **launch automations**.
+- Events where a customer is added or removed from the segment can be an **automation step**.
+- Events where a customer is added or removed from the segment can be an API method step.
+- These segments can be used in promotions.
+- Static segments can be used for a dynamic overview in reports like: Global control group, Turnover and repeat orders, and A/B test reports.
+
+### How to create a Static segment
+
+Unlike filter-based segments, you need to manually create a segmentation first and then build segments from there.
+
+This means your segments and segmentation may have different names and one segmentation may have multiple segments.
+
+For more details, please refer to this article — [How to Create a Static Customer Segment.](https://intercom.help/maestraio/en/articles/11888563-how-to-create-a-static-customer-segment)
+
+### Adding customers to a Static segment
+
+Please refer to the following guide:
+
+[How to Add Customers into a Static Segment using the UI](https://intercom.help/maestraio/en/articles/11888976-how-to-add-customers-into-a-static-segment-using-ui)
+
+### How a Static segment is displayed in a customer’s profile
+
+Go to **Customer Data Platform** → **Customers**, choose a relevant customer and click the **Segments tab** → **Current segments**:
+
+![08_segments](/images/imported/08_segments.png)
+
+In the segment history, you will find the date the customer was added to the segment:
+
+![14_segments\(1\)](/images/imported/14_segments-281-29.png)
+
+If a customer has been removed from the segment, you will see when this occurred.
+
+### How to filter customers belonging to a Static segment
+
+Create a filter on the **Customers** page:
+
+**Segment **→ **Segment (select Segmentation name)**→ Select **segment** from the drop-down list:
+
+![10_segments](/images/imported/10_segments.png)
+
+If the Segmentation includes only one segment, select only this segmentation name in the filter.
+
+### Use the drop-down list to filter the customers who:
+
+- don’t belong to the segment;
+- belonged to this segment on a certain date in the past;
+- were added to the segment during a specific period;
+- have never been in this segment.
+
+![11_segments](/images/imported/11_segments.png)

@@ -1,0 +1,28 @@
+---
+title: "How to Find Campaigns Sent for a Specific Order"
+---
+
+**Use case:** find campaigns sent for a specific order, such as payment or delivery notifications.
+
+Go to **Customer Data Platform → Campaign engagements** and set up the filter.
+
+![](/images/imported/How-to-find-campaigns-related-to-an-order.png)
+
+Add a condition to find **sent campaigns only**. 
+​
+
+![](/images/imported/How-to-find-campaigns-related-to-an-order-(1).png)
+
+## Which campaigns are included in the filter
+
+For a campaign to appear in the filter, the following conditions must be met:
+
+- The flow that sends the campaign must be triggered by the order event.
+
+![](/images/imported/--2026-02-13--18_04_28.png)
+
+- The method that sends/updates the order must use one of the events shown in the screenshot.
+
+![](/images/imported/How-to-find-orders-with-a-specific-value-(18).png)
+
+All steps are supported except the **Get order list** step.

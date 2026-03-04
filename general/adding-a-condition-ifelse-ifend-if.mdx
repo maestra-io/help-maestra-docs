@@ -1,0 +1,41 @@
+---
+title: "Adding a Condition: if...else if...end if"
+---
+
+You may sometimes need to check certain details from a customer’s profile in order to personalize content for them — this may be their gender, for example. To do this, you can use the if...else and if...end if conditions.
+
+Here’s what a **simple condition** looks like:
+
+```
+`@{ if Recipient.Sex.IsMale }
+Dear Sir,
+@{ end if }`
+```
+
+A **default condition** can be set if none of the conditions is satisfied:
+
+```
+`@{ if Recipient.Sex.IsMale}
+Dear Sir,
+@{ else if Recipient.Sex.IsFemale}
+Dear Madam,
+@{ else }
+Dear Sir or Madam,
+@{ end if }`
+```
+
+You can embed a simple or a complex condition inside an if/else if condition.
+
+A complex condition consists of multiple simple conditions joined by the AND / OR operator or with the NOT operator before a condition.
+
+### A condition can be:
+
+- Boolean (Recipient.Sex.IsMale, etc.);
+- An arithmetic comparison (Recipient.Balance > 50);
+- Request for a boolean function (IsEmpty(Recipient.Name)).
+
+If you decide to use a simple condition, the algorithm will check whether the condition has been met and will return a result if it has — for example, a specific text such as "Sir".
+
+If the condition has not been met, no value will be pasted.
+
+A default condition will check multiple conditions to see if they have been met. Once it finds one that is "true", it will paste the result corresponding to this condition. If none of the conditions have been met, a default value will be pasted.

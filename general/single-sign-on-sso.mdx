@@ -1,0 +1,121 @@
+---
+title: "Single Sign-On (SSO)"
+---
+
+# What is SSO?
+
+Single Sign-On (SSO) is an authentication method that allows users to use one set of login credentials to access multiple applications. This solution helps centrally manage employee access and ensure data security.
+
+Maestra SSO is based on SAML 2.0 and uses an Identity Provider (IdP) managed by your company’s IT team.
+
+**SAML (Security Assertion Markup Language) 2.0** is a protocol for exchanging authentication information between a service and an identity provider.
+
+An **Identity Provider (IdP)** is a system that creates, stores, and manages digital identification data. The IdP can either authenticate the user directly or provide authentication services to third-party providers (applications, websites, or other digital services).
+
+Examples of IdPs include Google, Azure AD, Okta, OneLogin.
+
+# Advantages of SSO
+
+- Helps manage employee access to applications. It can be easily revoked if a user leaves the organization.
+- Eliminates the need for employees to remember a large number of passwords for each service.
+- Allows to change the password once to restore access to all applications if a user’s data has been compromised.
+
+# Log in with SSO
+
+Users can be restricted to log in with SSO only or have the option to sign in with a Maestra username and password.
+
+![Снимок экрана 2023-04-14 в 15.17.34.png](/images/imported/-D0-A1-D0-BD-D0-B8-D0-BC-D0-BE-D0-BA-20-D1-8D-D0-BA-D1-80-D0-B0-D0-BD-D0-B0-202023-04-14-20-D0-B2-2015_17_34.png)
+
+When logging in with SSO:
+
+1. The user clicks "Log in with SSO."
+
+2. Maestra redirects them to your IdP.
+
+3. They enter login credentials in the IdP.
+
+4. The IdP redirects them back to Maestra.
+
+5. Maestra authenticates the user.
+
+If the user is already logged in to the IdP, there is no need to enter the password again. They will be automatically authorized in Maestra via the IdP.
+
+Users added to the project before SSO is enabled will also need to enter their Maestra password once to confirm their identity.
+
+# User Creation
+
+If SSO is enabled when adding users to the project, they will be able to use it for authentication immediately. In this case, users will not receive an email with a password.
+
+# Blocking users
+
+To block access to the platform:
+
+1. Block the user in your IdP.
+
+2. Block the user in Maestra.
+
+The latter is especially important on projects where, in addition to SSO, users can log in using a Maestra login and password.
+
+Blocking staff in the IdP will take effect after the current session ends. Blocking the user in Maestra will not allow them to perform any action on the page or navigate to another section.
+
+# Disabling SSO
+
+When SSO is disabled, access to the project will be available to any staff member who has not been blocked in Maestra.
+
+Users without a password will need to use the password recovery feature.
+
+# Technical requirements for SSO implementation
+
+To use Maestra SSO, you need the following:
+
+- An enabled Enterprise-security module;
+- An Identity Provider that supports the SAML 2.0 protocol.
+
+# Setting up SSO
+
+Please note that SSO can only be configured and enabled by the project Owner.
+
+1. Go to **Administrative settings** → **Platform** → **SSO Settings**:
+
+![Снимок экрана 2023-04-14 в 15.48.17.png](/images/imported/-D0-A1-D0-BD-D0-B8-D0-BC-D0-BE-D0-BA-20-D1-8D-D0-BA-D1-80-D0-B0-D0-BD-D0-B0-202023-04-14-20-D0-B2-2015_48_17.png)
+
+2. Copy the ACS (Access Control Server) and Entity ID and paste them into the corresponding fields in your IdP settings.
+
+The Entity ID may also be called Entity ID, SP Entity ID, Audience URL, or SP Audience URL depending on the IdP you are using.
+
+3. Select the user identification (Name ID) method: email address or login.
+
+For this, specify the identifier used in your IdP. It’s usually Email, but Maestra also supports authentication by login.
+
+Name ID may also be called Name ID format, Unique user identifier, or Name identifier format depending on the IdP used.
+
+4. Copy your IdP metadata and paste it into the corresponding block.
+
+Metadata can be in the format of:
+
+- Metadata URL
+- Metadata XML
+
+If Metadata XML is provided as a file, download it, copy the contents, and paste the code into the field.
+
+5. Enable SSO — the button is located in the upper right corner of the screen.
+
+Wait for the system to check the data provided. If the required information is not detected in the metadata, you will see a notification about the problem. In this case, you need to correct the indicated errors, re-paste the data, and try to enable the feature again.
+
+Upon successful activation, you will see a message confirming this.
+
+6. Check that the setting works correctly.
+
+Log out of your Maestra profile or use Incognito mode and try to log in with SSO.
+
+7. Once you've ensured that everything works, you can enable SSO-only login.
+
+You will need to confirm that SSO is working.
+
+After you enable this feature, users will only be able to log in to Maestra using SSO.
+
+# Edit SSO settings
+
+When SSO is enabled, its basic settings cannot be edited. Therefore you need to disable the feature, edit the settings and re-enable SSO.
+
+You can edit the “Enable SSO-only login” mode without disabling the feature.

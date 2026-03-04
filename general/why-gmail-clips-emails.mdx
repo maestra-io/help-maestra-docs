@@ -1,0 +1,97 @@
+---
+title: "Why Gmail Clips Emails"
+---
+
+If your email is larger than 102 kB, Gmail may clip it.
+
+In this case, instead of the entire message, the user will see the "Message clipped" line and the "View entire message" link.
+
+![00_GmailClipping](/images/imported/00_GmailClipping.png)
+
+# What it impacts
+
+The most obvious shortcoming is that your client will not see all of your content.
+
+Besides, there are other risks:
+
+- An unsubscribe link is usually placed in an email footer, which may not be included in its visible part, so instead of using the link the user may move the email to spam folder;
+- The tracking code at the bottom of the email will not be uploaded, which would affect open rate statistics;
+- If the HTML closing tag is truncated, a part of your code will be displayed in your email
+- In some ome mobile email clients the email may be clipped without any notes or links
+- AMP content will not be displayed.
+
+# Why your email is clipped
+
+Emails weighing more than 102 kB are clipped. The size of every email means the size of its HTML file with the email’s code, which depends on the number of symbols in the code. It includes all the HTML tags and attributes, CSS styles, text symbols, and links for images and other pages.
+
+All the elements listed above is taken into account .
+
+## How to know the size of your email
+
+Open the web version of your email -> right-click -> select "**Save as**" -> select "**Webpage, HTML only**" option:
+
+![01_GmailClipping](/images/imported/01_GmailClipping.png)
+
+Next, right-click the downloaded file -> Get info (Properties) -> Size:
+
+![02_GmailClipping](/images/imported/02_GmailClipping.png)
+
+# How to shorten your email
+
+**1.** **Delete line breaks, spaces, and delimiters across the entire file**
+
+To do this, you can use dedicated minification services, such as: [https://htmlcompressor.com/compressor](https://htmlcompressor.com/compressor/) or [https://www.willpeavy.com/minifier](https://www.willpeavy.com/minifier).
+
+The minified code will become harder to read as it will no longer contain spaces or line breaks, so we recommend completing this step after all the needed changes are made.
+
+**2. Avoid duplicating styles into Style and Class attributes**
+
+You will reduce your email size by using the Class attribute. However, keep in mind that these styles may not be displayed in some email clients such as Outlook.
+
+**3. Replace some content blocks with images**
+
+Image size does not impact the size of the email itself as the images are located at the sending server.
+
+Yet, images should take less space that the text—otherwise, spam filters may flag your email as spam.
+
+Yet, images should take less space that the text—otherwise, spam filters may flag your email as spam.
+
+**4.** **Avoid copying layout from websites**
+
+A website code may contain an additional formatting code. Instead of copying, use the website link or an image.
+
+You can also add data from a website as a plain text.
+
+To do this, use the "Paste as plain text" function.
+
+**5. Reduce the number of built-in containers**
+
+Extra containers increase the number of symbols and, thereby, your email’s size. Join them together, if possible.
+
+**6. Do not use the same subject in your emails**
+
+Gmail.com joins such emails in a chain which may exceed 102 kB.
+
+This issue usually occurs when sending several test emails in a row. To avoid this happening, use different subjects.
+
+**7. Try changing the number of products in one line**
+
+For instance, display two products in a line instead of three—by doing this in some cases you may reduce the length of code.
+
+**8. Reduce the amount of your text**
+
+You can use hyperlinks or split your email into several emails.
+
+Do not use shortened URLs—spam filters may flag your email as spam.
+
+Remember to always check how your email is displayed before sending it to customers.
+
+# If your email is still bigger than 102 kB
+
+1. Put the most important information at the beginning of the email.
+
+2. Make sure that the displayed text includes the unsubscribe link. To avoid putting it at the very top, place it where your email is clipped or a bit upper.
+
+3. The same applies to website URL and your tracking code.
+
+4. Make a note in the visible part of your email that the customer can grab a promo code or read some useful information at the end of the email.

@@ -1,0 +1,119 @@
+---
+title: "How to Send a Campaign Using a File"
+---
+
+## **When to use file-based email campaigns**
+
+These campaigns are useful for:
+
+- sending a campaign to a list of customers from a file (it can be a list of email addresses or phone numbers, or IDs).
+- adding values into the campaign that are not stored in the database (for example, promo codes or custom variables).
+
+## **How it works**
+
+1. In **Recipients**, select the **One-time file **option.
+
+![](/images/imported/How-to-Send-a-Campaign-Using-a-File-(1).png)
+
+**Choose the type of customer identifier:**
+
+- Maestra customer ID
+- Email 
+- Phone number
+- Custom field (field type must be "unique id")
+
+2. Download the template file. 
+
+![](/images/imported/How-to-Send-a-Campaign-Using-a-File.png)
+
+3. Fill in the template with values based on the identifier you selected.
+
+![](/images/imported/img-a32f0ba0.png)
+
+⚠️ **Important**: Remove **duplicates** before uploading. Otherwise, the same customer may receive the message twice.
+
+## **How Campaign Sending Works Across Channels**
+
+1. If you select **Email identification** and the file contains **email addresses**, the campaign will be sent to those addresses. 
+
+**This means you can also send campaign to addresses that are not yet in your database**.
+
+2. If identification is set to **email** but you send an **SMS campaign**, customer data will be pulled from the database. 
+
+**In this case, the campaign will only be delivered to customers who have a phone number in customer profile.**
+
+### **When sending Email campaigns**
+
+If you’re using email addresses to identify customers for the campaign:
+
+- If the email address isn’t in the database, the customer will be added as "Subscribed".
+- Customers without a subscription are automatically assigned the “Subscribed” status (if it’s a topic-based campaign, the user will be subscribed only to the topic, not the entire channel).
+- Unsubscribed customers do not receive campaigns, and their email addresses are excluded from recipient counts after file upload.
+- If the file contains duplicate email addresses, the campaign will be sent to each duplicate address.
+- If the campaign is created by user without permission to import new customers: 
+  - The campaign will only be sent to existing customers already in the database. 
+  - New customers will not be added or receive the campaign. 
+  - Copying a campaign created by a user without import permissions will not add new customers. The campaign must be recreated.
+
+New customers will be added to the database with the action:
+​
+
+![](/images/imported/img-2298d0f1.png)
+
+### **When sending SMS campaigns**
+
+Customer identification by phone number follows the same rules as email campaigns.
+
+### When Sending Campaigns** Across Other Channels**
+
+To send mobile push or web push, you can use any available identifier: email, phone number, Maestra ID, or a unique ID.
+
+**Please note:** customer data will always be pulled from the database.
+
+For example, to send a mobile push notification, you can select email identification. The system will then find the customer in the database via email and verify the application and subscription.
+
+If the customer has no application or subscription data, the campaign will not be sent.
+
+## How to Send a Bulk Campaign with Custom Variables
+
+We usually add custom variables to a campaign when we need to include a value that isn’t stored in the database. For example, if each customer needs to receive a unique promo code.
+​
+**To send the campaign with custom variables:**
+
+1. Follow the [instructions](https://help.maestra.io/en/articles/11898514-how-to-create-a-bulk-email-campaign) to create a campaign. 
+2. Add a unique variable to your template: ​ - Come up with a name for your variable.  The name must be unique, e.g., you may use the name of your campaign - SalesWithPromo123. ​ - Add the variable into the campaign: `${CustomParameters.ABC}` ​**ABC** is the name of the variable that we came up with above. The "CustomParameters" part of the variable always stays the same.  **How it looks in your campaign editor:** ​
+
+```
+`Your Promo code: ${CustomParameters.SalesWithPromo123}`
+```
+
+After adding the parameter, the campaign list looks like this. ​
+  ![](/images/imported/img-7875dd7c.png) The red error message can be ignored. It disappears once recipients are selected.​3. In **Recipients**, select **One-time file**.
+
+  ![](/images/imported/How-to-Send-a-Campaign-Using-a-File-(3).png)
+Select an identification method based on the type of contact in the upload file. In this example, the contacts are identified by email addresses.
+Download the template file for this campaign. 
+
+  ![](/images/imported/img-e1acaa78.png)
+4. Fill in the template with values based on the identifier you selected.
+
+  ![](/images/imported/How-to-Send-a-Campaign-Using-a-File-(5).png)
+- The CustomerIdentity column contains a list of email addresses.
+- The SalesWithPromo123 column contains variable values. The column name must match the name of the corresponding variable in the campaign.5. Upload your file
+
+  ![](/images/imported/img-276f4156.png)
+The message about an unknown variable disappears, showing the total number of campaign recipients.
+
+## **Common error**
+**Missing "CustomerIdentity" column.**
+The campaign accepts CSV files with a comma delimiter. The provided template file already uses this format.If you create the file manually, it may use a different delimiter. In this case, the campaign list will treat all columns as a single column and return an error indicating that the **CustomerIdentity** column is missing.To fix this, check the file delimiter using a text editor and replace them with commas if necessary, or copy the data into the template file.
+
+## **How to test your campaign**
+
+1. Create a small file with test addresses.
+2. Add sample variables values.
+3. Upload and send to the test group.
+4. Verify the result.
+5. Clone the campaign.
+6. Upload the full file.
+7. Send the live campaign.

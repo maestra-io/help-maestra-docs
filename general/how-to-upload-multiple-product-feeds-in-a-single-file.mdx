@@ -1,0 +1,69 @@
+---
+title: "How to upload multiple product feeds in a single file"
+---
+
+Use this method to add multiple feeds to your project at once — for example, if your project uses zones and needs a regional feed for each one.
+Instead of adding feeds manually in the UI, you can upload a single file that includes the details for every feed.
+
+If you only need to add one product feed, see the relevant instructions below based on your task.
+
+- [How to set up a product feed import](https://help.maestra.io/en/articles/12359414-how-to-set-up-feed-import)
+- [How to set up a regional product feed import](https://help.maestra.io/en/articles/12510421-how-to-set-up-regional-product-feed-import)
+
+1. In the **Products** section, click "Import" → "Add multiple feeds":
+
+![](/images/imported/Screenshot-2025-12-05-at-4_01_11PM.png)
+
+## Another Way to access the menu
+
+In the **Integration set up** section, click "Create integration":
+​
+
+![](/images/imported/Screenshot-2025-12-05-at-4_11_54-E2-80-AFPM.png)
+
+In the "Product feed" preset, click "Create several" button:
+​
+
+![](/images/imported/Screenshot-2025-12-05-at-4_16_08PM.png)
+
+2. On the file upload page, you can click **Download example **in the top-right corner to download a pre-filled file with sample data. Below it, you’ll find a list of all available upload fields, including each field’s name, description, whether it’s required, and examples of accepted formats.
+​
+
+![](/images/imported/Screenshot-2025-12-05-at-4_23_03PM.png)
+
+Let's review all fields that can be included in the file.
+
+​**Required fields:**
+
+- **Name **— product feed name
+- **Format **—** Google or YML**
+- **ExternalSystemSystemName **— system name of the [external system](https://help.maestra.io/en/articles/13007364-how-to-create-an-external-system).
+- **BrandSystemName **— system name of the brand.
+- **URL **—  web address where your product feed file is hosted
+- **UploadInterval **— how often the system checks your feed for updates. The system downloads the feed file every **N hours** and updates product data if anything has changed. The value is set **in hours**.**Optional fields:**
+- **AreaExternalId **— the external id of the area. Used in projects where products are split by areas.  ​***Required**** when uploading a regional feed for a specific area.*
+- **UploadStartAt **— the scheduled time to run product feed updates. After you upload the file and the feed is added successfully for the first time, the system will check your product feed URL for updates every **N hours**, starting at the time you specify (for example, at 6:00 AM each day). You can set this only if **UploadInterval** is a multiple of **12**. Otherwise the feed won’t be added to the project.
+- **Login **— username for password-protected feeds. Required if the uploaded file is password-protected.
+- **Password **— password for protected feeds. Required if the uploaded file is password-protected.If the product feed is password-protected, you must specify both the Login and the Password in the file. Otherwise, the feed will not be added to the project.3. Prepare the file. Here is an example of a completed file:
+
+  ![](/images/imported/image.png) Maximum file size—300 MB. Format—.csv.
+4. Configure the necessary settings for file upload within the format settings:
+
+  ![](/images/imported/Screenshot-2025-12-05-at-4_25_29PM.png)
+**Encoding **— utf-8 by default. You can check the file encoding using text editors, such as Notepad++, VS Code, etc.
+**TextQualifier **— "(double quote) by default. Leave this field unchanged.
+**Column Separator **— semicolon by default. If your file uses a different delimiter, please enter the correct value in the field. You can check the delimiter using text editors, such as Notepad++, VS Code, etc.
+5. Select the file and click "Upload":
+
+  ![](/images/imported/Screenshot-2025-12-05-at-8_22_07PM.png)
+After that, you’ll see the file processing progress on the page. Uploading multiple files at the same time isn’t supported — the file picker will stay disabled until the current upload finishes.
+
+  ![](/images/imported/Screenshot-2025-12-05-at-8_08_41PM.png)
+6. Once the file is processed and the feeds are uploaded successfully, you’ll see them on the **Integrations** page under the **Product feeds** tab. ​
+  ![](/images/imported/2025-12-05_17-15-45.png)
+The results file will remain available on the feed import page for 24 hours.
+
+  ![](/images/imported/Screenshot-2025-12-05-at-8_13_12PM.png)
+If the file fails to process and the feed isn’t imported, download the results file to see which rows contain errors. Fix the errors in your file, then upload it again.
+
+  ![](/images/imported/Screenshot-2025-12-05-at-8_17_29PM.png)

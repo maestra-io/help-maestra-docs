@@ -1,0 +1,130 @@
+---
+title: "How to Create Filters"
+---
+
+To start with, let’s go through how to create a filter for customers.
+
+Go to **Customer Data Platform** → **Customers**:
+
+![00_newCreateFilter](/images/imported/00_newCreateFilter.png)
+
+The filter conditions field contains the **Add AND condition** and **Add OR conditions** buttons.
+
+**AND condition.**
+​
+
+Use the **AND** condition when **all filter conditions must be true** for a customer to qualify.
+
+​**Example:**
+If you want customers with a **valid email AND an active subscription**, both conditions are required.
+A customer with a valid email but no subscription **will not qualify**.
+
+**OR condition.**
+​
+
+Use the **OR** condition when **at least one condition must be true** for a customer to qualify.
+
+​**Example:**
+If you want to find customers who purchased a **hat OR a scarf**, the filter will include:
+
+- customers who purchased a hat
+- customers who purchased a scarf
+- customers who purchased both
+
+Below the buttons on the left, you can see the total customer database size — in our case, it's 22,914 customers.
+
+## How to add AND condition
+
+Click on the **Add AND condition** field. A dropdown menu will appear with a list of customer attributes you can filter by. At the top, you’ll see standard profile properties (e.g. name, gender, birthday), followed by grouped property categories (e.g. custom fields, orders and product lists).
+
+![01_newCreateFilter](/images/imported/01_newCreateFilter.png)
+
+Click a group name to reveal related filter options:
+
+![02_ newCreateFilter](/images/imported/02_-20newCreateFilter.png)
+
+After selecting a filter, fill in any additional settings if available.
+
+For example, if you select the **Subscription** condition, additional fields will appear where you can specify the brand (if you have more then 1), channel and topic:
+
+![03_newCreateFilter](/images/imported/03_newCreateFilter.png)
+
+Once you’ve filled in all the required fields, click the **Add condition** button:
+
+![04_newCreateFilter](/images/imported/04_newCreateFilter.png)
+
+Click **Apply** to save the condition(s) you selected. The system will display the filtered customers and their total number:
+
+![05_newCreateFilter](/images/imported/05_newCreateFilter.png)
+
+AND conditions are connected by a light blue branching line (connector).
+
+![06_newcustomerfilter](/images/imported/06_newcustomerfilter.png)
+
+This condition means we want to find customers who have a valid, non-empty email AND a valid non-empty phone number AND a filled-in name.
+
+## How to add OR condition
+
+Use this feature when you want to match customers who meet any of the selected conditions.
+
+For example, to create a segment of customers with valid emails OR valid phone numbers, follow these steps:
+
+1. Click **Add OR condition**
+
+2. Click **Add AND condition** → **Email**, and select the "**not empty and valid**" from the dropdown on the right. After that, click **Add condition**.
+
+3. Then, on the same panel below click **Add condition** → **Phone number** and select the "**not empty and valid**" from the dropdown on the right. Click **Add condition**.
+
+4. Finally, click **Apply**.
+
+For more details on how to create filters with OR conditions, please refer to this article.
+
+OR conditions are connected by a lilac branching line (connector).
+
+![07_newcustomerfilter](/images/imported/07_newcustomerfilter.png)
+
+This condition means we want to find customers who either have a filled-in valid email OR have a filled-in valid phone number. Satisfying at least one of these two conditions is sufficient.
+
+## How to add a nested condition
+
+A field may contain additional conditions.
+
+The main condition and its more detailed nested condition are linked by a blue line of different levels.
+
+For example, to find customers who have placed an order and whose order value exceeds $100 and whose previous orders have been fully paid select the following conditions:
+
+![07_createfilter](/images/imported/07_createfilter.png)
+
+To apply additional conditions, click **+** next to the relevant condition.
+
+To apply nested conditions, click the links of the adjacent conditions.
+
+For example, to make the **Status** condition more detailed with a nested order line condition, you can choose from the following two options:
+
+1. Click **+**:
+
+![08_createfilter](/images/imported/08_createfilter.png)
+
+2. Click on the side line:
+
+![09_createfilter](/images/imported/09_createfilter.png)
+
+## Search
+
+You can look up the required field using its name:
+
+![10_createfilter](/images/imported/10_createfilter.png)
+
+### Cross-search through nested conditions
+
+You can find the field you need among the list of nested conditions.
+
+For example, if you want to find an **Action template** condition which is nested in the **Customer action field**, one way to do this would be to select **Actions** → **Customer action** → **Action template**:
+
+![11_createfilter](/images/imported/11_createfilter.png)
+
+But you can also do this in one step if you use the search bar — simply start typing the field name in the Condition name field and click on the line you’re looking for:
+
+![12_createfilter](/images/imported/12_createfilter.png)
+
+The cross-search function works across first- and second-level nested fields only.

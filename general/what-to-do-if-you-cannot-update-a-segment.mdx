@@ -1,0 +1,83 @@
+---
+title: "What to Do If You Cannot Update a Segment"
+---
+
+Scheduled segments are used in campaigns and flows or to collect filter results with multiple complex conditions.
+
+However, some conditions are so complex that the system cannot calculate a segment.
+
+## Issues and troubleshooting
+
+1. If complex conditions have been applied to a Scheduled segment and it takes over 24 hours to calculate the data, the platform will pause the calculation for 24 hours and add an issue on the Campaign & Data monitoring page:
+
+Please try simplifying the segment filter or contact your support manager for assistance.
+
+There are two ways to help resolve this:
+
+- Simplify the segment filters (refer to [this guide](https://intercom.help/maestraio/en/articles/6262582-how-to-simplify-a-filter) for more info);
+- Split your filter conditions into multiple Scheduled segments.
+
+Before
+
+After
+
+![](/images/imported/00_update_a_segment.png)
+
+![](/images/imported/01_update_a_segment.png)
+
+Here, we combined conditions of the same type into a Scheduled segment. We then created another Scheduled segment containing the first segment. 
+
+---
+
+2. If you’re using multiple real-time events in your Scheduled segment for recalculation or it contains a lot of complex conditions, it may take more time than usual to update. In this case, an issue will be added on the Campaign & Data monitoring page: 
+
+Use scheduled segments or select a less frequent event to check customers’ inclusion in the segment.
+
+To fix this, you can try:
+
+- Simplifying the segment filter (refer to [this guide](https://intercom.help/maestraio/en/articles/6262582-how-to-simplify-a-filter) for more info).
+- Consider splitting conditions into multiple Scheduled segments. For example:
+
+Before
+
+After
+
+![](/images/imported/02_update_a_segment.png)
+
+![](/images/imported/03_update_a_segment.png)
+
+Here, we split the scheduled segment’s complex filter into two separate conditions. The first one contains the order condition, the second one — the action. Then, we created a Scheduled segment for every condition.
+
+---
+
+You can also select a smaller action template category while choosing "action issued" as an event to update a segment.
+
+#### Example 1
+
+Before: 26 action templates
+
+After: 7 action templates
+
+![](/images/imported/08_update_a_segment.png)
+
+![](/images/imported/09_update_a_segment.png)
+
+Checking email opens requires going through lots of action templates. 
+
+You can significantly reduce the number of templates checked by using a specific campaign to limit the number of templates.
+
+#### Example 2
+
+Before: lots of events
+
+After: one event left
+
+![](/images/imported/06_update_a_segment.png)
+
+![](/images/imported/07_update_a_segment.png)
+
+The "before" segment had to check if customers met its conditions each time a customer was added to the database, changed their subscription or email. The selected events made it difficult to update.
+
+In the "after" segment we reduced the number of events, where possible.
+
+If necessary, you can create individual Scheduled segments for each event.

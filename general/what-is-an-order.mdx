@@ -1,0 +1,39 @@
+---
+title: "What is an Order?"
+---
+
+**An order** is a sequence of actions that records every status change for every order line item.
+
+At the integration stage, [a custom field](https://intercom.help/maestraio/en/articles/11900218-how-to-create-a-custom-field) is created in the Maestra system (e.g. entity: Order, field type: External ID).
+
+This custom field will later be populated with the external IDs of orders. **This ID is mandatory.**
+
+Once an order is recorded in the database, an additional **Maestra order ID is also automatically generated.**
+
+An order consists of **line items**. Every line item is a product with its own status and quantity.
+
+Let’s take a look at a sample order.
+
+The first action of this order is **Order creation**:
+
+![00_orderNew\(1\)](/images/imported/00_orderNew-281-29.png)
+
+**Line items**:
+
+Aqua Professional Suit with the **Placed** status at $2 000;
+
+Sunset Orange Professional Suit with the **Placed** status
+
+at $1 500.
+
+A $20 discount was applied to the order. This makes **the total cost**: $3 480.
+
+Since all the orders have a first action, you can conveniently filter orders by the date of the first action.
+
+Once the line items are paid for, the order lines change their statuses to **Delivered**:
+
+![01_orderNew](/images/imported/01_orderNew.png)
+
+You can view all statuses of a single order in the Actions tab. Simply enter the order ID in the filter:
+
+![02_orderNew](/images/imported/02_orderNew.png)

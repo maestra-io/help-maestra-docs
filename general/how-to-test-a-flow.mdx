@@ -1,0 +1,122 @@
+---
+title: "How to Test a Flow"
+---
+
+## Why conduct a testing before launching your flow?
+
+By testing your flow, you can:
+
+- make sure that the **expected number of customers** complete the flow;
+- verify **if your conditions are correct and how your customers are divided into branches**;
+- look how a **specific customer goes down the flow**
+- **test your campaigns** on real events without sending them to your customers.
+
+Meanwhile, **group of steps are not completed and expectations are ignored** in the test mode (campaigns in steps only generate messages but do not send them).
+
+In other words, to conduct a fast testing with minimum actions, you do not have to create a simplified flow version by removing promo codes or bonus points generation or by limiting expectation time down to 1 minute.
+
+You can just enable testing mode, so that you can test your flow with its final settings.
+
+## How to launch a testing
+
+Prepare your flow and press the "**Test**" button:
+
+![00_howtotestFlow](/images/imported/00_howtotestFlow.png)
+
+#### How the testing mode operates
+
+After the testing mode is enabled, a corresponding icon will appear in your flow. First runs are being calculated:
+
+![01_howtotestFlow](/images/imported/01_howtotestFlow.png)
+
+#### What runs go down to a test launch?
+
+- event flows are launched by an initial node event;
+- bulk flows are implemented once after the launch on the customers matching “Launch conditions” filter in Schedule node (10,000 customers maximum). Meanwhile, launch time settings are ignored.
+
+#### Which nodes and settings are run in the test launch?
+
+Testing **includes settings** of nodes, such as:
+
+- event;
+- schedule (filter only);
+- distribution to the branches of the flow;
+- limit (in a process launch, test runs are reset automatically)
+- conditions.
+
+The nodes and **settings below are ignored**:
+
+- expectation
+- group of steps (however, the testing mode is activated automatically for all campaigns in the flow → messages are generated but not sent);
+- A/B testing (the testing is not launched, your clients are just divided into branches, as in the flow splitter node);
+- execution frequency (event flows are executed every time a relevant event occurs, while bulk flows are executed only once after the test launch on all the customers matching the filter criteria. To repeat it, create a new version of the flow and launch a new testing);
+- start and end date of flow execution;
+- [transactionality](https://intercom.help/maestraio/en/articles/11890368-what-is-a-transactional-flow) (events in the test are processed without a priority).
+
+#### Can you launch a test flow and a process flow at the same time?
+
+Your flow can simultaneously contain one version only, either a test one or a process one.
+
+Copy your process flow and launch your test there for a parallel launch.
+
+### Testing results
+
+#### Customer distribution and flow runs
+
+Run mode operates like in a regular flow. The toggle feature is available after at least one customer enters the flow.
+
+![02_howtotestFlow](/images/imported/02_howtotestFlow.png)
+
+You can also choose customers from the branches and click on the icon next to the customer's name to see their runs:
+
+![03_howtotestFlow](/images/imported/03_howtotestFlow.png)
+
+![04_howtotestFlow](/images/imported/04_howtotestFlow.png)
+
+To view a specific user's way down the flow, you can also go to "Customer flow interections" and find the user by their ID:
+
+![05_howtotestFlow](/images/imported/05_howtotestFlow.png)
+
+![06_howtotestFlow](/images/imported/06_howtotestFlow.png)
+
+#### Generated campaigns
+
+To view the generated messages, go to the corresponding tab in the node with the campaign and click on the ‘eye’ icon:
+
+![07_howtotestFlow](/images/imported/07_howtotestFlow.png)
+
+Generated campaigns from all nodes are collected in the tab "**Executions and mailing campaigns**" → "**Generated messages**":
+
+![08_howtotestFlow](/images/imported/08_howtotestFlow.png)
+
+![09_howtotestFlow](/images/imported/09_howtotestFlow.png)
+
+For each node, mailings for the last ten clients are displayed.
+
+For repeated runs, the last letter generated for the client will be shown.
+
+## Testing termination and flow launch
+
+After you conducted the testing and analyzed its results, you can:
+
+- **Pause your test**. You can resume it later; the statistics will be common within one version.
+- Conduct a new test. To do this, go to the flow editing page, make your changes, and launch the new test. As this is a new version, the statistics in it will be reset.
+- Launch a flow. To do this, go to the flow editing page—a process flow version will be created with the same settings. Launch it. Meanwhile, the test version is paused automatically:
+
+![11_howtotestFlow](/images/imported/11_howtotestFlow.png)
+
+![13_howtotestFlow](/images/imported/13_howtotestFlow.png)
+
+#### What happens to the test runs?
+
+Nothing. They are not counted and, as a result, do not affect execution frequency counter.
+
+You cannot launch processing of the events of the test.
+
+#### How is the test displayed in the flow history?
+
+The test is a separate flow version.
+
+It is marked by a corresponding icon in the flow history. Its launch and stopping are recorded as in regular versions:
+
+![14_howtotestFlow](/images/imported/14_howtotestFlow.png)

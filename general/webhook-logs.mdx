@@ -1,0 +1,55 @@
+---
+title: "Webhook Logs"
+---
+
+To access this page, you need the Integration Log View permission.
+
+To open webhook logs, click on **Integration settings** → **Integration logs**:
+
+![00_webhook _logs](/images/imported/00_webhook-20_logs.png)
+
+The list includes all the requests made in the last 14 days.
+
+They can be filtered by dates, integration points and webhook names, request statuses, log IDs, URLs, and request bodies.
+
+![01_webhook _logs](/images/imported/01_webhook-20_logs.png)
+
+The page always displays the number of logs found, but you can browse only the most recent 500 records. To view more records, you need to export them.
+
+To find webhook logs for a particular customer or order, follow these steps:
+
+- Filter the log selection to ensure accuracy, then upload all the found requests.
+
+- You can upload the resulting CSV file to a table editor and use the in-built features to filter and group lines.
+
+Open a line to view information about a particular request:
+
+- a method and URL request;
+- headings and a request body;
+- headings and a response body;
+- log ID;
+- the flow node where the webhook was requested;
+- the link to this request (including any repeat requests).
+
+![02_webhook _logs](/images/imported/02_webhook-20_logs.png)
+
+**Why may a webhook log be missing headings and a response body?**
+The response time is 30 seconds. If the service fails to respond on time or there is a network error, the response will not be saved in the log.
+
+The logs are added to the list once the final request result shows that the request has been completed. While waiting, the system does not record the log.
+
+# How logs are exported
+
+To export logs from the platform, users need the Integration Logs Export permission.
+
+To export logs, select the required requests and click the **Export** button:
+
+![03_webhook _logs](/images/imported/03_webhook-20_logs.png)
+
+A task is created:
+
+![04_webhook _logs](/images/imported/04_webhook-20_logs.png)
+
+Once the task is finished, you will receive a link to the exported CSV file.
+
+Additionally, you can export logs using the API by following [these instructions](https://developers.maestra.io/docs/exporting_webhook_logs).

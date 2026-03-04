@@ -1,0 +1,60 @@
+---
+title: "How to Greet Contacts by Name in your campaigns."
+---
+
+When inserting a customer’s name into your email or subject line, it’s important to make sure the name looks natural.
+
+If you skip name validation, you might end up with greetings like:
+
+Hi, 123test!
+
+qwerty, good morning!
+
+To prevent this, use the OnlyStandardFirstName field. It ensures that only verified, real names are displayed.
+
+## **Adding Recipient’s Name to Your Campaigns**
+
+**Example 1**
+
+@\{if IsEmpty(Recipient.OnlyStandardFirstName)\}  
+
+Hello there!  
+
+@\{else\}  
+
+Hello, $\{Recipient.OnlyStandardFirstName\}!  
+
+@\{end if\}
+
+**Result:**
+
+No name or invalid name → “**Hello there!**”
+
+Valid, standard name → “**Hello, Helen!**”
+
+In this example, the logic works as follows:
+
+- If the first name is not standard or not provided display: **“Hello!”**
+- If the first name is standard display: **“NAME, hello!”**
+
+**Example 2**
+
+@\{if IsEmpty(Recipient.OnlyStandardFirstName)\}  
+
+Good afternoon!  
+
+@\{else\}  
+
+$\{Recipient.OnlyStandardFirstName\}, good afternoon!  
+
+@\{end if\}
+
+**Result:**
+
+No or not standard name → “**Good afternoon!**”
+
+Standard name → “**Helen, good afternoon!**”
+
+## Using the Email Builder
+
+If you’re using the email builder, you can set up name-based personalization without inserting any code. See the full instructions [here].

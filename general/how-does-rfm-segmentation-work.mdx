@@ -1,0 +1,201 @@
+---
+title: "How Does RFM Segmentation Work?"
+---
+
+RFM segmentation is an algorithm used to segment a database using RFM analysis. RFM analysis filters customers into segments according to their purchases using the following three factors:
+
+- Recency (the time since a customer last made a purchase);
+- Frequency (how often the customer made purchases);
+- Monetary value (the total amount of money the customer has spent).
+
+RFM segmentation requires data on orders and personal actions over the period of at least one year.
+
+## The Logic Behind Maestra’s RFM Segmentation
+
+Once the algorithm is launched, **Maestra automatically assigns users to one of 13 RFM segments**.
+
+Each user is scored from **1 to 5** for three key metrics, based on their order history:
+
+- **Recency (R):** How recently the customer made a purchase
+- **Frequency (F):** How often they purchase
+- **Monetary (M):** How much they spend
+
+These scores are combined into an RFM index for each customer — for example:
+
+- **555** means the customer is in the top 20% for all three metrics: they purchase often, spend a lot, and bought recently.
+- **111** represents the least engaged customers—those who made a single purchase a long time ago and haven’t returned. 
+
+**Important**
+
+RFM segments are updated daily at 12:00 a.m.
+You can update these manually if necessary.
+
+The algorithm scores customers on each of the factors and calculates the segments’ boundaries every day.
+
+Each index (group) of customers refers to one of the 13 segments:
+
+Segment
+
+Groups 
+
+Description 
+
+Champions 
+
+555, 554, 544, 545, 454, 455, 445
+
+Customers who have made a purchase recently, order frequently, and spend the biggest amounts. 
+
+Strategy:
+
+When communicating with these customers, focus on highlighting exclusive and unique products, as well as new releases. There is no need to communicate often or incite them with discounts. Send messages inciting them to buy more often or more expensive products.
+
+Loyal 
+
+543, 444, 435, 355, 354, 345, 344, 335
+
+Customers who make purchases consistently; some of them may become champions. 
+
+Strategy:
+
+1) Do not let the frequency of their purchases fall; use standard campaigns to maintain loyalty. 
+
+2) Grow new champions: Gradually increase the average order value with slightly more expensive items. 
+
+3) For the customers who respond well to the first two strategies: promote what is popular with the champions.
+
+Potential loyal
+
+553, 551, 552, 541, 542, 533, 532, 531, 452, 451, 442, 441, 431, 453, 433, 432, 423, 353, 352, 351, 342, 341, 333, 323
+
+Customers who purchase a little less frequently or have spent a smaller total than required to be considered loyal customers. 
+
+Strategy:
+
+Promote the most popular products to these customers — your main objective is to increase their loyalty by offering special loyalty program terms, etc.
+
+New customers
+
+512, 511, 422, 421 412, 411, 311
+
+Customers who have bought something for the first time or for the first time in a long while.  
+
+Strategy: 
+
+In your messages, focus on your popular products to incite this category of customers to purchase again.
+
+New customers (no orders)
+
+Took their first action over the last 60 days, have bought nothing yet
+
+Customers who have not yet made a purchase. 
+
+Strategy: 
+
+Encourage them to buy something and focus on popular items when recommending products.
+
+Promising 
+
+525, 524, 523, 522, 521, 515, 514, 513, 425 424, 413 414 415, 315, 314, 313
+
+Strategy: 
+
+Offer membership in the loyalty program and personal recommendations.
+
+Need attention
+
+535, 534, 443, 434, 343, 334, 325, 324
+
+Strategy: 
+
+Provide time-bound offers and personal recommendations.
+
+Almost dormant
+
+331, 321, 312, 221, 213, 231, 241, 251
+
+Customers in this segment have not made purchases for a relatively long time, but not so long that you would consider them a part of your customer churn. 
+
+Strategy: 
+
+Try to work with their interests and incite them to make another purchase by offering discounts.
+
+Too valuable to lose
+
+155, 154, 144, 214 215 115, 114, 113
+
+Customers who used to buy a lot and often, but have stopped doing so. 
+
+Strategy: 
+
+Interest them with updates or new products; talk to them, if necessary. Spend time on personalizing your messages as much as possible.
+
+Churn risk
+
+255, 254, 245, 244, 253, 252, 243, 242, 235, 234, 225, 224, 153, 152, 145, 143, 142, 135, 134, 133, 125, 124
+
+This group is very similar to High-value customers, but its members have recently made a purchase. 
+
+Strategy: 
+
+Use the same approach when working with this group as with Too valuable to lose segment.
+
+Dormant 
+
+332, 322, 233, 232, 223, 222, 132, 123, 122, 212, 211
+
+Strategy: 
+
+Include these customers in your standard email campaign, but check regularly to see if they mark your messages as spam. Do not interact with them through paid channels.
+
+Churned 
+
+111, 112, 121, 131 141 151
+
+Strategy: 
+
+Send thank-you emails with recommendations.
+
+Churned (no recent orders)
+
+Took their first action more than 60 days ago, have bought nothing over the reporting period
+
+This segment has the lowest priority. Do not waste resources on this segment as these customers are unlikely to return or they will do it with a small purchase. 
+
+## How to create RFM segmentation
+
+Go to **Customer Data Platform** → **Segments** → **Create Segmentation** → **RFM**:
+
+![](/images/imported/--2025-07-30--6_23_37PM.png)
+
+2. Set up a filter or leave it empty (this way the segmentation will cover the entire database), specify a name. If you have a multi-brand project, select a brand:
+
+![](/images/imported/--2025-07-30--6_26_48PM.png)
+
+When you select a brand, the segmentation will include only the customers who have taken actions with the brand specified.
+
+​3. Click **Save**.
+
+## How to view RFM segmentations
+
+Go to **Customer Data Platform **→ **Segmentations**. The RFM segmentations stand out from other segmentations since you can view them as dropdown lists.
+​
+
+![](/images/imported/--2025-07-30--6_35_06PM.png)
+
+Also you can use filters to find RFM segments
+​
+
+![](/images/imported/--2025-07-30--6_37_18PM.png)
+
+## How to delete an RFM segmentation
+
+Delete an RFM segment the way you would delete a segment using filter conditions.
+
+## How to edit an RFM segmentation
+
+1. Go to **Customer Data Platform **→ **Segments** → click the name of the segmentation.
+
+2. You can change the filter, name, or brand in the window.
+
+3. Tick **Update segment** and **Save**.

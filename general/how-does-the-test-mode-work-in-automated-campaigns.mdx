@@ -1,0 +1,120 @@
+---
+title: "How Does the Test Mode Work in Automated Campaigns?"
+---
+
+You cannot send test messages in tailor-made automated campaigns that use complex event parameters such as an order, session, etc. In these cases, you can view what the final message will look like only if there have been events that have collected data for these parameters.
+
+To test this message, you can switch it to test mode and place it into an automation / flow to view what your messages look like to real customers after being triggered by real events.
+
+Please note that in this case, messages will only get generated but will not actually be sent to customers.
+
+## How to launch an automated campaign using test mode
+
+1. Enable test mode.
+
+Please note that the message status must be **Automated campaign is ready**.
+
+2. Click **Enable test mode**:
+
+![00_test_mode](/images/imported/00_test_mode.png)
+
+Launch:
+
+![01_test_mode](/images/imported/01_test_mode.png)
+
+The status will change to **Test mode** and you should now see a URL to view the emails generated:
+
+![02_test_mode](/images/imported/02_test_mode.png)
+
+2. Open a flow with the event that you need and select your campaign:
+
+![03_test_mode](/images/imported/03_test_mode.png)
+
+3. Launch it:
+
+![04_test_mode](/images/imported/04_test_mode.png)
+
+4. The flow will run using real customers and will form messages with a **Sending paused** status assigned:
+
+![05_test_mode](/images/imported/05_test_mode.png)
+
+### You’ll be able to see the following data in the list of messages:
+
+**Recipient**: URL to the customer’s profile.
+
+**Contact**: the customer’s contact that was used to send the message.
+
+**Added**: date and time when the message was created.
+
+**Sending scheduled**: this is the actual time when the message will be sent. This option is useful if sending hours have been limited in settings. It is updated at every attempt to send the message.
+
+**Sent**: messages that were sent upon completing the testing.
+
+**Message**: URL to the composed message.
+
+**Status**: current status of the message.
+
+The message list also includes test messages sent from the email UI by clicking the Send test message button.
+
+### What you can do in the list of messages
+
+### Cancel sending
+
+You can cancel the sending of all messages or selected messages that you have filtered to make sure they are not sent to customers after the test mode has been disabled.
+
+You can filter the relevant messages in one of the two following ways:
+
+![06_test_mode](/images/imported/06_test_mode.png)
+
+Click **Selected** → **Cancel**:
+
+![10_test_mode](/images/imported/10_test_mode.png)
+
+Confirm the cancelation. The messages’ status will change to **Sending canceled**.
+
+### Forward your messages
+
+Filter and select messages in one of the two ways:
+
+![08_test_mode](/images/imported/08_test_mode.png)
+
+Click **Selected** → **Forward**:
+
+![09_test_mode](/images/imported/09_test_mode.png)
+
+You can apply it to messages that have not been canceled. You can forward up to 5 messages at a time.
+
+Forwarded messages will also appear in the list of messages.
+
+## How to stop testing and what will happen next
+
+If you end the test mode, this will not affect how your flow operates.
+
+Once you end the test mode, real messages will be generated and sent every time you launch the flow.
+
+To avoid this, pause the flow *before* ending test mode.
+
+### Next steps:
+
+1. Click Disable test mode:
+
+![11_test_mode](/images/imported/11_test_mode.png)
+
+2. Confirm.
+
+You also have an option to send messages that were generated in test mode. This allows you to decide what to do with the messages generated during the last test phase:
+
+![12_test_mode](/images/imported/12_test_mode.png)
+
+This is disabled by default. So no messages will be sent: their status will simply change to **Sending canceled**.
+
+If you check this option, the system will send queued messages that were not canceled to customers and will change these messages’ statuses to **Sent** or **Not sent** (if a message contains an error).
+
+## Important things to note when using test mode
+
+1. Actions. If the message status is Sending paused or Sending canceled, actions will not be assigned to customers. It means that these actions will not be displayed in the customer’s profile or in the overall list of actions.
+2. If you enable generated messages to be sent after test mode has ended, actions will be assigned to messages as usual.
+3. Message relevance. Tick this option to check that the composed messages are sent within the period in which they are relevant and not sent when they are no longer relevant. The countdown starts from the time the message is added to the list.
+4. The period of relevance is validated when the message is generated, not when it is sent.
+5. If a flow has been launched, it can seem as though it has worked on real customers. However, if the campaign within the flow is in test mode, it will not be sent.
+6. If you send an email in a flow using the **Send email to user** option, you will not be able to view the generated emails. This is because you cannot save any messages for Maestra users in the system. We recommend testing these emails using the standard **Send email** option in the flow.

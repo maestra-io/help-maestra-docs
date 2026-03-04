@@ -1,0 +1,55 @@
+---
+title: "How to Set Up Data Export for Analytics"
+---
+
+## What data can you export?
+
+With the integration, you can access your project data instantly. Read large data volumes fast and securely!
+
+**Data for the following entities are available for export** :
+
+- Orders and order items;
+- Touchpoints;
+- Bonus points changes;
+- Campaigns;
+- Folders;
+- Campaign engagement;
+- Campaign topics;
+- Customer merges;
+- A/B tests;
+- A/B test variants;
+- A/B test participants;
+- Segmentations and segments;
+- Segmentations and segments dictionary;
+- Customer segment history;
+- Mailings tags;
+- Tags dictionary;
+- External customer IDs history.
+
+The types of export data will be expanded. Follow the updates!
+
+## Integration specifics and limitations
+
+- You can create no more than one integration.
+
+- Analytics data are updated once a day by 00:00 UTC.
+
+- Analytics data contain auto deleted data but no manually deleted data.
+
+- Analytics data are 99% accurate. This means that at least 99% of the data you see on the Maestra admin dashboard are available for export.
+
+## How to create an integration
+
+To create a new endpoint, go to the Integrations section and click "Create Integration":
+
+![01.png](/images/imported/01-281-29.png)
+
+Select the "Data for analytics" preset:
+
+![01_SetUpDataExport](/images/imported/01_SetUpDataExport.png)
+
+After these steps are completed, your data will be immediately available by the URL specified in the "Data Storage URL" parameter. To access your data, you will need the data specified in the "Secret Key" parameter.
+
+![02.png](/images/imported/02-281-29.png)
+
+You can find the data reading API and the reading script example in the articles on [How to Read Your Data](https://developers.maestra.io/docs/how-to-read-your-data) and [How to Update Your Data Regularly](https://developers.maestra.io/docs/how-to-update-data-periodically).
