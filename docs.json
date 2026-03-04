@@ -787,6 +787,138 @@
     {
       "source": "/en/articles/6262584-how-to-create-filters",
       "destination": "/filters/how-to-create-filters"
+    },
+    {
+      "source": "/en/collections/14162110-customers",
+      "destination": "/customers-orders-and-products/customers/how-customer-de-anonymization-works"
+    },
+    {
+      "source": "/en/collections/14164305-actions",
+      "destination": "/customers-orders-and-products/actions/how-to-create-an-action-template"
+    },
+    {
+      "source": "/en/collections/14166223-orders",
+      "destination": "/customers-orders-and-products/orders/what-is-an-order"
+    },
+    {
+      "source": "/en/collections/14166379-products",
+      "destination": "/customers-orders-and-products/products/how-to-set-up-a-product-feed-import"
+    },
+    {
+      "source": "/en/collections/14166397-data-export",
+      "destination": "/customers-orders-and-products/data-export/how-to-set-up-data-export-for-analytics"
+    },
+    {
+      "source": "/en/collections/14300709-segments",
+      "destination": "/segments/how-does-rfm-segmentation-work"
+    },
+    {
+      "source": "/en/collections/14306688-flows",
+      "destination": "/flows/how-the-multibranches-mode-work-in-the-condition-block-of-the-flow"
+    },
+    {
+      "source": "/en/collections/14307925-examples",
+      "destination": "/flows/examples/how-to-create-a-next-best-action-flow"
+    },
+    {
+      "source": "/en/collections/14324580-campaigns",
+      "destination": "/campaigns/filtering-out-fake-clicks-keeping-your-click-rate-clean"
+    },
+    {
+      "source": "/en/collections/14325818-email-campaigns",
+      "destination": "/campaigns/email-campaigns/how-to-create-a-bulk-email-campaign"
+    },
+    {
+      "source": "/en/collections/14326356-sms-campaigns",
+      "destination": "/campaigns/sms-campaigns/how-to-create-a-bulk-sms-campaign"
+    },
+    {
+      "source": "/en/collections/14326815-mobile-push-campaigns",
+      "destination": "/campaigns/mobile-push-campaigns/how-to-create-a-bulk-mobile-push-campaign"
+    },
+    {
+      "source": "/en/collections/14327618-common-settings",
+      "destination": "/campaigns/common-settings/action-templates-for-campaigns"
+    },
+    {
+      "source": "/en/collections/14328122-ab-tests",
+      "destination": "/campaigns/ab-tests/how-to-set-up-control-groups-and-ab-tests-for-campaigns"
+    },
+    {
+      "source": "/en/collections/14328275-message-template-engine",
+      "destination": "/campaigns/message-template-engine/adding-a-condition-ifelse-ifend-if"
+    },
+    {
+      "source": "/en/collections/14328437-webhooks",
+      "destination": "/campaigns/webhooks/how-to-use-webhook-responses-in-flows"
+    },
+    {
+      "source": "/en/collections/14328854-personalization",
+      "destination": "/personalization/pop-up-forms-and-embedded-blocks/guidelines-for-coding-pop-ups-and-embedded-forms"
+    },
+    {
+      "source": "/en/collections/14328859-pop-up-forms-and-embedded-blocks",
+      "destination": "/personalization/pop-up-forms-and-embedded-blocks/guidelines-for-coding-pop-ups-and-embedded-forms"
+    },
+    {
+      "source": "/en/collections/14329452-product-recommendation",
+      "destination": "/personalization/product-recommendation/types-of-product-recommendation-presets"
+    },
+    {
+      "source": "/en/collections/14329906-mobile-app-personalization",
+      "destination": "/mobile-app-personalization/creating-an-in-app-message"
+    },
+    {
+      "source": "/en/collections/14330415-ad-optimization",
+      "destination": "/ad-optimization/how-to-set-up-the-ad-optimization-module"
+    },
+    {
+      "source": "/en/collections/14330509-loyalty",
+      "destination": "/loyalty/how-discounts-are-distributed-across-order-line-items"
+    },
+    {
+      "source": "/en/collections/14330727-reports",
+      "destination": "/reports/attribution-model"
+    },
+    {
+      "source": "/en/collections/14331018-api-integrations",
+      "destination": "/api-integrations/api-v3-methods-basics"
+    },
+    {
+      "source": "/en/collections/14331830-administration",
+      "destination": "/administration/faq-billing"
+    },
+    {
+      "source": "/en/collections/14331890-security",
+      "destination": "/security/advanced-security"
+    },
+    {
+      "source": "/en/collections/14352270-get-started",
+      "destination": "/campaigns/email-campaigns/get-started/how-to-add-senders-email-address"
+    },
+    {
+      "source": "/en/collections/14352304-email-authentication-methods",
+      "destination": "/campaigns/email-campaigns/email-authentication-methods/setting-up-dkim-and-dmarc"
+    },
+    {
+      "source": "/en/collections/14352309-email-deliverability",
+      "destination": "/campaigns/email-campaigns/email-deliverability/active-subscribers"
+    },
+    {
+      "source": "/en/collections/17802447-filtering-by-campaign-engagement",
+      "destination": "/filters/filtering-by-campaign-engagement/how-to-find-clicks-on-specific-links-in-campaigns"
+    },
+    {
+      "source": "/en/collections/18447532-filtering-by-orders",
+      "destination": "/filters/filtering-by-orders/how-the-order-first-action-filter-works"
+    },
+    {
+      "source": "/en/collections/3489399-customers-orders-and-products",
+      "destination": "/customers-orders-and-products/customers/how-customer-de-anonymization-works"
+    },
+    {
+      "source": "/en/collections/3489400-filters",
+      "destination": "/filters/how-to-create-filters"
     }
   ]
 }
