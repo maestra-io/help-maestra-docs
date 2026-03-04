@@ -5,23 +5,27 @@ description: "Maestra V3 API reference — operation invocation methods, paramet
 
 ## Operation Invocation Methods
 
-```xml Synchronous
-POST https://api.maestra.io/v3/operations/sync?endpointId={unique ID of site/mobile app/etc.}&operation={operation name}&deviceUUID={unique device ID}
+<CodeGroup>
 
+```http Synchronous
+POST /v3/operations/sync?endpointId={endpointId}&operation={operation}&deviceUUID={deviceUUID} HTTP/1.1
+Host: api.maestra.io
 Accept: application/xml
 Content-Type: application/xml
-Authorization: SecretKey {Secret Key, check with the manager if it's mandatory}"
-X-Customer-IP: {IP of customer device, check with the manager if it's mandatory}
+Authorization: SecretKey {Secret Key}
+X-Customer-IP: {IP of customer device}
 ```
 
-```text Asynchronous
-POST https://api.maestra.io/v3/operations/async?endpointId={unique ID of site/mobile app/etc.}&operation={operation name}&deviceUUID={unique device ID}
-
+```http Asynchronous
+POST /v3/operations/async?endpointId={endpointId}&operation={operation}&deviceUUID={deviceUUID} HTTP/1.1
+Host: api.maestra.io
 Accept: application/xml
 Content-Type: application/xml
-Authorization: SecretKey {secret key, check with the manager if it's mandatory}
-X-Customer-IP: {IP of customer device, check with the manager if it's mandatory}
+Authorization: SecretKey {Secret Key}
+X-Customer-IP: {IP of customer device}
 ```
+
+</CodeGroup>
 
 ## EndpointId
 

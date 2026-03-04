@@ -38,12 +38,12 @@ What to do:
 
 ### **How to add contact details to the blocklist:**
 
-```
-`POST https://projectname-services.maestra.com/v2/import?operation=ImportFakeContacts&csvCodePage=65001
+```http
+POST https://projectname-services.maestra.com/v2/import?operation=ImportFakeContacts&csvCodePage=65001
 
 Content-Type:text/csv
 Accept:application/xml
-Authorization: Basic Auth. Your login and password to access the Maestra project. 
+Authorization: Basic Auth. Your login and password to access the Maestra project.
 
 Contact;ContactType
 1@1.com;Email
@@ -51,25 +51,25 @@ fale@fake.com;Email
 77777777777;MobilePhone
 78888888888;MobilePhone
 111111;TechnicalIdentity
-844fcf8b-783c-4297-a0ad-ec5ee966a962;Device`
+844fcf8b-783c-4297-a0ad-ec5ee966a962;Device
 ```
 
 ### **How to delete contact details from the blocklist:**
 
-```
-`POST https://projectname-services.maestra.com/v2/import?operation=DeleteFakeContacts&csvCodePage=65001
+```http
+POST https://projectname-services.maestra.com/v2/import?operation=DeleteFakeContacts&csvCodePage=65001
 
 Content-Type:text/csv
-Accept:application/xml 
-Authorization: Basic Auth. Your login and password to access the Maestra project. 
+Accept:application/xml
+Authorization: Basic Auth. Your login and password to access the Maestra project.
 
-Contact;ContactType 
-1@1.com;Email 
-fale@fake.com;Email 
+Contact;ContactType
+1@1.com;Email
+fale@fake.com;Email
 78005553535;MobilePhone
-78004453535;MobilePhone 
-111111;TechnicalIdentity 
-844fcf8b-783c-4297-a0ad-ec5ee966a962;Device`
+78004453535;MobilePhone
+111111;TechnicalIdentity
+844fcf8b-783c-4297-a0ad-ec5ee966a962;Device
 ```
 
 ## **List of invalid contact details**
@@ -79,7 +79,7 @@ This list is specific for every project. The list below contains common invalid 
 **Email addresses:**
 
 ```
-`11111@hotmail.com
+11111@hotmail.com
 123@hotmail.com
 1@1.com
 1@hotmail.com
@@ -120,13 +120,13 @@ shop@reee.com
 unknown@site.com
 1@1
 q@q
-fale@fake.com`
+fale@fake.com
 ```
 
 **Cell Phone Numbers:**
 
 ```
-`10000000000
+10000000000
 11111111111
 11234567890
 12222222222
@@ -151,5 +151,5 @@ fale@fake.com`
 19880000000
 19888888888
 19995555555
-19999999999`
+19999999999
 ```

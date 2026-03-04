@@ -7,21 +7,21 @@ You may sometimes need to check certain details from a customer’s profile in o
 Here’s what a **simple condition** looks like:
 
 ```
-`@{ if Recipient.Sex.IsMale }
+@{ if Recipient.Sex.IsMale }
 Dear Sir,
-@{ end if }`
+@{ end if }
 ```
 
 A **default condition** can be set if none of the conditions is satisfied:
 
 ```
-`@{ if Recipient.Sex.IsMale}
+@{ if Recipient.Sex.IsMale}
 Dear Sir,
 @{ else if Recipient.Sex.IsFemale}
 Dear Madam,
 @{ else }
 Dear Sir or Madam,
-@{ end if }`
+@{ end if }
 ```
 
 You can embed a simple or a complex condition inside an if/else if condition.

@@ -24,7 +24,7 @@ The ***TableRows*** function can solve this problem by making a layout. It group
 # Example:
 
 ```
-`@{ if cell.Value != null } Upload some of the field values: ${ cell.Value.Title } @{ else } Make a layout without using values @{ end if }`
+@{ if cell.Value != null } Upload some of the field values: ${ cell.Value.Title } @{ else } Make a layout without using values @{ end if }
 ```
 
 Let’s see how it all works by looking at some examples.
@@ -36,8 +36,8 @@ Layout:
 A placeholder, e.g. an image, is added to empty cells.
 Layout code:
 
-```
-`<table>   @{for row in Products, 3)}     <tr>       @{for cell in row.Cells}         <td>           @{if cell.Value != null}             ${cell.Value.Name}           @{end if}         </td>       @{end for}     </tr>   @{end for} </table>`
+```html
+<table>   @{for row in Products, 3)}     <tr>       @{for cell in row.Cells}         <td>           @{if cell.Value != null}             ${cell.Value.Name}           @{end if}         </td>       @{end for}     </tr>   @{end for} </table>
 ```
 
 # Example 2:
@@ -47,8 +47,8 @@ Layout:
 If there are not enough elements for the last row in the layout, a different layout is applied — e.g., with merged cells.
 Layout code:
 
-```
-`<table> @{ for row in tableRows(Products, 3) }     @{ if row.ValueCount = 3 }         @{* Layout for a standard row where all the relevant elements are present *}           <tr>             @{ for cell in row.Cells }               <td>                 ${ cell.Value }               </td>             @{ end for }           </tr>         @{ else }           <tr>             <td colspan="3"> 	            @{* Example of a table inside the last row *} 	              <table> 	                <tr> 	                  @{ for cell in row.Cells }                       @{ if cell.Value != null }                         <td>                           ${ cell.Value }                         </td>                       @{ end if }                     @{ end for }                   </tr>                 </table>             </td>           </tr>     @{ end if }    @{ end for }  </table>`
+```html
+<table> @{ for row in tableRows(Products, 3) }     @{ if row.ValueCount = 3 }         @{* Layout for a standard row where all the relevant elements are present *}           <tr>             @{ for cell in row.Cells }               <td>                 ${ cell.Value }               </td>             @{ end for }           </tr>         @{ else }           <tr>             <td colspan="3"> 	            @{* Example of a table inside the last row *} 	              <table> 	                <tr> 	                  @{ for cell in row.Cells }                       @{ if cell.Value != null }                         <td>                           ${ cell.Value }                         </td>                       @{ end if }                     @{ end for }                   </tr>                 </table>             </td>           </tr>     @{ end if }    @{ end for }  </table>
 ```
 
 # Example 3:
@@ -58,6 +58,6 @@ Layout:
 The last row has a different style and might use a different layout; each starting element in the row has a different style / layout.
 Layout code:
 
-```
-`<table>   @{ for row in tableRows(Products, 3) }     <tr class="${ if (row.isLast, "red", "regular") }">       @{ for cell in row.Cells }         @{ if cell.Value != null }           <td class="${ if (cell.isFirst, "highlight", "regular") }">             ${ cell.Value }           </td>         @{ end if }       @{ end for }     </tr>   @{ end for } </table>`
+```html
+<table>   @{ for row in tableRows(Products, 3) }     <tr class="${ if (row.isLast, "red", "regular") }">       @{ for cell in row.Cells }         @{ if cell.Value != null }           <td class="${ if (cell.isFirst, "highlight", "regular") }">             ${ cell.Value }           </td>         @{ end if }       @{ end for }     </tr>   @{ end for } </table>
 ```
