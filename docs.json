@@ -313,7 +313,18 @@
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
-  "navbar": {},
+  "navbar": {
+    "links": [
+      {
+        "label": "Success stories",
+        "href": "https://maestra.io/blog/cases"
+      },
+      {
+        "label": "Developers",
+        "href": "https://developers.maestra.io"
+      }
+    ]
+  },
   "contextual": {
     "options": [
       "copy",
@@ -326,7 +337,23 @@
       "vscode"
     ]
   },
-  "footer": {},
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/maestraplatform/",
+      "facebook": "https://www.facebook.com/maestraplatform"
+    },
+    "links": [
+      {
+        "title": "Support",
+        "items": [
+          {
+            "label": "support@maestra.io",
+            "href": "mailto:support@maestra.io"
+          }
+        ]
+      }
+    ]
+  },
   "redirects": [
     {
       "source": "/en/articles/11584375-who-is-a-customer",
