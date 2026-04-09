@@ -116,13 +116,13 @@ When combined:$\{FormatDecimal(balance, 'N0')\}$\{Forms(balance, 'bonus', 'bonus
 
 ## Boolean methods (true/false)
 
-- **If** (conditional statement, string1, string2): returns string1 if the statement is true or string2 if the statement is false.  Example: $\{Order.AdditionalData.FreeShipping\} — true $\{If(Order.AdditionalData.FreeShipping, "free", "\$2″)\} → free
+- **If** (conditional statement, string1, string2): returns string1 if the statement is true or string2 if the statement is false.  Example: $\{Order.AdditionalData.FreeShipping\} — true $\{If(Order.AdditionalData.FreeShipping, "free", "$2″)\} → free
 
 ---
 
 ## Methods for images
 
-- **ResizeImage** (URL, width, height): resizes images. You can send test emails to check how this method works. Images are resized as emails are composed.  Example: `<img src="${ResizeImage(PictureUrl, 200, 100)}"`  The method returns the resized image within the specified width and height. This method does not crop the image and does not change the aspect ratio.
+- **ResizeImage** (URL, width, height): resizes images. You can send test emails to check how this method works. Images are resized as emails are composed.  Example: <img src="$\{ResizeImage(PictureUrl, 200, 100)\}"  The method returns the resized image within the specified width and height. This method does not crop the image and does not change the aspect ratio.
 
 ## Hash functions
 

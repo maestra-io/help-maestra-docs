@@ -1,0 +1,128 @@
+---
+title: "How to create and configure an integration point"
+---
+
+To start using Maestra, you need to set up data exchange between Maestra and your external system — a website, mobile app, point of sale, etc. This connection is called an **integration**. Each of your systems needs a unique identifier in Maestra to send and receive data. That identifier is called an **integration point**.
+
+Each integration point is created once per system. When data is exchanged, the integration point tells Maestra exactly which system is sending it and which saved settings to apply.
+
+For each integration point, you can define a touchpoint, contact verification settings, account access settings, and the sites where the Maestra JS tracker is installed.
+
+To create a new integration point, go to **Integrations** **→** **Integration Setup** **→** **Add integration**.
+​
+
+![](/images/imported/--2026-03-03--16_46_24.png)
+
+Then select the appropriate preset.
+​
+
+![](/images/imported/--2026-03-03--16_55_16.png)
+
+Let's walk through each settings section in detail.
+
+# Integration name
+
+A display name for your integration point — for example, "Website" or "iOS App". This is not a system identifier and is used for display purposes only.
+​
+
+![](/images/imported/--2026-03-03--17_04_45.png)
+
+# General settings
+
+- **Brand** (multi-brand projects only) — the brand this integration point will be linked to.
+
+- **ID** — the system name used when calling operations. Two options are available:
+
+- Specify name manually — the project name is always added as a prefix — you can't change that part. In multi-brand projects, the brand name comes next, followed by "Website" or "Custom" based on the integration type. You're free to replace this brand + type segment with any word you'd like.
+- Use generated name — a GUID is automatically generated as the system name. Available for Website, Other, iOS app, and Android app integration types.
+
+![](/images/imported/--2026-03-06--13_04_09.png)
+
+# Secret keys
+
+Secret keys secure the data transfer between your systems and Maestra. A production key is generated automatically when you create an integration point. You can also add extra production keys and test keys.
+
+**Permissions required:**
+
+- View and copy a test key — **View integrations**
+- View and copy any key — **Manage secret keys**
+- Create a test key — **Edit integrations**
+- Create any key — **Edit integrations** + **Manage secret keys**
+
+Test key limitations:
+
+- Export operations can't be called with a test key
+- The key expires 12 hours after it's saved
+- Rate limit: 100 operation calls per hour
+
+![](/images/imported/--2026-03-06--13_16_28.png)
+
+Each integration point **has its own secret key**, so if one key is compromised, the others remain unaffected.
+
+## How to rotate a production key without downtime 
+
+1. Create a new production key in your integration settings — keep the old key active for now.
+
+2. Find all operations using the old key and pass their system names to your dev team along with the new key.
+​
+
+![](/images/imported/--2026-03-06--13_24_02.png)
+
+3. Once the new key is deployed, verify that no calls are still going through the old key.
+
+4. Delete the old key from your integration settings.
+
+# Attribution settings
+
+A **touchpoint** tracks where a user came from and where they take actions. Each integration point must have a unique contact point. It's created automatically when you set the integration point's system name, or you can assign an existing contact point manually.
+​
+
+![](/images/imported/--2026-03-06--13_29_05.png)
+
+# Contact confirmation settings
+
+Only needed for projects with a customer account managed on the Maestra side. Specify which contact details should enable registration, login, and password recovery.
+
+A contact marked as **granting account access** has a special status in the system:
+
+- A customer with that contact can't be registered again.
+- Two customers with account-granting contacts can't be merged. 
+
+# Account access settings
+
+Primarily needed for projects with a customer account managed on the Maestra side.
+
+If you need to verify that an email belongs to a subscriber who has opted in to communications, use a separate subscription confirmation mechanism (double opt-in).
+​
+
+![](/images/imported/--2026-03-06--14_08_27.png)
+
+**Why account access settings might be needed**:
+
+For example, in a loyalty program, you might want to allow points redemption only for customers with a verified phone number and/or email. Subscription confirmation alone doesn't work here — a customer could unsubscribe from emails but still use the loyalty program.
+
+# Site personalization settings
+
+Specify the operation names used to pass product views, category views, and cart state data from the site this integration point belongs to. This is important for correct popup targeting. This section is only available for the **Website** integration type. For a full setup guide, see the [Website Personalization](https://developers.maestra.io/page/website-personalization) article.
+
+![](/images/imported/--2026-03-06--14_15_09.png)
+
+# Sites with JavaScript SDK
+
+Enter the site URLs (without the protocol) where the Maestra JS tracker is installed. Data about customer actions will only be collected from the listed sites. This section is only available for the **Website** integration type.
+​
+
+![](/images/imported/--2026-03-06--14_19_17.png)
+
+Common errors:
+
+1. **Domain is already used in another project.** One domain can only be assigned to one integration point across all Maestra projects. You can skip this and pass the integration point ID directly in the [JavaScript SDK](https://developers.maestra.io/docs/javascript-sdk) instead.
+2. **Subdomains aren't tracked**. The tracking code doesn't collect data from subdomains of your site by default. Enable the **Including subdomains** flag in settings, or list each subdomain manually.
+3. **Domain entered with a protocol**. Use the format `site.com` or `www.site.com` — not `https://site.com`. If your domain is `site.com` (no www), make sure to enter it exactly that way, otherwise you'll see a console error: **"Requests from `http://site.com` are not allowed. Add your domain in integration settings."**
+
+# Examples
+
+- **You have one website**. Create one integration point.
+- **You have a website and a landing page**, and you want to track where subscribers come from. Create two integration points — one for each. Assign a unique touchpoint to each. To find users who came through the landing page, simply filter customers by touchpoint.
+
+When importing customers or orders, the choice of integration point depends on the data source. For example, if you're uploading customers who registered on the website, select the website integration point.

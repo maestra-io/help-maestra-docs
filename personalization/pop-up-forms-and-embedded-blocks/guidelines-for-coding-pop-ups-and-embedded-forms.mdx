@@ -12,8 +12,8 @@ Each form’s layout depends on the form type, i.e., whether it collects contact
 - The `"popmechanic-main"` class wraps the main screen of the subscription form.
 - Any element that is used to close a form should use `"data-popmechanic-close"`. No additional scripts are needed:
 
-```html
-<!-- The form is entirely wrapped in an individual div of the "popmechanic-reset" class and id="popmechanic-form" -->
+```
+`<!-- The form is entirely wrapped in an individual div of the "popmechanic-reset" class and id="popmechanic-form" -->
 <div class="popmechanic-reset" id="popmechanic-form">
   <div class="popmechanic-main">
       <div class="popmechanic-content">
@@ -28,37 +28,37 @@ Each form’s layout depends on the form type, i.e., whether it collects contact
   <!-- A specific class to describe elements that close the form: -->
   <div class="popmechanic-close" data-popmechanic-close>×
   </div>
-</div>
+</div>`
 ```
 
 ### Forms that collect contacts
 
 As contact collection forms send some customer details to Maestra, they should contain at least one **input field** and one **confirmation button**:
 
-```html
-<div class="popmechanic-inputs">
+```
+`<div class="popmechanic-inputs">
 		<input type="email" class="popmechanic-input" data-popmechanic-input="email" placeholder="Email" required>
 		<button type="button" name="button" class="popmechanic-button" data-popmechanic-submit>Button text</button>
-</div>
+</div>`
 ```
 
 More on input and validation fields
 
 In your contact collection form, you can add a **Thank You screen** and wrap it in the `"popmechanic-thankyou"` class:
 
-```html
-<div class="popmechanic-thankyou">
+```
+`<div class="popmechanic-thankyou">
 		<div class="popmechanic-title">Thank you!</div>
     <div class="popmechanic-sub-title">An email was sent to you</div>
     <div class="popmechanic-close" data-popmechanic-close>×
     </div>
-</div>
+</div>`
 ```
 
 **Ready-to-use example:**
 
-```html
-<!-- The entire form is wrapped in an individual div with the "popmechanic-reset" class and id="popmechanic-form" -->
+```
+`<!-- The entire form is wrapped in an individual div with the "popmechanic-reset" class and id="popmechanic-form" -->
 <div class="popmechanic-reset" id="popmechanic-form">
   <div class="popmechanic-main">
       <div class="popmechanic-content">
@@ -85,23 +85,23 @@ In your contact collection form, you can add a **Thank You screen** and wrap it 
       <div class="popmechanic-close" data-popmechanic-close>×
       </div>
   </div>
-</div>
+</div>`
 ```
 
 ### Data submission forms
 
 If you need to count clicks on your embedded form’s URL or button, add `"data-popmechanic-submit"` to this URL/button.
 
-```html
-<button type="button" name="button" class="popmechanic-button" data-popmechanic-submit>Button text</button>
+```
+`<button type="button" name="button" class="popmechanic-button" data-popmechanic-submit>Button text</button>`
 ```
 
 If you have several buttons with this parameter in your form, all click counts will be aggregated in the report.
 
 **Ready-to-use example:**
 
-```html
-<!-- The entire form is wrapped in an individual div with the "popmechanic-reset" class and id="popmechanic-form" -->
+```
+`<!-- The entire form is wrapped in an individual div with the "popmechanic-reset" class and id="popmechanic-form" -->
 <div class="popmechanic-reset" id="popmechanic-form">
   <div class="popmechanic-main">
       <div class="popmechanic-content">
@@ -118,7 +118,7 @@ If you have several buttons with this parameter in your form, all click counts w
   <!-- An individual class to wrap elements that close the form -->
   <div class="popmechanic-close" data-popmechanic-close>×
   </div>
-</div>
+</div>`
 ```
 
 ## CSS styles
@@ -136,35 +136,35 @@ Classes reserved for styles:
 
 To create custom CSS form styles, place `#popmechanic-form` at the beginning of the selector as shown below:
 
-```css
-/* Styles for all the form URLs: */
+```
+`<!-- Styles for all the form URLs: -->
 #popmechanic-form a {
   display: block;
 }
 
-/* Styles for all the window close elements: */
+<!-- Styles for all the window close elements: -->
 #popmechanic-form .popmechanic-close {
   font-size: 20px;
 }
 
-/* Styles for the the mobile form version: */
+<!-- Styles for the the mobile form version: -->
 .popmechanic-mobile #popmechanic-form {
   width: 300px;
 }
 
-/* Styles for images in the mobile form version: */
+<!-- Styles for images in the mobile form version: -->
 .popmechanic-mobile #popmechanic-form img {
   width: 200px;
-}
+}`
 ```
 
 ### Adding custom fonts to your form
 
 Recommended:
 
-```css
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext");
+```
+`@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext");`
 ```
 
 ### Adding a video to your form
@@ -173,10 +173,10 @@ Limit your GIF animation by 2 MB.
 
 The video can be used as a background for the form:
 
-```html
-<video autoplay loop muted class="popmechanic-video popmechanic-video-desktop">
+```
+`<video autoplay loop muted class="popmechanic-video popmechanic-video-desktop">
     <source src="Paste video link here" type="video/mp4">
-</video>
+</video>`
 ```
 
 For more information on how to handle video in your forms refer to How to Create a Pop-Up with a Video.
@@ -185,32 +185,34 @@ For more information on how to handle video in your forms refer to How to Create
 
 When you design a multiscreen form or a form with a Thank You screen, hide all the screens except the first one.
 
-```css
-/* The form is displayed with the Thank You screen hidden */
+```
+`<!-- The form is displayed with the Thank You screen hidden -->
 #popmechanic-form .popmechanic-thankyou {
   display: none; }
 
-/* The first screen is hidden once the data is successfully submitted, and the Thank You screen is displayed */
+<!-- The first screen is hidden once the data is successfully submitted, and the Thank You screen is displayed -->
 .popmechanic-success #popmechanic-form .popmechanic-main {
   display: none; }
 
 .popmechanic-success #popmechanic-form .popmechanic-thankyou {
   display: block; }
+
+`
 ```
 
-```css
-/* Similarly, a multiscreen form in which all screens are hidden except the first */
+```
+`<!-- Similarly, a multiscreen form in which all screens are hidden except the first -->
 #popmechanic-form .second-screen {
   display: none;
-}
+}`
 ```
 
 **Example:**
 
 The form button styles are described below
 
-```css
-/* General button styles for desktop and mobile versions */
+```
+`<!-- General button styles for desktop and mobile versions -->
 #popmechanic-form .popmechanic-button {
   width: 110px;
   height: 30px;
@@ -229,16 +231,16 @@ The form button styles are described below
   -webkit-transition: all .3s;
   transition: all .3s;
   }
-  /* Changing a style when hovering over a button */
+  <!-- Changing a style when hovering over a button -->
   #popmechanic-form .popmechanic-button:hover {
   color: #4fad00;
   background: #fff;
   }
-  /* Changing a style when designing a button on a mobile device */
+  <!-- Changing a style when designing a button on a mobile device -->
   .popmechanic-mobile #popmechanic-form .popmechanic-button {
   width: 120px;
   height: 25px;
   font-size: 12px;
   line-height: 10px;
-  }
+  }`
 ```

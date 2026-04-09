@@ -278,7 +278,6 @@
             "pages": [
               "administration/faq-billing",
               "administration/how-to-create-an-external-system",
-              "administration/maestra-ai",
               "administration/multibrand"
             ]
           },
@@ -292,6 +291,16 @@
               "security/single-sign-on-sso",
               "security/staff-session-duration",
               "security/what-are-passkeys"
+            ]
+          },
+          {
+            "group": "General",
+            "pages": [
+              "general/how-to-create-and-configure-an-integration-point",
+              "general/how-to-use-custom-fonts-in-the-maestra-editor",
+              "general/test",
+              "general/testing",
+              "general/what-is-an-action"
             ]
           }
         ]
