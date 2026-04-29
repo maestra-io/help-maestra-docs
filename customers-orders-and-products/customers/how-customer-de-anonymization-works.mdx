@@ -2,8 +2,7 @@
 title: "How Customer De-anonymization Works"
 ---
 
-Maestra stores customer actions even before a customer registers, so you can deliver a smoother experience to anonymous users.
-Once the user registers, these actions are automatically linked to the identified customer profile based on their **[device UUID](/api-integrations/what-is-a-deviceuuid)**.
+Maestra stores customer actions even before a customer registers, so you can deliver a smoother experience to anonymous users. Once the user registers, these actions are automatically linked to the identified customer profile based on their [**device UUID**](/api-integrations/what-is-a-deviceuuid).
 
 Here’s what gets tracked and stored:
 
@@ -11,15 +10,14 @@ Here’s what gets tracked and stored:
 - **30 days** — interactions with widgets, pop-ups, and embedded blocks (impressions and clicks).
 - **7 days** — product and category views.
 
-**Important**
-
-Data from asynchronous calls is stored with the status "Unidentified customer" and is executed as soon as the user is identified on that device.
+<Note>
+  Data from asynchronous calls is stored with the status "Unidentified customer" and is executed as soon as the user is identified on that device.
+</Note>
 
 ![](/images/imported/--2025-09-15--10_37_39AM.png)
 
 Any actions taken before de-anonymization are added to the project only after the customer is recognized. Because of this, the creation date in the system may be later than the actual time of the event.
 
-**How does it look like**
-​
+**How does it look like** ​
 
 ![](/images/imported/--2025-09-15--11_09_54AM.png)
