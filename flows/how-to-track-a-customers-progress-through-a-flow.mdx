@@ -1,0 +1,86 @@
+---
+title: "How to Track a Customer's Progress Through a Flow"
+---
+
+## Overview
+
+Ever wonder why a specific customer didn't get an email from your welcome flow — or where exactly they dropped off? Maestra lets you replay any customer's journey through a flow step by step, so you can see exactly where they are, how long they've been waiting, and why they exited.
+
+This is especially useful for:
+
+- Debugging flows that aren't behaving as expected
+- Investigating a support request from a specific customer
+- Confirming that your logic is working the way you intended
+
+## How to view a customer's flow activity
+
+1. Open the flow you want to inspect.
+2. Click the **flow menu** (the three-dot icon in the top right corner).
+3. Select **View customer activity**.
+4. Search for the customer using any of the following:
+   - Full name
+   - Maestra ID
+   - Email address
+   - Mobile phone number
+5. Select a **time period**. Activity data is available for the last **30 days**.
+6. Click on an entry in the results list to open the full activity view.
+
+You'll see a visual timeline of the customer's path through the flow — each block they passed through, how long they spent there, and what happened at each step.
+
+<Note>
+If the flow was edited after the customer entered it, the activity view reflects the settings that were active **at the time each step was executed** — not the current version of the flow.
+</Note>
+
+## Understanding activity statuses
+
+### In progress
+
+The customer is currently moving through the flow. This includes two scenarios:
+
+- They're **actively in a step** — the system is processing an action right now.
+- They're **waiting in a delay block** — the expected exit time is shown so you know when they'll move on.
+
+### Completed
+
+The customer finished the flow. This can happen in a few ways:
+
+- All steps executed successfully.
+- An event failed a condition check at the final step.
+- The trigger frequency limit was reached (the flow ran the maximum number of times allowed for this customer).
+
+### Stopped
+
+The customer exited the flow early. Common reasons include:
+
+| Reason | What it means |
+|---|---|
+| Step relevance period expired | The customer was in the flow too long and exceeded the time limit set for the steps |
+| Frequency limit not met | The customer didn't meet re-entry rules set for event-triggered flows |
+| Failed launch condition check | The customer didn't satisfy the conditions required to start the flow |
+| Outside segment restriction | The flow folder was limited to a segment, and this customer wasn't in it |
+| Flow was stopped | The flow was manually paused or stopped while the customer was in it |
+| Wait block was deleted | An active delay block was removed during a flow edit while the customer was waiting in it |
+| Dynamic wait value missing | A delay block relied on a custom field date that wasn't available for this customer |
+
+### Error
+
+Something unexpected happened. If you see this status, check the **Campaign & Data monitoring** page for more detail.
+
+## Troubleshooting: why doesn't a customer show up?
+
+If you search for a customer and don't see any activity — or the activity seems incomplete — here are the most likely causes.
+
+### For event-triggered flows
+
+- **The flow wasn't active when the event occurred.** Check the version history to see if the flow was running at that time.
+- **The event trigger wasn't set up yet in that version.** An older version of the flow might not have included the same trigger.
+- **The event didn't match the trigger criteria.** Review the launch block conditions and confirm the customer's action met all of them.
+- **Wrong template used.** If the trigger is template-based, make sure the right template was active.
+- **Multi-brand project.** If you're running multiple brands, confirm the event happened in the correct brand.
+- **Historical event upload.** If the event was uploaded retroactively: the flow must have been active at the time of the upload, and the event must have occurred within the last 7 days before the data was entered.
+
+### For scheduled flows
+
+- **The flow hasn't run yet.** Double-check the scheduled run time — it may simply not have triggered yet.
+- **The customer didn't meet the conditions at run time.** The version history shows what conditions were active at each scheduled execution.
+- **The flow wasn't active at that moment.** Confirm the flow was running during the scheduled window.
