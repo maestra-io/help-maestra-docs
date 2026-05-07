@@ -2,102 +2,141 @@
 title: "Who is a Customer?"
 ---
 
-A customer in Maestra is any consumer that can be identified and found in the system.\
-\
-Once recorded in a project, every customer must have at least one **unique contact detail / ID,** such as:
+A customer in Maestra is any of your customers that we can identify — whether they've placed an order, signed up for a newsletter, or just installed your app. Once a customer lands in your project, Maestra builds them a single profile that tracks who they are, how they engage, and what they've done across every channel.
 
-- email;
-- mobile phone number;
-- discount card number;
-- external ID (an ID issued by your external system; you’ll need to create an additional [custom field](/api-integrations/how-to-create-a-custom-field) to save this info (field type: Unique ID, entity: Customer);
-- mobile app;
-- mobile push device.
+## What makes someone a customer
 
-In addition, a Maestra ID is generated automatically for all customers recorded in the project.
+Every customer needs at least one **unique contact detail or ID**. Any of the following will do:
 
-The system also creates an individual customer profile for every customer.
+- Email address
+- Mobile phone number
+- Loyalty or discount card number
+- External ID — an ID from your own system (requires a [custom field](/api-integrations/how-to-create-a-custom-field) with field type **Unique ID** and entity **Customer**)
+- Mobile app install
+- Mobile push device
 
-Go to **Customer data platform** → **Customers** to see all the customer profiles:
+On top of that, Maestra automatically assigns every customer a **Maestra ID** so you always have a stable internal reference.
 
-![00\_whois](/images/imported/00_whois.png)
+## Finding customer profiles
 
-To open the profile of a particular customer, click the customer’s name:
+Go to **Customer data platform** → **Customers** to browse every profile in your project.
 
-![01\_whois](/images/imported/01_whois.png)
+![All customers list](/images/imported/00_whois.png)
 
-# Navigating the customer profile
+Click any name to open that customer's profile.
 
-![02\_whois](/images/imported/02_whois.png)
+![Customer profile entry](/images/imported/01_whois.png)
 
-In the center are the main contacts and personal information of a customer: email, mobile phone number, birthdate, gender, area and time zone.
+## Navigating the customer profile
 
-Below, you'll find IDs and discount cards, along with a detailed history of past customer identifiers (**ID Changelog**) if they’ve been updated. To the right of this section, there’s an authentication token. Clicking on it copies the customer's authorization token value directly to the clipboard.
+![Customer profile overview](/images/imported/02_whois.png)
 
-In the right area — devices.
+### Main section
 
-# Devices
+The main section is stacked top to bottom:
 
-**Mobile applications:**
+- **Top** — core contact and personal info: email, mobile phone, birthdate, gender, area, and time zone.
+- **Middle** — IDs and discount cards, plus an **ID Changelog** with the full history of identifier updates. To the right, an authentication token — click it to copy the customer's auth token to your clipboard.
+- **Bottom** — the **registration date** and **purchase data**. Click the registration date to jump straight to that moment in the activity feed. For multi-brand projects, the customer's first registration date and the brand they signed up under are shown here as well.
 
-![06\_whois](/images/imported/06_whois.png)
+Below the main section, you'll find a row of tabs with a deeper view of the customer — their activity, the segments they belong to, their subscriptions, and other data tied to the profile: [Activity feed](#activity-feed), [Subscriptions](#subscriptions), [Segments](#segments), [Profile changelog](#profile-changelog), [Custom fields](#custom-fields), and [Product lists](#product-lists).
 
-**Browsers for sending push notifications:**
+The customer's devices live in a separate panel on the right side of the profile.
 
-![03\_whois](/images/imported/03_whois.png)
+**Purchase data**
 
-Customers using the same devices to log in into their accounts or app:
+The profile shows three top-line numbers calculated from the customer's lifetime orders:
 
-![customer\_05](/images/imported/customer_05.png)
+- **Order count** — how many orders this customer has placed.
+- **Average order value** — total order revenue divided by order count.
+- **Total spend** — lifetime revenue from this customer. If you have RFM segmentation set up, the customer's RFM segment is shown alongside it.
 
-Tabs at the bottom of the screen.
+<Note>
+**A few things worth knowing about purchase data:**
 
-# Activity feed
+- Only orders that fall into the **Placed**, **Paid**, or **Delivered** order status categories are counted. Deleted orders are excluded.
+- Both average order value and total spend are calculated **after** discounts are applied.
+- Values can be copied to the clipboard with the **Copy** button. Without the **View and edit personal data** permission, the copied values come through masked.
+- Purchase data isn't included in customer exports.
+</Note>
 
-This tab displays all the actions of this customer:
+### Devices
 
-![04\_whois](/images/imported/04_whois.png)
+The **Devices** section gives you a full picture of every device this customer has used to connect with your brand — across apps, browsers, and customers with shared devices.
 
-# Bonus points
+**Mobile apps**
 
-This tab displays the customer’s current points balance and all changes in their bonus points accounts, as well as promo codes and prizes across all campaigns:
+![Mobile app installs](/images/imported/06_whois.png)
 
-![customer\_07](/images/imported/customer_07.png)
+**Browsers**
 
-# Subscriptions
+![Web push browsers](/images/imported/03_whois.png)
 
-This tab displays all subscription statuses of the customer:
+**Customers with shared devices** — other customers who've signed in on the same device or app:
 
-![customer\_08](/images/imported/customer_08.png)
+![Customers sharing a device](/images/imported/customer_05.png)
 
-# Segments
+### Activity feed
 
-The **Current** tab in the **Segments** section displays all the segments the customer belongs to.
+The Activity feed has two tabs: **All activity** and **Bonus points**.
 
-![customer\_09](/images/imported/customer_09.png)
+**All activity**
 
-The **Segment history** tab in the **Segments** section shows the history of segmentation: when and which Recalculated segments the customer was added to or removed from.
+A timeline of everything that's happened with this customer: their own actions, anything done on their profile, campaigns sent to them, and personal data updates.
 
-When customers are merged, you can view the whole history of segmentation for each merged customer:
+![Customer activity feed](/images/imported/04_whois.png)
 
-![customer\_10](/images/imported/customer_10.png)
+Filter by date range or activity type to zero in on what you're looking for.
 
-# Profile changelog
+**Bonus points**
 
-This tab displays details of all the updates to the customer's personal information (email, area, custom fields, etc.), including merging details: full name, timestamp, touchpoint, initiator, and what has changed:
+The customer's current points balance and the full ledger of changes across every bonus account, with the reason for each accrual or deduction.
 
-![05\_whois](/images/imported/05_whois.png)
+![Bonus points and rewards](/images/imported/customer_07.png)
 
-# Actions with customer profile
+### Subscriptions
 
-Customer profiles allow you to:
+The customer's opt-in status across every channel and topic.
 
-- edit customer details;
-- change subscriptions;
-- issue actions.
+![Subscription statuses](/images/imported/customer_08.png)
 
-Customers can be added to the database:
+### Segments
 
-- [manually](/customers-orders-and-products/customers/how-to-add-a-customer-manually-via-the-user-interface), one at a time;
-- [via file import](/customers-orders-and-products/customers/how-to-bulk-import-customers-from-a-file);
-- by importing a customer from an FTP server;
-- via [API](https://developers.maestra.io/docs/bulk-import-of-customers).
+- **Current Segments** — every segment (both Scheduled and Static) the customer belongs to right now, along with the date they entered it.
+
+![Current segments](/images/imported/customer_09.png)
+
+- **Segment history** — when and why the customer entered or left each segment, with the relevant Maestra ID and any merge events flagged. If the profile has been merged with others, you'll see the full segmentation history of every merged customer.
+
+![Segment history after merge](/images/imported/customer_10.png)
+
+### Profile changelog
+
+Every change to the customer's personal info — email, area, custom fields, and more, including profile merges. For each entry you'll see what changed, when, at which touchpoint, who made the change, and the details of the change itself. Filter by date range to narrow it down.
+
+![Profile changelog](/images/imported/05_whois.png)
+
+### Custom fields
+
+All custom and computed fields stored on this customer profile.
+
+### Product lists
+
+Every product the customer has added to their product lists — favorites, wishlists, and any custom lists you've defined.
+
+## What you can do from a customer profile
+
+From any profile, you can:
+
+- Edit customer details
+- Update subscriptions
+- Issue actions
+
+## Adding customers to your project
+
+There are four ways to get customers into Maestra:
+
+- [Manually](/customers-orders-and-products/customers/how-to-add-a-customer-manually-via-the-user-interface), one at a time
+- [Bulk import from a file](/customers-orders-and-products/customers/how-to-bulk-import-customers-from-a-file)
+- Import from an FTP server
+- Via [API](https://developers.maestra.io/docs/bulk-import-of-customers)
