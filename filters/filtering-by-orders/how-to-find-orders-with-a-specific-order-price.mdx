@@ -41,7 +41,10 @@ The order price changes depending on how discounts and returns are considered:
 
 ![](/images/imported/--2026-02-12--15_54_10.png)
 
+<Note>
+
 **Note:** Both value boundaries in filters are inclusive.
+</Note>
 
 In some cases, all three values can be equal. For example, if an order has no discounts or canceled items, the total will be the same for all filters.
 
@@ -65,7 +68,7 @@ Filters in this category include:
 - **Order** — **Order item — Product — Price** (current product price from the product feed in Maestra)
 - **Order** — **Order item — Product — Old price** (previous product price from the product feed in Maestra)
 
-####  **Product vs. order item: What’s the difference**
+<Accordion title="Product vs. order item: What’s the difference">
 
 A **product** is a catalog item. It’s usually uploaded via an XML feed, which keeps pricing and availability up to date. You can find all products in **Customer Data Platform → Products**.
 
@@ -74,8 +77,12 @@ When an item is purchased, the order line includes the product itself, its price
 In other words, a product is just one part of an order item. That’s why the product price and the order item price can be different.
 
 For example, a year ago a customer bought a watch for $1,000. Today the same watch costs $2,000. In this case, the **order item price** is $1,000, while the **product price** is $2,000.
+</Accordion>
+
+<Note>
 
 **Note:** Item price filters always look at the price per item, not the total for the line.
+</Note>
 
 For example, let's take a loot at this order line and its item. 
 
@@ -103,5 +110,7 @@ You can filter:
 
 ![](/images/imported/How-to-find-orders-with-a-specific-value-(16).png)
 
-**Note:** Both value boundaries in filters are inclusive.
+<Note>
 
+**Note:** Both value boundaries in filters are inclusive.
+</Note>

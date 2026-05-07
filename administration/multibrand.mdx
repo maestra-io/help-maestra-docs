@@ -432,7 +432,11 @@ If your account includes multiple brands (2+), you’ll be asked to select the b
 - Product list changed
 - Customer entered the segment
 - Customer quit the segment
-- Predictive AI: Next Best ActionTo segment customers by brand for flows triggered by exception events, add Condition blocks and set the filter to the required brand.Any event not listed as an exception must belong to the flow’s brand to trigger it.
+- Predictive AI: Next Best ActionTo segment customers by brand for flows triggered by exception events, add Condition blocks and set the filter to the required brand.
+
+<Warning>
+Any event not listed as an exception must belong to the flow’s brand to trigger it.
+</Warning>
 
 # How to disable the brand
 Before disabling the brand, you need to delete or edit the entities associated with it:
@@ -483,4 +487,3 @@ What happens to existing entities within the project that are linked to a deacti
 | **Staff** | Staff access can be restricted by the inactive brand. Adjust access permissions if necessary |
 | **Permissions** | If only one active brand remains on the project, the "Brand View" permission will no longer be required for creating flows and campaigns |
 | **Reports** | Reports for deactivated brands are hidden |
-

@@ -16,7 +16,10 @@ Create a file with identifiers of the customers that contains a promo code for e
 
 1. Follow the [guidelines](/loyalty/how-to-import-promo-codes-into-a-project) to create a pool of promo codes.
 
+<Note>
+
 The pool must be marked as "Can be used" in the UI.
+</Note>
 
 2. Issue promo codes to your customers:
 
@@ -38,4 +41,3 @@ For example, a message template parameter for the following pool:
 ![00_addpromocode](/images/imported/00_addpromocode.png)
 
 will be: **$\{Recipient.LastReceivedPromoCode.WithTypeBirthdaypromocodes.Value\}**
-

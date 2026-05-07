@@ -29,7 +29,12 @@ Passkeys are supported on:
 - Maintain control over account access. ​
 
 ## **How it works**
-Passkey login doesn’t work if single [sign-on (SSO)](https://sos) enforcement is enabled.When you set up passkey authentication, a pair of keys is created:
+
+<Warning>
+Passkey login doesn’t work if single [sign-on (SSO)](https://sos) enforcement is enabled.
+</Warning>
+
+When you set up passkey authentication, a pair of keys is created:
 - **Private key** — stored securely on your device.
 - **Public key** — stored on Maestra’s server.When you log in, your device “signs” a request using its private key. The server verifies this signature using the public key. The private key is not transferred over the Internet and does not leave your device. Even if someone intercepts the data or compromises the server, they won’t be able to access your account.
 - Each website receives a unique key, so compromising one doesn’t affect others.
@@ -44,5 +49,8 @@ Passkey login doesn’t work if single [sign-on (SSO)](https://sos) enforcement 
 - **In Google Password Manager:** Works across all devices where you’re signed into your Google account. If your current device isn’t logged into your account, you can still sign in using your phone. Choose “Use a phone, tablet, or passkey”, scan the QR code, and confirm access using the passkey stored in Google Password Manager.
 - **In your Chrome profile:** The passkey is stored on a single device within the Google Chrome browser.
 - **In Windows Hello:** Works across all devices connected to your Microsoft account, or can be stored locally on one device.
-- **In password managers:** 1Password, Dashlane, Bitwarden, and others — allowing you to use passkeys across any of your devices.[Learn more](/security/passkeys/passkey-login-administration-and-setup)If a team member loses access to all devices where their passkeys are stored, the project owner, administrator, or another user with the appropriate permissions can restore their access.
+- **In password managers:** 1Password, Dashlane, Bitwarden, and others — allowing you to use passkeys across any of your devices.[Learn more](/security/passkeys/passkey-login-administration-and-setup)
 
+<Warning>
+If a team member loses access to all devices where their passkeys are stored, the project owner, administrator, or another user with the appropriate permissions can restore their access. 
+</Warning>

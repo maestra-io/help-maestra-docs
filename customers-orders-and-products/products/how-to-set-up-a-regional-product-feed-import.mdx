@@ -2,12 +2,15 @@
 title: "How to Set Up a Regional Product Feed Import"
 ---
 
+<Note>
+
 Since August 2025, the system no longer creates bulk tasks for feed import.
 ​
 ​**How it worked before**
 After you added a feed to your project, the system would automatically check it at the set intervals. A product import was only triggered if the feed contained new or updated data since the last import. You could download an original file with new data or a resulting file in the “Bulk tasks” tab.
 
 ​**How it will be now**: bulk tasks for feed import are no longer created. Data update logic stays the same. You can view your feed's update history on its page. [See more](/customers-orders-and-products/products/how-to-set-up-a-product-feed-import).
+</Note>
 
 First of all, areas must be added to the project.
 
@@ -21,12 +24,13 @@ Select the "Product feeds" preset:
 
 ![](/images/imported/--2025-10-03--11_08_11AM.png)
 
-Another way to add your feed
+<Accordion title="Another way to add your feed">
 
 Go to the **Products** tab and click **"Import"** → **"Add product feed"**:
 ​
 
 ![](/images/imported/123.png)
+</Accordion>
 
 2. Fill in the fields on the settings page:
 
@@ -40,7 +44,10 @@ Go to the **Products** tab and click **"Import"** → **"Add product feed"**:
 - **URL** — your file address.
 - **Update every n hours** — the time period after which the system downloads the file by the specified URL and updates the data if necessary. After adding the feed, data download will start immediately, and then continue with the selected frequency. [See more on the update algorithm](/customers-orders-and-products/products/how-to-set-up-a-product-feed-import).
 
+<Tip>
+
 If you specify a number that is a multiple of 12, you will be able to specify the exact time at which the data should be updated.
+</Tip>
 
 **Optional fields:**
 

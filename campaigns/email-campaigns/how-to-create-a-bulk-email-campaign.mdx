@@ -61,22 +61,40 @@ Once your template is complete, you can also:
   ![](/images/imported/How-to-Create-a-Bulk-Email-Campaign-(8).png)
 
 ## Send Test Message
-Once your campaign is ready, you can preview it.During a test send, the selected customer will receive the message via email.You can only send test emails to customers  **that already exist** in your database. To create a new account in the database, please follow the [instructions](/customers-orders-and-products/customers/how-to-add-a-customer-manually-via-the-user-interface).To send a live test, click “**Send Test Message**”. You can select recipients from the existing list (previously added for testing) or add additional ones using the “**Add Recipient**” button. Then, click “**Send to Selected**.”
+Once your campaign is ready, you can preview it.
+
+<Warning>
+During a test send, the selected customer will receive the message via email.You can only send test emails to customers  **that already exist** in your database. To create a new account in the database, please follow the [instructions](/customers-orders-and-products/customers/how-to-add-a-customer-manually-via-the-user-interface).
+</Warning>
+
+To send a live test, click “**Send Test Message**”. You can select recipients from the existing list (previously added for testing) or add additional ones using the “**Add Recipient**” button. Then, click “**Send to Selected**.”
 
   ![](/images/imported/How-to-Create-a-Bulk-Email-Campaign-(9).png)
 Test results are not recorded on the customers card. You can see their statuses in a list by clicking on the link.
 
   ![](/images/imported/How-to-Create-a-Bulk-Email-Campaign-(10).png)
+
+<Note>
 Click Preview to view your message without sending it. ​
   ![](/images/imported/How-to-Create-a-Bulk-Email-Campaign-(11).png)
+</Note>
 
 ## General Settings
 
 - **Brand** – relevant for multibrand projects.
 - **Topic** – allows recipients to flexibly manage their subscriptions and receive communications only on topics they’re interested in.
 - **Tags** – use tags to group campaigns by an additional attribute when channel, topic, and folder filters are not sufficient. Filtering campaigns by tags is easy, including within reports.**Campaign profile** – defines who can receive the message and under what rules.  ​ Available Profiles:
-- **Default** – for marketing messages. Basic recipient checks are applied: * Valid email adress * Active email subscription (Subscribed to email channel or selected topic) * Not part of the global control group (if enabled).  Note: this is not the same as the campaign control group. * Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).You can disable these checks using the toggles available in the campaign profile. However, subscription checks can only be bypassed in transactional campaigns, and only for critical service messages that must be delivered to the customer (such as order status updates).
-- **Opt-In** – for confirming pending subscriptions. Applies checks for: * Valid email * Pending opt-in status for the email channel (or for the selected topic, if the campaign includes one) * Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).You can override Smart Sending using toggle in the profile.
+- **Default** – for marketing messages. Basic recipient checks are applied: * Valid email adress * Active email subscription (Subscribed to email channel or selected topic) * Not part of the global control group (if enabled).  Note: this is not the same as the campaign control group. * Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).
+
+<Tip>
+You can disable these checks using the toggles available in the campaign profile. However, subscription checks can only be bypassed in transactional campaigns, and only for critical service messages that must be delivered to the customer (such as order status updates).
+</Tip>
+
+- **Opt-In** – for confirming pending subscriptions. Applies checks for: * Valid email * Pending opt-in status for the email channel (or for the selected topic, if the campaign includes one) * Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).
+
+<Tip>
+You can override Smart Sending using toggle in the profile.
+</Tip>
 
 ### Recipients
 Choose one of the following recipients selection methods:
@@ -164,4 +182,3 @@ After the campaign is sent, detailed reports become available:
 
 ### Campaigns report
   ![](/images/imported/How-to-Create-a-Bulk-Email-Campaign-(28).png)
-

@@ -30,17 +30,26 @@ These campaigns are useful for:
 
 ![](/images/imported/img-a32f0ba0.png)
 
+<Warning>
+
 ⚠️ **Important**: Remove **duplicates** before uploading. Otherwise, the same customer may receive the message twice.
+</Warning>
 
 ## **How Campaign Sending Works Across Channels**
+
+<Note>
 
 1. If you select **Email identification** and the file contains **email addresses**, the campaign will be sent to those addresses. 
 
 **This means you can also send campaign to addresses that are not yet in your database**.
+</Note>
+
+<Note>
 
 2. If identification is set to **email** but you send an **SMS campaign**, customer data will be pulled from the database. 
 
 **In this case, the campaign will only be delivered to customers who have a phone number in customer profile.**
+</Note>
 
 ### **When sending Email campaigns**
 
@@ -68,7 +77,10 @@ Customer identification by phone number follows the same rules as email campaign
 
 To send mobile push or web push, you can use any available identifier: email, phone number, Maestra ID, or a unique ID.
 
+<Note>
+
 **Please note:** customer data will always be pulled from the database.
+</Note>
 
 For example, to send a mobile push notification, you can select email identification. The system will then find the customer in the database via email and verify the application and subscription.
 

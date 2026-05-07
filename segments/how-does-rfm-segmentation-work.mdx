@@ -8,7 +8,10 @@ RFM segmentation is an algorithm used to segment a database using RFM analysis. 
 - Frequency (how often the customer made purchases);
 - Monetary value (the total amount of money the customer has spent).
 
+<Note>
+
 RFM segmentation requires data on orders and personal actions over the period of at least one year.
+</Note>
 
 ## The Logic Behind Maestra’s RFM Segmentation
 
@@ -25,12 +28,15 @@ These scores are combined into an RFM index for each customer — for example:
 - **555** means the customer is in the top 20% for all three metrics: they purchase often, spend a lot, and bought recently.
 - **111** represents the least engaged customers—those who made a single purchase a long time ago and haven’t returned. 
 
+<Note>
+
 **Important**
 
 RFM segments are updated daily at 12:00 a.m.
 You can update these manually if necessary.
 
 The algorithm scores customers on each of the factors and calculates the segments’ boundaries every day.
+</Note>
 
 Each index (group) of customers refers to one of the 13 segments:
 
@@ -60,7 +66,10 @@ Go to **Customer Data Platform** → **Segments** → **Create Segmentation** �
 
 ![](/images/imported/--2025-07-30--6_26_48PM.png)
 
+<Note>
+
 When you select a brand, the segmentation will include only the customers who have taken actions with the brand specified.
+</Note>
 
 ​3. Click **Save**.
 

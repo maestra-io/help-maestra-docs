@@ -4,6 +4,8 @@ title: "The price of the most viewed or purchased product has dropped flow"
 
 The task: to send a communication about the reduced price of a product from the [computed field](/api-integrations/computed-fields) — the product the customer buys most often.
 
+<Tip>
+
 **Before creating the flow**
 ​
 
@@ -12,12 +14,15 @@ Add an automated mailing in the required channel: [email](https://intercom.help/
 A [parameter](/campaigns/message-template-engine/what-is-the-message-template-engine) for product output —
 
 Recipient.CustomField.\{A system name of a field\}
+</Tip>
 
 Create [flow](/flows/what-are-flows-and-how-do-you-use-them):
 
 1. Launch — by the "Preferred product changed" event:
 
 ![00](/images/imported/00.png)
+
+<Tip>
 
 When the "Price" field of a product is changed, it is checked whether the price has decreased compared to the previous value by a specified percentage or amount.
 
@@ -42,6 +47,7 @@ For clients with a filled area:
 - If the product has regional data for the client’s area but the price information in that area is not filled, the flow triggers based on changes in the main feed.
 
 - If the product has no regional data, the flow triggers based on changes in the main feed.
+</Tip>
 
 2. We don't set a delay, but we restrict the exit from the block so as not to send an email at night:
 
@@ -61,8 +67,13 @@ If there are other mechanics for price reduction (in the list or by views), set 
 
 ![05](/images/imported/05.png)
 
+<Tip>
+
 - In the mailing, you can output the related products for the product; parameter — Recipient.CustomField.\{the field name\}.Recommendations.
-- Use A/B testing to evaluate the efficiency of using recommendations and select the most suitable algorithm.6. Restrict the number of times the scenario is applied to a customer so as not to send a few mailings at a time:
+- Use A/B testing to evaluate the efficiency of using recommendations and select the most suitable algorithm.
+</Tip>
+
+6. Restrict the number of times the scenario is applied to a customer so as not to send a few mailings at a time:
 
   ![06](/images/imported/06.png)
 7. The flow is ready, you can launch it:
