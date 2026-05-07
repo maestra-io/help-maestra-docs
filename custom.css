@@ -1,0 +1,15 @@
+/* Accordion: add space above so it doesn't hug preceding images / paragraphs,
+   and make the closed-state background a touch more visible than Mintlify's default. */
+details.accordion {
+  margin-top: 1.5rem;
+}
+
+/* Light mode: soft greenish tint pulled from the brand palette, low opacity. */
+details.accordion {
+  background-color: rgba(151, 234, 45, 0.08);
+}
+
+/* Dark mode: lift the surface a bit above the page background. */
+.dark details.accordion {
+  background-color: rgba(255, 255, 255, 0.04);
+}
