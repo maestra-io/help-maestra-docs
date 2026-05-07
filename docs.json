@@ -105,6 +105,7 @@
             "pages": [
               "flows/what-are-flows-and-how-do-you-use-them",
               "flows/how-to-test-a-flow",
+              "flows/how-to-track-a-customers-progress-through-a-flow",
               "flows/what-is-a-transactional-flow",
               "flows/how-the-multibranches-mode-work-in-the-condition-block-of-the-flow",
               {
