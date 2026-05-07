@@ -316,17 +316,6 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "For developers",
-        "groups": [
-          {
-            "group": "API",
-            "pages": [
-              "for-developers/v3-api"
-            ]
-          }
-        ]
       }
     ],
     "global": {}
