@@ -4,7 +4,10 @@ title: "How to Create Automated Email Campaign"
 
 **Automated email campaigns** are sent from flows or API methods triggered by specific events.
 
+<Warning>
+
 Note: Ensure that your email campaign has a "Ready to Use" status and is located in the same folder (or subfolder) as your automation flow.
+</Warning>
 
 ## How to Create a Campaign
 
@@ -66,7 +69,10 @@ Once your campaign is ready, you can preview it.
 
 To send a live test, click “**Send Test Message**”.
 
+<Warning>
+
 During a test send, the selected customer will receive the message via email.
+</Warning>
 
 ![](/images/imported/How-to-Create-Automated-Email-Campaign--289-29.png)
 
@@ -74,13 +80,19 @@ You can select recipients from the existing list (previously added for testing) 
 
 ![](/images/imported/How-to-Create-Automated-Email-Campaign-(10).png)
 
+<Note>
+
 You can only send test emails to customers that already exist in your database. To create a new account in the database, please follow the [instructions](/customers-orders-and-products/customers/how-to-add-a-customer-manually-via-the-user-interface).
+</Note>
 
 Test results are not recorded on the customers card. You can see their statuses in a list by clicking on the link.
 
 ![](/images/imported/How-to-Create-Automated-Email-Campaign-(11).png)
 
+<Note>
+
 Click Preview to view your message without sending it.
+</Note>
 
 ![](/images/imported/How-to-Create-Automated-Email-Campaign-(12).png)
 
@@ -94,9 +106,18 @@ Click Preview to view your message without sending it.
 ​
 ​**Available Profiles:**
 
-- **Default** – for marketing messages. Basic recipient checks are applied: - Valid email adress - Active email subscription (Subscribed to email channel or selected topic) - Not part of the global control group (if enabled).  Note: this is not the same as the campaign control group. - Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).You can disable these checks using the toggles available in the campaign profile. However, subscription checks can only be bypassed in transactional campaigns, and only for critical service messages that must be delivered to the customer (such as order status updates).
+- **Default** – for marketing messages. Basic recipient checks are applied: - Valid email adress - Active email subscription (Subscribed to email channel or selected topic) - Not part of the global control group (if enabled).  Note: this is not the same as the campaign control group. - Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).
 
-- **Opt-In** – for confirming pending subscriptions. Applies checks for: - Valid email - Pending opt-in status for the email channel (or for the selected topic, if the campaign includes one) - Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).You can override Smart Sending using toggle in the profile.
+<Note>
+You can disable these checks using the toggles available in the campaign profile. However, subscription checks can only be bypassed in transactional campaigns, and only for critical service messages that must be delivered to the customer (such as order status updates).
+</Note>
+
+- **Opt-In** – for confirming pending subscriptions. Applies checks for: - Valid email - Pending opt-in status for the email channel (or for the selected topic, if the campaign includes one) - Daily communications for the recipient stay within the allowed limit (if Smart Sending limits are enabled).
+
+<Note>
+You can override Smart Sending using toggle in the profile.
+</Note>
+
 - **Transactional** campaigns are those that customers request and expect to receive as quickly as possible. No checks are applied.
 
 ## Sending restrictions
@@ -122,7 +143,10 @@ Once all required fields are completed — indicated by a green check mark next 
 To make your campaign available in Flows, change its status to "Ready to Use" by clicking the "Finish Editing" button.
 
   ![](/images/imported/How-to-Create-Automated-Email-Campaign-(16).png)
+
+<Warning>
 Once the campaign is set up, you cannot change the brand, campaign profile (except the priority settings), or A/B test settings.
+</Warning>
 
 ## A/B Testing and Control Groups
 
@@ -155,4 +179,3 @@ After the campaign is sent, detailed reports become available:
   ![](/images/imported/How-to-Create-Automated-Email-Campaign-(27).png)
 - **Campaigns report**
   ![](/images/imported/How-to-Create-Automated-Email-Campaign-(25).png)
-

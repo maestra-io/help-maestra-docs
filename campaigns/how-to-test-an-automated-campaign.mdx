@@ -26,9 +26,12 @@ In the node that sends the relevant campaign, enable the "Test campaign" option 
 
 ![00_why conduct campaign testing](/images/imported/00_why-20conduct-20campaign-20testing.png)
 
+<Tip>
+
 The flow will operate **like any other launched flow**: all the settings, nodes, or groups of steps, except for the test campaign, will be performed.
 
 The campaign messages **will be generated but not sent**.
+</Tip>
 
 This way you can test a new campaign in an already operating flow when it is important not to lose runs during testing.
 
@@ -46,7 +49,10 @@ The group of steps that includes a test campaign is marked in the flow:
 
 ![03_why conduct campaign testing](/images/imported/03_why-20conduct-20campaign-20testing.png)
 
+<Note>
+
 You can view customer distribution by branches in the test flow without the actual flow run.
+</Note>
 
 The nodes and settings below **are ignored**:
 
@@ -58,9 +64,12 @@ The nodes and settings below **are ignored**:
 
 You can use flow testing when creating a new flow, when it is important not only to test the messages but also see if the chains are built correctly. Plus, this way fits for testing the flows where only the step of sending the campaign is implemented, to avoid counting test runs.
 
+<Warning>
+
 The campaign may use the template variables where the value should appear during chain completion: it can be a promo code issued in the flow or a webhook response.
 
 As the steps are not performed in the flow test, there will be no data for these parameters.
+</Warning>
 
 You can test such messages in two ways: either [set up a selected contact to send it to or launch the flow and use the campaign test](/campaigns/how-to-test-your-campaign).
 
@@ -118,6 +127,9 @@ To launch the campaign, you have to disable the testing mode in the mechanic tha
 
 Enabling and disabling the testing in flows and operations is **available only in the edit mode**.
 
+<Warning>
+
 Flow testing finish does not impact the "Test campaign" toggle in the sending step. It returns into the state it used to be before test launch.
+</Warning>
 
 **You cannot send** the messages **generated during the testing**.

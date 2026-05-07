@@ -7,6 +7,8 @@ There are a number of cases in which you may want to use a manual import. For ex
 - If you need to send an email where messages lack certain values/parameters that are not yet available in the system: e.g., a promo code (one-time code) or another custom parameter.
 - If you need to send an email to addresses that are listed in a specific file.
 
+<Note>
+
 **Please note that**
 ​
 — if a customer’s email is not in the database, this customer will be imported with a "**subscribed**" status;
@@ -21,6 +23,7 @@ There are a number of cases in which you may want to use a manual import. For ex
 
 — if the user that creates this email does not have permission to import new customers, the messages will only be sent to customers that are already in the database. New customers listed in the file will not be imported and the messages will not be sent to them.
 — please note that the new customers will not be imported even if you have extended permissions when you copy the email created by a user without the permission to add new customers. To import them, you will have to create the email from scratch.
+</Note>
 
 ## Steps
 
@@ -28,7 +31,10 @@ There are a number of cases in which you may want to use a manual import. For ex
 
 ### 2. Insert your parameter into the email layout.
 
+<Note>
+
 This step allows you to input a parameter that is not yet available in the system into the email: e. g., a one-time promo code.
+</Note>
 
 2.1. Give your parameter a name.
 
@@ -103,4 +109,3 @@ You can see here that the error message has disappeared and the number of recipi
 7. Upload the list of real recipients.
 
 8. Send the duplicated email to your recipients.
-

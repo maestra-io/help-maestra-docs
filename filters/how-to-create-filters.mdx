@@ -11,14 +11,18 @@ Go to **Customer Data Platform** → **Customers**:
 The filter conditions field contains the **Add AND condition** and **Add OR conditions** buttons.
 
 <Note>
+
 **AND condition.**
+​
 
 Use the **AND** condition when **all filter conditions must be true** for a customer to qualify.
 
-**Example:**
+​**Example:**
 If you want customers with a **valid email AND an active subscription**, both conditions are required.
 A customer with a valid email but no subscription **will not qualify**.
 </Note>
+
+<Note>
 
 **OR condition.**
 ​
@@ -31,6 +35,7 @@ If you want to find customers who purchased a **hat OR a scarf**, the filter wil
 - customers who purchased a hat
 - customers who purchased a scarf
 - customers who purchased both
+</Note>
 
 Below the buttons on the left, you can see the total customer database size — in our case, it's 22,914 customers.
 
@@ -58,11 +63,14 @@ Click **Apply** to save the condition(s) you selected. The system will display t
 
 ![05_newCreateFilter](/images/imported/05_newCreateFilter.png)
 
+<Tip>
+
 AND conditions are connected by a light blue branching line (connector).
 
 ![06_newcustomerfilter](/images/imported/06_newcustomerfilter.png)
 
 This condition means we want to find customers who have a valid, non-empty email AND a valid non-empty phone number AND a filled-in name.
+</Tip>
 
 ## How to add OR condition
 
@@ -80,11 +88,14 @@ For example, to create a segment of customers with valid emails OR valid phone n
 
 For more details on how to create filters with OR conditions, please refer to this article.
 
+<Tip>
+
 OR conditions are connected by a lilac branching line (connector).
 
 ![07_newcustomerfilter](/images/imported/07_newcustomerfilter.png)
 
 This condition means we want to find customers who either have a filled-in valid email OR have a filled-in valid phone number. Satisfying at least one of these two conditions is sufficient.
+</Tip>
 
 ## How to add a nested condition
 
@@ -128,5 +139,7 @@ But you can also do this in one step if you use the search bar — simply start 
 
 ![12_createfilter](/images/imported/12_createfilter.png)
 
-The cross-search function works across first- and second-level nested fields only.
+<Note>
 
+The cross-search function works across first- and second-level nested fields only.
+</Note>

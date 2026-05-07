@@ -22,7 +22,10 @@ This report helps you:
 - Understand how your promotions influence core KPIs compared to previous periods.
 - Determine which promotions work best for each location by comparing performance across all touchpoints.
 
+<Note>
+
 All report data is updated nightly and reflects metrics as of the previous day.
+</Note>
 
 # Promotion dynamics
 
@@ -45,12 +48,18 @@ Steps to View Promotion Data:
 4. **Filter Orders & Configure Metrics** ​ Click **“More conditions”** to specify which orders should be included. You can filter by order status categories and include/exclude anonymous orders. ​
   ![](/images/imported/--2025-12-08--2_49_03PM.png)
 You can also choose which metrics to display in the report. To remove a metric, simply uncheck it. This is helpful if you frequently use a specific set of data. Drag metrics to reorder them, move the most important to the top, and hide the ones you don’t need. These display settings are **saved for all users in the project**. ​
-  ![](/images/imported/--2025-12-08--3_04_51PM.png)Metric selection and order filters affect exports. The resulting file will include only the metrics you’ve chosen in this menu.**5. Add a comparison period (optional)** Add a custom comparison period or use preset dates to analyze your promotion’s performance over time. ​
+  ![](/images/imported/--2025-12-08--3_04_51PM.png)
+
+<Note>
+Metric selection and order filters affect exports. The resulting file will include only the metrics you’ve chosen in this menu.
+</Note>
+
+**5. Add a comparison period (optional)** Add a custom comparison period or use preset dates to analyze your promotion’s performance over time. ​
   ![](/images/imported/--2025-12-09--1_34_11PM.png)
 
 ## 
 
-## Metric Description
+<Accordion title="Metric Description">
 
 - **Revenue**
   - **By promotion** — the total value of all units that had a promotion applied during the selected period.
@@ -70,6 +79,7 @@ You can also choose which metrics to display in the report. To remove a metric, 
 - **Total discount amount** — the total discount amount for the selected promotion within the chosen period. ​
 - **Average percentage of discount** calculated as: ​**Total discount amount/ Pre-discount value of orders with the promotion applied × 100%**. ​
 - **Average discount amount** calculated as: ​**Total discount amount**  **/ Orders by Promotion**. 
+</Accordion>
 
 ## Metric Performance Charts
 Bar charts are available for each metric, with breakdowns by calendar days, weeks, months, or years. To adjust the chart:
@@ -99,11 +109,16 @@ This feature helps you compare the effectiveness of the selected discount promot
 By default, the report is built using the five most recently launched promotions from the past month. To configure this report, follow [the same steps](#h_c1ef7d02fe) as in the **Promotion Dynamics** report setup.
 Promotions that weren’t applied to any orders won’t be available for selection and will not appear in the drop-down menu.
 
-## Metric description
+<Accordion title="Metric description">
 
 - **Avg Daily Revenue for Promotion-Applied Units** — calculated as:  "Total Revenue from Promoted Units" / "Active Promo Days". Only the promotion’s active days that fall within the selected period are included. ​
 - **Avg Daily Promotion-Applied Orders** — calculated as:  "Promo-Applied Orders"/"Active Promo Days". ​
-- **Avg Daily Promoted Units Sold** — calculated as:  "Promo-Applied Units"/"Active Promo Days".For promotions that were active for different numbers of days within the selected reporting period, we recommend comparing them using average daily performance metrics.
+- **Avg Daily Promoted Units Sold** — calculated as:  "Promo-Applied Units"/"Active Promo Days".
+
+<Note>
+For promotions that were active for different numbers of days within the selected reporting period, we recommend comparing them using average daily performance metrics.
+</Note>
+
 - **Total Revenue from Promoted Units** — the final cost of all the units the promotion was applied to within the selected period. ​
 - **Promo-Applied Units** — the number of Units sold with the promotion applied during the selected period. ​
 - **Promo-Applied Orders** — the number of orders the promotion was applied to within the selected period. ​
@@ -121,11 +136,17 @@ Promotions that weren’t applied to any orders won’t be available for selecti
 - **Order Count Growth** — this metric shows how the number of orders changed during the selected period related to the comparison period. It includes only touchpoints where promo-related orders occurred. Calculated as: “Promo-Applied Orders” – “Promo-Applied Orders within the comparison period)”.
 - **Average Order Value Growth** — this metric shows how the average order value changed during the selected period related to the comparison period. It includes only touchpoints where promo-related orders occurred. Calculated as: "Avg Order Value" − "Avg Order Value within the comparison period".
 - **Promo Units Sold Growth** — this metric shows how the number of promo units sold changed during the selected period in relation to the comparison period. Data is calculated only for touchpoints that had promo orders.  Calculated as: "Average order value by promotion" − "Average order value by promotion within the comparison period".
+</Accordion>
 
 ## Report table
 Below the report settings, you'll find a table where all metrics are grouped by the selected promotions. The table also displays promotion statuses, the number of Active Promo Days, and each promotion’s period. 
+
+<Note>
+
 - **Active Promo Days** — the number of days the promotion held the **“Launched”** status within the selected report period.
 - **Promotion Period** — the span between the promotion’s first launch date and the last date it held the **“Launched”** status before being finished or paused. The end date is not shown if the promotion is currently active.
+</Note>
+
   ![](/images/imported/--2025-12-17--15_32_40.png)
 
 ## Filters
@@ -148,12 +169,17 @@ Changes to or deletions of orders from the past three months, as well as deletio
 
 ## Report export
 Select the report type and configure the required settings. The file content and structure depend on the selected report settings. If certain metrics are not needed in the export, disable their checkboxes in the report settings. Click **Export**: ​
-  ![](/images/imported/--2025-12-16--15_45_53.png)**Exporting the promotion report via the API is not supported.**
+  ![](/images/imported/--2025-12-16--15_45_53.png)
+
+<Warning>
+**Exporting the promotion report via the API is not supported.**
+</Warning>
 
 ## "Promotion Dynamics" Report Export
 If no comparison period is specified in the report settings, metric values in the file are displayed with a daily breakdown.When a comparison period is selected, metric values are grouped by the selected touchpoints, and metrics for the comparison period are also included.
 
-## Column Description
+<Accordion title="Column Description">
+
 *If all metrics are selected in the report settings, the following fields are included in the CSV file:*
 - **promotionName** — promotion name.
 - **promotionId** — promotion ID.
@@ -207,10 +233,11 @@ If no comparison period is specified in the report settings, metric values in th
 - **totalReceiptsOnPromotionActiveDaysForComparisonPeriod** — total orders on Active Promo Days for the comparison period.
 - **averagePromoItemsPerPromoReceiptForComparisonPeriod** — average number of Promo-Applied Units in Promo-Applied Orders for the comparison period.  Calculated as: "Promo-Applied Units for the comparison period"/"Promo-Applied Orders for the comparison period".
 - **averageItemsPerReceiptForComparisonPeriod** — average number of units in order for the comparison period. Calculated as: "Average number of units"/"Total orders".
+</Accordion>
 
 ## "Promotion Comparison" Report Export
 
-## Column Description
+<Accordion title="Column Description">
 
 *The following fields are included in the CSV file if all metrics are selected and no comparison period is specified in the report settings:*
 - **promotionName** — promotion name.
@@ -267,4 +294,7 @@ If no comparison period is specified in the report settings, metric values in th
 - **totalRevenueForComparisonPeriod** — revenue for the comparison period.
 - **totalItemsSoldForComparisonPeriod** — number of units sold for the comparison period. 
 - **totalReceiptsForComparisonPeriod** — number of orders for the comparison period.
-- **averageReceiptForComparisonPeriod** — average order value for the comparison period.Growth metrics are not included in the export. If needed, you can view their values in the report interface or calculate them independently.
+- **averageReceiptForComparisonPeriod** — average order value for the comparison period.
+</Accordion>
+
+Growth metrics are not included in the export. If needed, you can view their values in the report interface or calculate them independently.

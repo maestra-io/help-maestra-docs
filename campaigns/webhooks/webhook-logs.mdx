@@ -2,7 +2,10 @@
 title: "Webhook Logs"
 ---
 
+<Warning>
+
 To access this page, you need the Integration Log View permission.
+</Warning>
 
 To open webhook logs, click on **Integration settings** → **Integration logs**:
 
@@ -16,11 +19,14 @@ They can be filtered by dates, integration points and webhook names, request sta
 
 The page always displays the number of logs found, but you can browse only the most recent 500 records. To view more records, you need to export them.
 
+<Note>
+
 To find webhook logs for a particular customer or order, follow these steps:
 
 - Filter the log selection to ensure accuracy, then upload all the found requests.
 
 - You can upload the resulting CSV file to a table editor and use the in-built features to filter and group lines.
+</Note>
 
 Open a line to view information about a particular request:
 
@@ -33,14 +39,20 @@ Open a line to view information about a particular request:
 
 ![02_webhook _logs](/images/imported/02_webhook-20_logs.png)
 
+<Note>
+
 **Why may a webhook log be missing headings and a response body?**
 The response time is 30 seconds. If the service fails to respond on time or there is a network error, the response will not be saved in the log.
+</Note>
 
 The logs are added to the list once the final request result shows that the request has been completed. While waiting, the system does not record the log.
 
 # How logs are exported
 
+<Warning>
+
 To export logs from the platform, users need the Integration Logs Export permission.
+</Warning>
 
 To export logs, select the required requests and click the **Export** button:
 

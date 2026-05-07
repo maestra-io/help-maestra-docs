@@ -5,7 +5,10 @@ description: "This article describes how discounts are applied to order lines an
 
 # Spread — Proportional Discount Distribution
 
+<Note>
+
 Discounts and loyalty points are split proportionally between purchased items according to their value.
+</Note>
 
 ---
 
@@ -34,6 +37,8 @@ Based on these shares, the system distributes loyalty points proportionally:
 
 ---
 
+<Warning>
+
 **Some rewards** offer additional discount distribution options.
 ​
 You can apply a discount in one of the following ways:
@@ -41,6 +46,7 @@ You can apply a discount in one of the following ways:
 - Apply the discount **only to the discounted item**
 - Distribute the discount **proportionally across all items participating in the promotion**, based on their prices
 - Set a **minimum price of $1** for the discounted item
+</Warning>
 
 ![](/images/imported/--2026-01-07--15_40_57.png)
 
@@ -127,7 +133,12 @@ Otherwise, the attempt to create the order will fail with the following error:
   ![](/images/imported/--2026-01-07--17_02_49.png) ​
 
 ---
-For redeem points promotions, order lines are not split if points cannot be evenly distributed proportionally by price.See the next section for details.
+
+<Warning>
+For redeem points promotions, order lines are not split if points cannot be evenly distributed proportionally by price.
+</Warning>
+
+See the next section for details.
 
 ## Multiplicity Rule for Loyalty Point Discounts
 In promotions **that use loyalty points**, a customer may not always be able to redeem all available points for an order.This happens when a discount  **cannot be proportionally distributed** across an order line **.** In this case, the system does **not split the order line**. Instead, it allows the customer to redeem only the **maximum number of points that can be evenly applied across the items in the line**.
@@ -146,4 +157,3 @@ In all other cases, order line splitting works the same way as in other types of
 
 # **How Loyalty Points Are Refunded After a Return**
 When a discounted item is returned the refund amount reflects the final price paid for the returned product.If the order contained multiple identical items with **different discount allocations**, the refund amount depends on **which order line is referenced** when the order status is updated.
-

@@ -6,15 +6,20 @@ When inserting a customer’s name into your email or subject line, it’s impor
 
 If you skip name validation, you might end up with greetings like:
 
+<Note>
+
 Hi, 123test!
 
 qwerty, good morning!
+</Note>
 
 To prevent this, use the OnlyStandardFirstName field. It ensures that only verified, real names are displayed.
 
 ## **Adding Recipient’s Name to Your Campaigns**
 
 **Example 1**
+
+<Note>
 
 @\{if IsEmpty(Recipient.OnlyStandardFirstName)\}  
 
@@ -25,6 +30,7 @@ Hello there!
 Hello, $\{Recipient.OnlyStandardFirstName\}!  
 
 @\{end if\}
+</Note>
 
 **Result:**
 
@@ -39,6 +45,8 @@ In this example, the logic works as follows:
 
 **Example 2**
 
+<Note>
+
 @\{if IsEmpty(Recipient.OnlyStandardFirstName)\}  
 
 Good afternoon!  
@@ -48,6 +56,7 @@ Good afternoon!
 $\{Recipient.OnlyStandardFirstName\}, good afternoon!  
 
 @\{end if\}
+</Note>
 
 **Result:**
 
@@ -58,4 +67,3 @@ Standard name → “**Helen, good afternoon!**”
 ## Using the Email Builder
 
 If you’re using the email builder, you can set up name-based personalization without inserting any code. See the full instructions [here].
-

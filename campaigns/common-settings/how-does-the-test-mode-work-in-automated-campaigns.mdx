@@ -88,11 +88,14 @@ Forwarded messages will also appear in the list of messages.
 
 ## How to stop testing and what will happen next
 
+<Warning>
+
 If you end the test mode, this will not affect how your flow operates.
 
 Once you end the test mode, real messages will be generated and sent every time you launch the flow.
 
 To avoid this, pause the flow *before* ending test mode.
+</Warning>
 
 ### Next steps:
 
@@ -112,9 +115,12 @@ If you check this option, the system will send queued messages that were not can
 
 ## Important things to note when using test mode
 
+<Note>
+
 1. Actions. If the message status is Sending paused or Sending canceled, actions will not be assigned to customers. It means that these actions will not be displayed in the customer’s profile or in the overall list of actions.
 2. If you enable generated messages to be sent after test mode has ended, actions will be assigned to messages as usual.
 3. Message relevance. Tick this option to check that the composed messages are sent within the period in which they are relevant and not sent when they are no longer relevant. The countdown starts from the time the message is added to the list.
 4. The period of relevance is validated when the message is generated, not when it is sent.
 5. If a flow has been launched, it can seem as though it has worked on real customers. However, if the campaign within the flow is in test mode, it will not be sent.
 6. If you send an email in a flow using the **Send email to user** option, you will not be able to view the generated emails. This is because you cannot save any messages for Maestra users in the system. We recommend testing these emails using the standard **Send email** option in the flow.
+</Note>

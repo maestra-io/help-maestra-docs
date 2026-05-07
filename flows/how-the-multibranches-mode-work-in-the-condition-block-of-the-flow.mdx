@@ -23,9 +23,12 @@ Choose the type of divide condition and add your variants in the branch settings
 
 ![](/images/imported/02_j.png)
 
+<Tip>
+
 If you add multiple values to one branch, the system uses OR logic — the customer only needs to match one of them to move down that branch.
 
 You can use up to 50 branches in a single block.
+</Tip>
 
 Conditions are evaluated **top to bottom**, allowing you to prioritize. 
 
@@ -43,7 +46,7 @@ After saving, an Other branch appears. You can leave it unconnected or use it fo
 
 Available for any launch settings.
 
-#### Customer Segment
+<Accordion title="Customer Segment">
 
 Determines whether the customer belongs to a segment. Both [static](/segments/how-to-create-a-static-customer-segment) and [scheduled](/segments/how-to-filter-customers-into-segments) segments can be used.
 ​
@@ -58,10 +61,13 @@ Inactive customers → brand reminder
 ![](/images/imported/05_j.png)
 
 ​
+</Accordion>
 
-#### Birthday
+<Accordion title="Birthday">
 
 Routes customers based on their birthday.
+
+<Note>
 
 Conditions like "Arrived  less" than or "Coming in less" than includes today.
 
@@ -70,6 +76,7 @@ Example: Today is 09.10. Customers in the condition "Coming in less than 7 days"
 Today, 09.10
 
 From 10.10 to 16.10
+</Note>
 
 **Example**: Send different communications based on the birthday timing:
 
@@ -80,7 +87,9 @@ From 10.10 to 16.10
 
 ![](/images/imported/06_j.png)
 
-#### Mobile Device
+</Accordion>
+
+<Accordion title="Mobile Device">
 
 Identifies the customer’s active app.
 
@@ -92,8 +101,9 @@ Instead of multiple blocks for checking the app, use one multi-branch block.
 ![](/images/imported/07_j.png)
 
 ​
+</Accordion>
 
-#### Customer Custom Fields
+<Accordion title="Customer Custom Fields">
 
 Allows routing customers based on a value in a custom field.
 
@@ -105,6 +115,8 @@ Allows routing customers based on a value in a custom field.
 - Default → customers with no orders, offer 20% off the first purchase
 
 ![](/images/imported/08_j.png)
+
+</Accordion>
 
 ## Event-Based Conditions
 
@@ -122,7 +134,7 @@ Available in flows triggered by these events:
 - "Preferred product changed"
 - "Product related action added"
 
-#### By Product from event
+<Accordion title="By Product from event">
 
 Checks if the product from the event matches the product in the branch condition. Search it by name, SKU, or external product ID.
 
@@ -137,7 +149,9 @@ Multi-branch evaluates the product variant, then sends a targeted message and aw
 
 ![](/images/imported/09_j.png)
 
-#### By Product segment from event
+</Accordion>
+
+<Accordion title="By Product segment from event">
 
 Routes customers by the segment of the product in the event. Supports [static](/segments/how-to-create-a-static-customer-segment) and [scheduled](/segments/how-to-filter-customers-into-segments) segments.
 ​
@@ -151,7 +165,9 @@ Determine the segment of the viewed product and suggest alternatives from the sa
 
 ![](/images/imported/10_j.png)
 
-#### By Product Category from Event
+</Accordion>
+
+<Accordion title="By Product Category from Event">
 
 Determines the product category and routes customers to branches based on the options.
 ​
@@ -163,7 +179,9 @@ The goal is to offer the customer a selection of alternative products from the s
 
 ![](/images/imported/11_j.png)
 
-#### By Product Custom Fields from Event
+</Accordion>
+
+<Accordion title="By Product Custom Fields from Event">
 
 Allows routing customers based on product custom fields from the event.
 ​
@@ -176,11 +194,13 @@ Allows routing customers based on product custom fields from the event.
 
 ![](/images/imported/12_j.png)
 
+</Accordion>
+
 ### **By Session**
 
 Available in flows triggered by "Customer left the website or app" event.
 
-#### Product viewed in Session
+<Accordion title="Product viewed in Session">
 
 Checks if the product viewed in the session matches the product in the branch. Search product by name, SKU, or external ID.
 
@@ -192,7 +212,9 @@ Checks if the product viewed in the session matches the product in the branch. S
 
 ![](/images/imported/13_j.png)
 
-#### Product segment viewed in Session
+</Accordion>
+
+<Accordion title="Product segment viewed in Session">
 
 Route customers based on product segment they viewed during the session.
 ​
@@ -206,8 +228,9 @@ Example.
 ![](/images/imported/14_j.png)
 
 ​
+</Accordion>
 
-#### Category of Product viewed in Session
+<Accordion title="Category of Product viewed in Session">
 
 Determines product category and routes customers to flow branches.
 
@@ -218,7 +241,9 @@ Customer browsed but didn’t purchase → determine the category of the viewed 
 
 ![](/images/imported/15_j.png)
 
-#### Custom Field of Browsed Product  in Session
+</Accordion>
+
+<Accordion title="Custom Field of Browsed Product in Session">
 
 Checks custom  field of the product browsed during the session and routes customers according to the branch conditions.
 ​
@@ -228,6 +253,7 @@ Checks custom  field of the product browsed during the session and routes custom
 2. Identify the product’s brand from its additional field and send a personalized email with brand-specific recommendations and a special offer.
 
 ![](/images/imported/16_.png)
+</Accordion>
 
 ### 
 **By Order**
@@ -240,7 +266,7 @@ Available in flows triggered by these events:
 - Order product delivered
 - Order product paid
 
-#### Product in Order
+<Accordion title="Product in Order">
 
 Allows you to route customers based on the presence of a specific product in their order. Products can be searched by name, SKU, or external product ID.
 ​
@@ -255,7 +281,9 @@ The goal is to determine which course the customer bought and send a targeted em
 
 ![](/images/imported/17_j.png)
 
-#### Product Segment in Order
+</Accordion>
+
+<Accordion title="Product Segment in Order">
 
 Routes customers according to the segment of the product purchased in the triggering order.
 ​
@@ -272,7 +300,9 @@ Goal: Send a post-purchase message to drive cross-sell.
 
 ![](/images/imported/18_j.png)
 
-#### Product Category in Order
+</Accordion>
+
+<Accordion title="Product Category in Order">
 
 Determines the product category in order and routes customers to branches based on the options.
 ​
@@ -283,7 +313,9 @@ Determines the product category in order and routes customers to branches based 
 
 ![](/images/imported/19_j.png)
 
-#### Touchpoint of first action with Order
+</Accordion>
+
+<Accordion title="Touchpoint of first action with Order">
 
 Routes customers by point of contact of first action with Order.
 
@@ -292,7 +324,9 @@ Depending on the store (touchpoint) where the order was placed, send the custome
 
 ![](/images/imported/20_j.png)
 
-#### Product Custom Fields in Order
+</Accordion>
+
+<Accordion title="Product Custom Fields in Order">
 
 Checks products custom field from the order and routes customers according to the condition branches.
 ​
@@ -302,7 +336,9 @@ The product's custom field contains a specific attribute, such as “season.” 
 
 ![](/images/imported/21_j.png)
 
-#### Order Custom field
+</Accordion>
+
+<Accordion title="Order Custom field">
 
 Checks a custom field in the order and routes customers according to the condition branches.
 
@@ -312,6 +348,8 @@ The order’s custom field contains the delivery method. Based on this value, di
 ​
 
 ![](/images/imported/22_j.png)
+
+</Accordion>
 
 ### By Action
 
@@ -324,7 +362,7 @@ Available in flows triggered by events:
 5. "Authentication code requested"
 6. "Customer registered"
 
-#### By customer action
+<Accordion title="By customer action">
 
 Checks which action template was assigned to the customer and routes them to the corresponding branches.
 ​
@@ -337,7 +375,9 @@ Depending on the stage, send customers different messages with information about
 
 ![](/images/imported/23_J.png)
 
-#### By action touchpoint
+</Accordion>
+
+<Accordion title="By action touchpoint">
 
 Routes customers by point of contact of action.
 
@@ -350,7 +390,9 @@ A brand may have multiple websites for different language audiences. Communicati
 
 ![](/images/imported/24_j.png)
 
-#### By action custom field
+</Accordion>
+
+<Accordion title="By action custom field">
 
 Routes customers by custom field of action.
 
@@ -358,6 +400,8 @@ Routes customers by custom field of action.
 In the “Gift Selection” popup, the customer is assigned an action, and the selected gift is recorded in a custom field.
 
 ![](/images/imported/25_j.png)
+
+</Accordion>
 
 ## Numeric Condition Rules
 

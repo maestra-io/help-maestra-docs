@@ -13,9 +13,12 @@ Choose a folder and click **Create**.
 
 ![](/images/imported/How-to-Create-Pop-ups-(1).png)
 
+<Warning>
+
 **To work with product list data and browsed products, full integration is required.**
 
 Follow the instructions to configure the settings: [https://developers.maestra.io/page/website-personalization](https://developers.maestra.io/page/website-personalization)
+</Warning>
 
 ## **Choose a template**
 
@@ -80,7 +83,11 @@ In addition to basic input fields, new templates also support adding:
 ### **Editing elements**To edit an element, click it in the list or on the preview.
 
   ![](/images/imported/How-to-Create-Pop-ups-(27).png)
+
+<Note>
 New templates allow you to customize each text element for different screens, including font style, size, color, and alignment.
+</Note>
+
 - 
 
 ### **Device-specific design**By default, most elements automatically sync and adjust to the mobile version.To set custom properties, disable synchronization and configure settings for the specific device.
@@ -93,7 +100,11 @@ New templates allow you to customize each text element for different screens, in
   ![](/images/imported/How-to-Create-Pop-ups-(29).png)
 
   ![](/images/imported/How-to-Create-Pop-ups-(30).png)
+
+<Note>
 With the new templates, you can set a fixed height for all screens. This is useful when screens contain different content and their heights vary.
+</Note>
+
 - 
 
 ### **Saving data when closing the second screen**For templates with multiple main screens, you can configure the form to save entered data when the second screen is closed.In this case, all fields on the second screen become optional.
@@ -103,18 +114,26 @@ To enable: open **General settings desktop→ Data transfer → User data** and 
 We only recommend using this option if the first screen **includes a mandatory privacy policy checkbox** to ensure that the user has explicitly consented to data transfer and communications.
 
 ## **Targeting**
-Use filters to define who will see the pop-up and under what conditions.You can preconfigure a customer segment and show (or hide) the form for that segment.For example, here’s a filter for customers whose birthday is in 7 days (segment created in advance)
+Use filters to define who will see the pop-up and under what conditions.You can preconfigure a customer segment and show (or hide) the form for that segment.
+
+<Note>
+For example, here’s a filter for customers whose birthday is in 7 days (segment created in advance)
 
   ![](/images/imported/How-2Bto-2BCreate-2BPop-ups-2B-2832-29.png)
+</Note>
 
 ## General Settings
 In **General settings**, specify:
 - Website
 - Days of the week for display
 - Frequency of appearance
-- Whether the form is **priority**. If checked, the pop-up will appear even if frequency limits per visitor are set in the “Pop-up frequency control” section.For example, these are the settings for a form that will be displayed daily, but will only pop up once for each user during a visit to the site (and form is a priority).
+- Whether the form is **priority**. If checked, the pop-up will appear even if frequency limits per visitor are set in the “Pop-up frequency control” section.
+
+<Note>
+For example, these are the settings for a form that will be displayed daily, but will only pop up once for each user during a visit to the site (and form is a priority).
 
   ![](/images/imported/How-to-Create-Pop-ups-(33).png)
+</Note>
 
 ## **Display conditions**
 Next, set the pop-up display conditions: ​1.  By set of conditions
@@ -123,11 +142,17 @@ Next, set the pop-up display conditions: ​1.  By set of conditions
 - After a certain time spent on the page.
 - After visiting a defined number of pages.
 - After being inactive for period of time
-- On a specific action performed on the website.2. Immidiately after falling into target group 3. After API-request or click on call-to-action buttonFor example, these are the settings for a form that will be displayed for a customer who has visited two pages of the site in total.
+- On a specific action performed on the website.2. Immidiately after falling into target group 3. After API-request or click on call-to-action button
+
+<Note>
+For example, these are the settings for a form that will be displayed for a customer who has visited two pages of the site in total.
 
   ![](/images/imported/How-to-Create-Pop-ups-(34).png)
+</Note>
 
+<Warning>
 Page views and visits are counted starting from the moment the popup script is installed on the site. If installed yesterday, data is only available from that point.
+</Warning>
 
 ## **What happens after form was filled & Custom JS-calls**
 

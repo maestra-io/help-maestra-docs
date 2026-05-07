@@ -28,7 +28,12 @@ To send a request to a service with a webhook, you should first integrate this s
 
   ![02_webhook](/images/imported/02_webhook.png)
 
-- Set the maximum number of requests per second allowed — a useful workaround for services with a limited processing speed.All the webhooks in the integration share the same processing limit.
+- Set the maximum number of requests per second allowed — a useful workaround for services with a limited processing speed.
+
+<Note>
+All the webhooks in the integration share the same processing limit.
+</Note>
+
 Please note the estimated restriction as the actual number of requests per second may vary based on the network delays. We recommend setting a slower speed than your service can process to reduce the risk of exceeding the limit.
 
   ![03_webhook](/images/imported/03_webhook.png)
@@ -55,12 +60,21 @@ You can now create webhooks for your integrations.
 - The Description is an optional field that can contain any useful info about the webhook’s function.
 - Method is determined by the task — GET, POST, PUT, PATCH, DELETE.
 - The URL is an optional part to the root URL specified in the integration and can be left blank if the full URL is already included in the integration.
-- The URL view displays the full URL request for visualization purposes only and does not require editing.**Idempotency key** If you add the `$\{WebhookRequest.TransactionalId\}` parameter to your request, the webhook will be called back three times within six minutes if the response contains errors 5xx and 429, as long as the response does not include other codes or an absent transactionID. This parameter is optional.
+- The URL view displays the full URL request for visualization purposes only and does not require editing.
+
+<Note>
+**Idempotency key** If you add the `$\{WebhookRequest.TransactionalId\}` parameter to your request, the webhook will be called back three times within six minutes if the response contains errors 5xx and 429, as long as the response does not include other codes or an absent transactionID. This parameter is optional.
+</Note>
 
   ![08_webhook](/images/imported/08_webhook.png)
 
 ## How to add a transactionID
-You can enter the idempotency key in a URL, a header, or a request body.Please check the documents of your service whether it accepts the `transactionId` parameter and how it is best sent in webhooks, as data format requirements may vary among services.
+You can enter the idempotency key in a URL, a header, or a request body.
+
+<Warning>
+Please check the documents of your service whether it accepts the `transactionId` parameter and how it is best sent in webhooks, as data format requirements may vary among services.
+</Warning>
+
 Now, let’s have a look at the examples of how the `transactionID` is added to the webhook’s URL.
 The transactionId=$\{WebhookRequest.TransactionalId\} is added after the question mark `?`:
 
@@ -95,4 +109,3 @@ Helpful article:
 - [Exporting Webhook Logs](https://developers.maestra.io/docs/exporting_webhook_logs)To duplicate a webhook, open the relevant webhook’s menu and click "Copy":
 
   ![15_webhook](/images/imported/15_webhook.png)
-

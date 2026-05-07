@@ -2,6 +2,8 @@
 title: "Attribution model"
 ---
 
+<Warning>
+
 **Changes in the attribution model**
 - Maximum attribution window is 30 days;
 
@@ -14,6 +16,7 @@ title: "Attribution model"
 - Campaigns attribution does not intersect with website personalization and In-App personalization flows;
 
 - Lead forms do not take away conversions from notification campaigns.
+</Warning>
 
 # What is attribution model and when to use it
 
@@ -31,7 +34,11 @@ Meaning, that If there were several campaign interactions before the order, the 
 
 - Attribution model measures which campaigns the customer clicked last across all communication channels, except for SMS, you can track clicks or deliveries based on the settings. ​
 - The order is attributed to a campaign when: - The order matches the settings (status and first action touchpoint) determined by the selected goal; - Number of days passed between the campaign interaction and the order first action is less than specified in the attribution settings; - There are no other website visits between the campaign interaction and the order first action, except for direct visits (entering a link in the address bar or using bookmarks) or visits with `utm_source=maestra`.
-- Orders are not attributed: - To campaigns excluded in the attribution settings; - To lead generation forms and pop-ups;**Deleted data** does not affect revenue metrics and conversion.
+- Orders are not attributed: - To campaigns excluded in the attribution settings; - To lead generation forms and pop-ups;
+
+<Tip>
+**Deleted data** does not affect revenue metrics and conversion.
+</Tip>
 
 # Attribution settings
 Go to **Settings** → **System** → **Goals and attribution settings** and select tab **Attribution**:

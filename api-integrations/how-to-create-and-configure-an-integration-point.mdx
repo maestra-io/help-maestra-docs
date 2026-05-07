@@ -42,12 +42,15 @@ A display name for your integration point — for example, "Website" or "iOS App
 
 Secret keys secure the data transfer between your systems and Maestra. A production key is generated automatically when you create an integration point. You can also add extra production keys and test keys.
 
+<Info>
+
 **Permissions required:**
 
 - View and copy a test key — **View integrations**
 - View and copy any key — **Manage secret keys**
 - Create a test key — **Edit integrations**
 - Create any key — **Edit integrations** + **Manage secret keys**
+</Info>
 
 Test key limitations:
 
@@ -57,7 +60,10 @@ Test key limitations:
 
 ![](/images/imported/--2026-03-06--13_16_28.png)
 
+<Tip>
+
 Each integration point **has its own secret key**, so if one key is compromised, the others remain unaffected.
+</Tip>
 
 ## How to rotate a production key without downtime 
 
@@ -97,9 +103,12 @@ If you need to verify that an email belongs to a subscriber who has opted in to 
 
 ![](/images/imported/--2026-03-06--14_08_27.png)
 
+<Note>
+
 **Why account access settings might be needed**:
 
 For example, in a loyalty program, you might want to allow points redemption only for customers with a verified phone number and/or email. Subscription confirmation alone doesn't work here — a customer could unsubscribe from emails but still use the loyalty program.
+</Note>
 
 # Site personalization settings
 
@@ -125,5 +134,7 @@ Common errors:
 - **You have one website**. Create one integration point.
 - **You have a website and a landing page**, and you want to track where subscribers come from. Create two integration points — one for each. Assign a unique touchpoint to each. To find users who came through the landing page, simply filter customers by touchpoint.
 
-When importing customers or orders, the choice of integration point depends on the data source. For example, if you're uploading customers who registered on the website, select the website integration point.
+<Note>
 
+When importing customers or orders, the choice of integration point depends on the data source. For example, if you're uploading customers who registered on the website, select the website integration point.
+</Note>
