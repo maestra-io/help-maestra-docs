@@ -3,31 +3,27 @@ title: "How to Set Up a Product Feed Import"
 ---
 
 <Info>
+  Since August 2025, the system no longer creates bulk tasks for feed import. ​ ​
 
-Since August 2025, the system no longer creates bulk tasks for feed import.
-​
-​**How it worked before**
-After you added a feed to your project, the system would automatically check it at the set intervals. A product import was only triggered if the feed contained new or updated data since the last import. You could download an original file with new data or a resulting file in the “Bulk tasks” tab.
+  **How it worked before** After you added a feed to your project, the system would automatically check it at the set intervals. A product import was only triggered if the feed contained new or updated data since the last import. You could download an original file with new data or a resulting file in the “Bulk tasks” tab.
 
-​**How it will be now**: bulk tasks for feed import are no longer created. Data update logic stays the same. You can view your feed's update history on its page. [See more](#h_5901676d6d).
+  ​**How it will be now**: bulk tasks for feed import are no longer created. Data update logic stays the same. You can view your feed's update history on its page. [See more](#h_5901676d6d).
 </Info>
 
 ## Adding a product feed
 
-1. Go to the **Products** tab and click **"Import"** → **"Add product feed"**: 
+1. Go to the **Products** tab and click **"Import"** → **"Add product feed"**:
 
 ![](/images/imported/--2025-09-25--2_50_07PM.png)
 
 <Accordion title="Another way to add your feed">
+  Go to the **Integration setup** tab. Click  **"Create integration"**:
 
-Go to the **Integration setup** tab. Click  **"Create integration"**:
+  ![](/images/imported/--2025-10-03--11_04_46AM.png)
 
-![](/images/imported/--2025-10-03--11_04_46AM.png)
+  Choose “Product feeds”.
 
-Choose “Product feeds”.
-
-![](/images/imported/--2025-10-03--11_08_11AM.png)
-
+  ![](/images/imported/--2025-10-03--11_08_11AM.png)
 </Accordion>
 
 2. Fill in the fields on the settings page:
@@ -36,25 +32,24 @@ Choose “Product feeds”.
 
 **Mandatory fields:**
 
-- **Feed type** — Google/YML. 
+- **Feed type** — Google/YML.
 - **External system** — the system we take incoming data from.
 - **Brand** — relevant for multi-brand projects. Select the brand you need to upload the product data for.
 - **URL** — your file address.
 - **Update every n hours** — the time period after which the system downloads the file by the specified URL and updates the data if necessary. After adding the feed, data download will start immediately, and then continue with the selected frequency. [See more on the update algorithm](#h_72b5c2885c).
 
 <Note>
-
-If you specify a number that is a multiple of 12, you will be able to specify the exact time at which the data should be updated.
+  If you specify a number that is a multiple of 12, you will be able to specify the exact time at which the data should be updated.
 </Note>
 
 **Optional fields:**
 
-- By default, your feed is named *Product feed #.* Feel free to give it a more convenient name anytime.
+- By default, your feed is named _Product feed #._ Feel free to give it a more convenient name anytime.
 - **Area** — used for the projects where products data may differ depending on the region (Areas).
 - **Launch update at** — the exact time the data update is needed if necessary. After adding the feed, data download will start immediately, and then continue with the selected frequency. This option becomes available when you enter a number divisible by 12 in the **Update every n hours** field.
 - **Authorization** — fill in the field if the file for the download is secured by password. To add the feeds secured by password, you need to have the "Managing secret data" permission.
 
-3. Click **"Add"**. 
+3. Click **"Add"**.
 
 Once the setup is complete, the feed will be displayed in the **"Product feeds" tab** of the **Integration setup** section.
 
@@ -66,24 +61,22 @@ Once the setup is complete, the feed will be displayed in the **"Product feeds" 
 
 ## How product data is updated
 
-Immediately after the feed is added to the project and during periodic updates, the system attempts to download the product feed file from the specified link. If the file is successfully downloaded and there are changes compared to the previous download, product information is updated: new products are added and existing ones are edited.
-​
+Immediately after the feed is added to the project and during periodic updates, the system attempts to download the product feed file from the specified link. If the file is successfully downloaded and there are changes compared to the previous download, product information is updated: new products are added and existing ones are edited. ​
 
 When loading and updating the feed, the system identifies a product based on two parameters: the **external product ID** and the **external feed system**. If the feeds with the same external product ID are added to the project, two scenarios are possible:
 
-- **Different external systems are selected**—*two product cards* will be created on the project, one for each system.
-- **The same external system is selected**—*one product card* will be created on the project. Updates may be applied to the product unpredictably, sometimes from one feed, sometimes from another.
+- **Different external systems are selected**—_two product cards_ will be created on the project, one for each system.
+- **The same external system is selected**—_one product card_ will be created on the project. Updates may be applied to the product unpredictably, sometimes from one feed, sometimes from another.
 
 <Info>
-
-A brand does not currently impact a product's identification in Maestra.
+  A brand does not currently impact a product's identification in Maestra.
 </Info>
 
 Click the "Update feed" button when you need to update product data without waiting for the next scheduled update.
 
 ![](/images/imported/--2025-10-03--11_35_38AM.png)
 
-A problem will be opened if the feed failed to download or process. 
+A problem will be opened if the feed failed to download or process.
 
 ## Possible problems
 
@@ -91,9 +84,9 @@ A problem will be opened if the feed failed to download or process.
 
 | **Description** | **Comment** |
 | --- | --- |
-| Unable to download the feed by the \{feed URL\} address: incorrect URL or the server is unavailable. | Incorrect feed address is specified or the server is unavailable. |
-| Unable to process the feed by the \{feed URL\} address: incorrect or unsupported format. | Incorrect feed type (Google/YML) is selected or the file is created in an incorrect format. |
-| Unable to download the feed by the \{feed URL\} address: access forbidden—check login and password. | Incorrect authorization data (login and password) are specified when the feed is secured by password. |
+| Unable to download the feed by the {feed URL} address: incorrect URL or the server is unavailable. | Incorrect feed address is specified or the server is unavailable. |
+| Unable to process the feed by the {feed URL} address: incorrect or unsupported format. | Incorrect feed type (Google/YML) is selected or the file is created in an incorrect format. |
+| Unable to download the feed by the {feed URL} address: access forbidden—check login and password. | Incorrect authorization data (login and password) are specified when the feed is secured by password. |
 
 ### Issues with specific product values
 
