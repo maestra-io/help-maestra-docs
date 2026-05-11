@@ -365,6 +365,11 @@
       }
     ]
   },
+  "integrations": {
+    "intercom": {
+      "appId": "imn5pkg4"
+    }
+  },
   "redirects": [
     {
       "source": "/en",
