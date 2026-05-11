@@ -367,6 +367,10 @@
   },
   "redirects": [
     {
+      "source": "/en",
+      "destination": "/"
+    },
+    {
       "source": "/en/articles/11584375-who-is-a-customer",
       "destination": "/customers-orders-and-products/customers/who-is-a-customer"
     },
