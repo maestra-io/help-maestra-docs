@@ -307,13 +307,6 @@
                 ]
               }
             ]
-          },
-          {
-            "group": "General",
-            "pages": [
-              "general/test",
-              "general/testing"
-            ]
           }
         ]
       }
